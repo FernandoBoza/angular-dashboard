@@ -1,0 +1,32 @@
+<section class="one">
+   <h1 class="title"><i class="fas fa-chart-bar"></i> Project Performance</h1>
+</section>
+<section class="two">
+   <h1 class="title"><i class="fas fa-tasks"></i> Tasks</h1>
+</section>
+<section class="three">
+   <h1 class="title"><i class="fas fa-users"></i> Departments</h1>
+   <ul class="department_blocks">
+      <li class="department" *ngFor="let dep of departments">
+         <span>{{dep}} <i class="fas fa-ellipsis-h"></i></span>
+         <ul>
+            <li class="department_user" *ngFor="let user of users">
+               <span class="img_holder"><img src="{{user.img}}" alt="{{user.name}}"></span>
+               <span>{{user.name}}</span>
+            </li>
+         </ul>
+      </li>
+   </ul>
+</section>
+<section class="four">
+   <h1 class="title"><i class="fas fa-bell"></i> Notifications</h1>
+   <ul class="notifications">
+      <li *ngFor="let notif of notifications">
+         <span class="{{notif.status}}"> <i class="fas fa-circle"></i> </span>
+         <span>{{notif.message}}</span>
+         <span>{{notif.timelog}}</span>
+         <i class="fas fa-external-link-alt"></i>
+         <i class="fas fa-times"></i>
+      </li>
+   </ul>
+</section>

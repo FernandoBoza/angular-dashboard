@@ -1,1 +1,246 @@
-/* You can add global styles to this file, and also import other style files */
+@import "reset.scss";
+
+$sidebar: #222947;
+$darkOne: #202237;
+$darkTwo: #191f3f;
+$purple: #7a4bb7;
+$block_bg: #2d3049;
+$block_fg: #3e4360;
+$blue: #667cff;
+$blueTwo: #1fc5ff;
+$green: #1dff88;
+$red: #ff2261;
+
+app-root {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100vh;
+  font-family: "futura pt";
+}
+
+.chat_widget {
+  z-index: 2;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  background: $purple;
+  padding: 1rem;
+  border-radius: 6px;
+  color: white;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  transition: background 0.4s, height 0.4s, width 0.4s;
+
+  &:hover,
+  &:active {
+    background: darken($purple, 20%);
+  }
+
+  i.toggle {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: $purple;
+    z-index: 2;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  &.expanded {
+    width: 21rem;
+    height: 80%;
+  }
+
+  p {
+    font-weight: bold;
+  }
+
+  ul {
+    margin-top: 1.4rem;
+    overflow: scroll;
+    height: 90%;
+    position: absolute;
+    width: 93%;
+
+    li {
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      display: flex;
+
+      span {
+        align-self: center;
+      }
+    }
+  }
+}
+
+span.img_holder {
+  width: 57px;
+  height: 57px;
+  border-radius: 7rem;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid gray;
+
+  &.online {
+    border: 2px solid $green;
+  }
+
+  img {
+    width: 5rem;
+    position: absolute;
+    left: -10px;
+    top: 0;
+  }
+}
+
+.sidebar {
+  color: #ccc;
+  padding: 0.5rem;
+  background: $sidebar;
+
+  ul {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+
+    li {
+      border-radius: 5px;
+      transition: background 0.4s;
+      cursor: pointer;
+
+      &:hover {
+        background: $purple;
+        color: white;
+      }
+
+      &:active {
+        background: darken($purple, 20%);
+        color: white;
+      }
+
+      i {
+        pointer-events: none;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.content {
+  background: linear-gradient($darkOne, $darkTwo);
+
+  admin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    grid-gap: 1rem;
+    padding: 1rem;
+
+    section {
+      background: $block_bg;
+      border-radius: 7px;
+      box-shadow: 0px 0px 5px 2px #00000030;
+      transition: border 0.3s;
+      border: 2px solid transparent;
+      padding: 1rem;
+
+      &:hover {
+        border: 2px solid $blue;
+      }
+
+      h1.title {
+        color: white;
+        font-size: 1.3rem;
+
+        i {
+          margin-right: 5px;
+        }
+      }
+
+      &.three {
+        overflow: scroll;
+        width: 100%;
+
+        h1 {
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+ul.department_blocks {
+  display: flex;
+  height: fit-content;
+  margin-top: 2.6rem;
+  width: fit-content;
+
+  li.department {
+    color: #ccc;
+    width: 230px;
+    padding: 1rem;
+    display: block;
+    margin-right: 2rem;
+    border-radius: 4px;
+    background: $block_fg;
+    justify-content: space-between;
+
+    span {
+      display: flex;
+      justify-content: space-between;
+      align-self: center;
+
+      &.img_holder {
+        margin-right: 1rem;
+      }
+    }
+
+    ul {
+      margin-top: 1rem;
+      overflow: scroll;
+      height: 180px;
+
+      li.department_user {
+        margin-bottom: 1rem;
+        display: flex;
+      }
+    }
+  }
+}
+
+.notifications {
+  margin-top: 1.4rem;
+  overflow: scroll;
+  height: 37%;
+  position: absolute;
+
+  li {
+    background: $block_fg;
+    color: #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 22px 1fr 81px auto auto;
+    grid-gap: 1rem;
+
+    i {
+      cursor: pointer;
+    }
+  }
+  .complete {
+    color: $green;
+  }
+  .pending {
+    color: $blueTwo;
+  }
+  .deleted {
+    color: $red;
+  }
+}
