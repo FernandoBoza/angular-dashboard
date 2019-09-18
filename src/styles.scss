@@ -23,7 +23,7 @@ app-root {
   width: 3rem;
   height: 3rem;
   position: absolute;
-  background: $purple;
+  background: #1d203a;
   padding: 1rem;
   border-radius: 6px;
   color: white;
@@ -31,10 +31,10 @@ app-root {
   right: 0.5rem;
   transition: background 0.4s, height 0.4s, width 0.4s;
 
-  &:hover,
-  &:active {
-    background: darken($purple, 20%);
-  }
+  // &:hover,
+  // &:active {
+  //   background: darken($purple, 20%);
+  // }
 
   i.toggle {
     cursor: pointer;
@@ -66,7 +66,8 @@ app-root {
     li {
       justify-content: space-between;
       margin-bottom: 1rem;
-      display: flex;
+      display: grid;
+      grid-template-columns: auto 100px auto;
 
       span {
         align-self: center;
@@ -113,6 +114,7 @@ span.img_holder {
       transition: background 0.4s;
       cursor: pointer;
 
+      &.active,
       &:hover {
         background: $purple;
         color: white;
@@ -126,6 +128,19 @@ span.img_holder {
       i {
         pointer-events: none;
         padding: 1rem;
+      }
+
+      span.notification {
+        cursor: pointer;
+        position: absolute;
+        background: $red;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 56px;
+        box-shadow: -2px 5px 4px #38000042;
       }
     }
   }
@@ -177,9 +192,10 @@ span.img_holder {
 
 ul.department_blocks {
   display: flex;
-  height: fit-content;
+  height: 14rem;
   margin-top: 2.6rem;
   width: fit-content;
+  overflow: scroll;
 
   li.department {
     color: #ccc;
@@ -195,6 +211,10 @@ ul.department_blocks {
       display: flex;
       justify-content: space-between;
       align-self: center;
+
+      &.department_title {
+        font-weight: bold;
+      }
 
       &.img_holder {
         margin-right: 1rem;
@@ -242,5 +262,40 @@ ul.department_blocks {
   }
   .deleted {
     color: $red;
+  }
+}
+
+section.two {
+  display: grid;
+  grid-gap: 0 2rem;
+  grid-template-columns: 1fr;
+
+  h1 {
+    position: absolute;
+  }
+
+  .tasks {
+    margin-top: 2rem;
+    color: #ccc;
+    overflow: scroll;
+    height: 240px;
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    span {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 114px min-content 90px min-content 74px;
+      font-size: 13px;
+      margin: 0.5rem 0;
+      grid-gap: 1rem;
+      opacity: 0.8;
+    }
+
+    i.fa-circle {
+      font-size: 7px;
+    }
   }
 }

@@ -18,11 +18,13 @@
 <section class="sidebar">
   <ul>
     <li>Logo</li>
-    <li *ngFor="let i of menu"><i class="fal {{i.icon}}"></i></li>
+    <li *ngFor="let i of menu" routerLink="/{{i.url}}" [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active">
+      <span class="notification" *ngIf="i.notification > 0">{{i.notification}}</span>
+      <i class="fal {{i.icon}}"></i>
+    </li>
   </ul>
 </section>
 <section class="content">
-  <admin></admin>
+  <router-outlet></router-outlet>
 </section>
-
-<!-- <router-outlet></router-outlet> -->

@@ -3,12 +3,37 @@
 </section>
 <section class="two">
    <h1 class="title"><i class="fas fa-tasks"></i> Tasks</h1>
+   <ul class="tasks">
+      <li *ngFor="let task of tasks_completed">
+         <p>{{task.message}}</p>
+         <span>
+            {{task.author}}
+            <i class="fas fa-circle"></i>
+            {{task.department}}
+            <i class="fas fa-circle"></i>
+            {{task.timelog}}
+         </span>
+      </li>
+   </ul>
+
+   <!-- <ul class="tasks">
+      <li *ngFor="let task of tasks_pending">
+         <p>{{task.message}}</p>
+         <span>
+            {{task.author}}
+            <i class="fas fa-circle"></i>
+            {{task.department}}
+         </span>
+      </li>
+   </ul> -->
 </section>
 <section class="three">
    <h1 class="title"><i class="fas fa-users"></i> Departments</h1>
    <ul class="department_blocks">
       <li class="department" *ngFor="let dep of departments">
-         <span>{{dep}} <i class="fas fa-ellipsis-h"></i></span>
+         <span>
+            <span class="department_title">{{dep}}</span>
+            <i class="fas fa-ellipsis-h"></i></span>
          <ul>
             <li class="department_user" *ngFor="let user of users">
                <span class="img_holder"><img src="{{user.img}}" alt="{{user.name}}"></span>

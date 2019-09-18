@@ -11,12 +11,13 @@ export class AdminComponent implements OnInit {
   constructor(private user: UserServiceService) { }
   public notifications = CONSTANTS.notifications;
   public departments = CONSTANTS.departments;
+  public tasks_completed = CONSTANTS.tasks_completed;
+  public tasks_pending = CONSTANTS.tasks_pending;
 
 
   public get users(): any[] {
     return this.user.mockUser;
   }
-
 
   ngOnInit() {
   }

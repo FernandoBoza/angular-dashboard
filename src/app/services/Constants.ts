@@ -3,35 +3,51 @@ export default class CONSTANTS {
    public static menu = [
       {
          label: "Home",
-         icon: "fa-home-alt"
+         icon: "fa-home-alt",
+         notification: 0,
+         url: ""
       },
       {
-         label: "Progress",
-         icon: "fa-chart-bar"
+         label: "Projects",
+         icon: "fa-chart-bar",
+         notification: 0,
+         url: "projects"
       },
       {
          label: "Department",
-         icon: "fa-users"
+         icon: "fa-users",
+         notification: 0,
+         url: "departments"
       },
       {
          label: "Tasks",
-         icon: "fa-tasks"
+         icon: "fa-tasks",
+         notification: 0,
+         url: "tasks"
       },
       {
          label: "Inbox",
-         icon: "fa-inbox"
+         icon: "fa-inbox",
+         notification: 1,
+         url: "inbox"
       },
       {
          label: "Notifications",
-         icon: "fa-bell"
+         icon: "fa-bell",
+         notification: 2,
+         url: "notifications"
       },
       {
          label: "Calendar",
-         icon: "fa-calendar"
+         icon: "fa-calendar",
+         notification: 0,
+         url: "calendar"
       },
       {
          label: "Settings",
-         icon: "fa-cog"
+         icon: "fa-cog",
+         notification: 0,
+         url: "settings"
       },
    ]
 
@@ -83,5 +99,66 @@ export default class CONSTANTS {
       "Sales",
       "Marketing",
       "Engineering"
+   ]
+
+   public static tasks_completed = [
+      {
+         message: "Set up aws SE2 for client",
+         author: "Jane Smith",
+         department: "Development",
+         timelog: "1 day ago"
+      },
+      {
+         message: "Fix sales contract - EMEA",
+         author: "Jane Smith",
+         department: "Sales",
+         timelog: "1 day ago"
+      },
+      {
+         message: "Call with AWS",
+         author: "Jane Smith",
+         department: "Development",
+         timelog: "6 hours ago"
+      },
+      {
+         message: "Finsish IBC broshure",
+         author: "Jane Smith",
+         department: "Marketing",
+         timelog: "1 day ago"
+      },
+      {
+         message: "Set up license for FOX",
+         author: "Jane Smith",
+         department: "Engineering",
+         timelog: "1 day ago"
+      },
+   ]
+
+   public static tasks_pending = [
+      {
+         message: "Finish media brochure for Intel",
+         author: "Jane Smith",
+         department: "Marketing",
+      },
+      {
+         message: "Working on upload panel",
+         author: "John Doe",
+         department: "Development",
+      },
+      {
+         message: "Seek interface on panel",
+         author: "Jean Parker",
+         department: "Engineering",
+      },
+      {
+         message: "Fix AI for translation",
+         author: "Maggie Lopez",
+         department: "Development",
+      },
+      {
+         message: "Create project",
+         author: "Jane Smith",
+         department: "Development",
+      },
    ]
 }
