@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { InboxComponent } from './components/inbox/inbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SettingsComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,

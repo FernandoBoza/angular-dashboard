@@ -1,0 +1,34 @@
+<section class="left">
+  <h1>Chat</h1>
+  <div class="search_messages">
+    <i class="fal fa-search"></i>
+    <input type="text" placeholder="Search">
+  </div>
+  <ul class="chat">
+    <li *ngFor="let message of messages" (click)="selectMsg(message)">
+      <span class="img_holder"><img src="{{message.img}}"></span>
+      <div class="chat_layout">
+        <div class="top">
+          <span>{{message.name}}</span>
+          <span>{{message.date}}</span>
+        </div>
+        <div class="btm">
+          <span>{{message.thread[0].message}}</span>
+          <span>{{message.unread}}</span>
+        </div>
+      </div>
+
+    </li>
+  </ul>
+</section>
+<section class="right">
+  <ul class="chat_history">
+    <li *ngFor="let msg of chatHistory" [class.user]="msg.name =='Jane Smith'">
+      <div class="img_time">
+        <span class="img_holder"><img src="{{msg.img}}"></span>
+        <span>{{msg.time}}</span>
+      </div>
+      <span class="msg_content">{{msg.message}}</span>
+    </li>
+  </ul>
+</section>

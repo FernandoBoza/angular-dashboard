@@ -91,7 +91,6 @@ video {
   font: inherit;
   vertical-align: baseline;
   cursor: auto;
-  outline: none;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -147,4 +146,5 @@ table {
 
 * {
   box-sizing: border-box;
+  outline: none;
 }

@@ -1,5 +1,7 @@
 @import "reset.scss";
 
+$font: "futura pt";
+
 $sidebar: #222947;
 $darkOne: #202237;
 $darkTwo: #191f3f;
@@ -15,7 +17,7 @@ app-root {
   display: grid;
   grid-template-columns: auto 1fr;
   height: 100vh;
-  font-family: "futura pt";
+  font-family: $font;
 }
 
 .chat_widget {
@@ -162,11 +164,11 @@ span.img_holder {
       border-radius: 7px;
       box-shadow: 0px 0px 5px 2px #00000030;
       transition: border 0.3s;
-      border: 2px solid transparent;
+      border: 1px solid transparent;
       padding: 1rem;
 
       &:hover {
-        border: 2px solid $blue;
+        border: 1px solid $blue;
       }
 
       h1.title {
@@ -296,6 +298,310 @@ section.two {
 
     i.fa-circle {
       font-size: 7px;
+    }
+  }
+}
+
+inbox,
+settings {
+  display: grid;
+  color: #ccc;
+  padding: 1rem;
+  height: 100%;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+
+  section {
+    background: $block_bg;
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+settings {
+  section {
+    &.left {
+      li {
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        &.title {
+          border-bottom: 1px solid #cccccc78;
+          margin: 1.5rem 0;
+          padding-bottom: 0.5rem;
+          h2 {
+            font-weight: bold;
+            i {
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+
+      i.fal.fa-chevron-right {
+        font-size: 10px;
+        align-self: center;
+      }
+    }
+
+    &.right {
+      ul {
+        width: 42%;
+        margin: 0 auto;
+
+        span.img_holder {
+          display: block;
+          margin: 0 auto;
+          width: 120px;
+          height: 120px;
+          background: #d2bc4b;
+          margin-bottom: 1.5rem;
+          border: 1px solid $blue;
+          box-shadow: 0px 9px 6px 0px #00000052;
+
+          span.img_whiteout {
+            display: block;
+            height: 100%;
+            background: white;
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 0.4s;
+          }
+
+          span.new_img {
+            position: absolute;
+            left: calc(100%);
+            top: 31%;
+            z-index: 1;
+            background: $block_fg;
+            padding: 1rem;
+            border-radius: 44px;
+            transition: left 0.4s ease-in-out;
+          }
+
+          img {
+            width: 9rem;
+            position: absolute;
+            left: -12px;
+            top: 10px;
+          }
+
+          &:hover {
+            .img_whiteout {
+              opacity: 0.4;
+            }
+            .new_img {
+              cursor: pointer;
+              left: calc(100% - 70%);
+
+              i {
+                pointer-events: none;
+                transition: transform 0.3s;
+              }
+
+              &:active i {
+                transform: scale(0.9);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.input_container {
+  position: relative;
+  margin-bottom: 2rem;
+
+  span.label {
+    background: $block_bg;
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    width: 90px;
+    text-align: center;
+  }
+
+  input {
+    padding: 0.7rem 1rem;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: white;
+    width: 100%;
+    font-family: $font;
+    font-size: 1rem;
+  }
+}
+
+.logout {
+  position: absolute;
+  bottom: 3rem;
+  left: 40%;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 45px;
+  transition: box-shadow 0.4s;
+
+  &:hover {
+    box-shadow: 0px 5px 11px #151a3166;
+  }
+
+  &:active {
+    box-shadow: 0px 5px 11px #151a3100;
+  }
+}
+
+inbox {
+  .search_messages {
+    color: #ccc;
+    position: relative;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #cccccc54;
+
+    input {
+      background: transparent;
+      border: none;
+      width: 100%;
+      color: #ccc;
+      padding-left: 2rem;
+      font-size: 1rem;
+      font-family: $font;
+
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+
+    i {
+      top: 5px;
+      position: absolute;
+    }
+  }
+
+  span.img_holder {
+    display: block;
+    img {
+      left: -13px;
+      top: -7px;
+    }
+  }
+  .chat {
+    margin-top: 1.5rem;
+    li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 0 1rem;
+      background: $block_fg;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      box-shadow: 0px 5px 8px #00000024;
+      margin-bottom: 1rem;
+      cursor: pointer;
+
+      .chat_layout {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+        }
+      }
+
+      .btm span {
+        &:nth-child(1) {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 60%;
+          height: 1rem;
+        }
+
+        &:nth-last-child(1) {
+          cursor: pointer;
+          position: absolute;
+          right: 0;
+          bottom: -5px;
+          background: $red;
+          border-radius: 30px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          box-shadow: 0px 3px 7px #00000061;
+        }
+      }
+    }
+  }
+
+  .top span:nth-last-child(1),
+  .btm {
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+
+  .right {
+    ul.chat_history {
+      li {
+        margin-bottom: 1rem;
+        display: flex;
+
+        &.user {
+          flex-direction: row-reverse;
+
+          span.msg_content {
+            margin-right: 1rem;
+            background: $blue;
+          }
+        }
+
+        .img_time {
+          position: relative;
+          span:nth-last-child(1) {
+            font-size: 0.8rem;
+            position: absolute;
+            top: 60px;
+            width: 110%;
+          }
+
+          span.img_holder {
+            width: 53px;
+            height: 53px;
+            border: none;
+
+            img {
+              width: 4rem;
+              left: -5px;
+              top: 0px;
+            }
+          }
+        }
+
+        span.msg_content {
+          color: white;
+          display: flex;
+          align-self: center;
+          margin-left: 1rem;
+          padding: 1rem;
+          background: $block_fg;
+          border-radius: 56px;
+        }
+      }
     }
   }
 }

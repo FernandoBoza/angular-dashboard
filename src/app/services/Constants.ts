@@ -161,4 +161,33 @@ export default class CONSTANTS {
          department: "Development",
       },
    ]
+
+   public static messages = [
+      {
+         name: "John Doe",
+         img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+         date: "Sept 01",
+         unread: 2,
+         thread: [
+            {
+               time: "10:05 AM",
+               message: "did you see the packages I sent you ?",
+               name: "John Doe",
+               img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               time: "10:15 AM",
+               message: "Yea! they're really cheaaap",
+               name: "Jane Smith",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+            {
+               time: "10:22 AM",
+               message: "I knowwww",
+               name: "John Doe",
+               img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            }
+         ]
+      }
+   ]
 }
