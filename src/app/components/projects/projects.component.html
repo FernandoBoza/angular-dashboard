@@ -21,13 +21,52 @@
   <i class="add fal fa-plus"></i>
 </section>
 <section class="right" *ngIf="projectLayout != null">
-  <ul style="display: flex;justify-content: space-between;">
+
+  <!-- top layer -->
+  <ul class="user_top_right" style="display: flex;justify-content: space-between;">
     <li>
       <h1 class="title">{{projectLayout.title}}</h1>
       <p><i class="fas fa-calendar-check"></i> {{projectLayout.dueDate}}</p>
     </li>
-    <li style="display: grid;grid-template-columns: repeat(4, 32px);direction: rtl;">
-      <span class="img_holder" *ngFor="let img of projectLayout.followers"><img src="{{img}}"></span>
+    <li>
+      <i class="add fal fa-plus"></i>
+      <h2>{{projectLayout.followers.length - 3}} +</h2>
+      <div class="users_status" *ngFor="let img of projectLayout.followers | slice:0:3">
+        <span class="img_holder">
+          <img src="{{img}}">
+        </span>
+        <i class="fas fa-circle"></i>
+      </div>
     </li>
   </ul>
+
+  <!-- Files and Task panel -->
+
+  <div class="files_task_toggle">
+    <h2 (click)="toggleFileTask('Files')" [class.selected]="filetaskOption">Files</h2>
+    <h2 (click)="toggleFileTask('Tasks')" [class.selected]="!filetaskOption">Tasks</h2>
+  </div>
+
+  <div class="option_container files" [class.files_selected]="filetaskOption">
+    <div class="file_grid">
+      <div class="file_holder" *ngFor="let file of projectLayout.files">
+        <ul class="img_info_options">
+          <li>
+            <h2>{{file.fileName}}</h2>
+            <span>
+              {{file.uploader}} <i class="fas fa-circle"></i> {{file.fileSize}}
+            </span>
+          </li>
+          <li>
+            <i class="fal fa-arrow-to-bottom"></i>
+          </li>
+        </ul>
+        <img src="{{file.src}}">
+      </div>
+    </div>
+  </div>
+  <div class="option_container tasks" [class.tasks_selected]="!filetaskOption">
+    tasks
+  </div>
+
 </section>

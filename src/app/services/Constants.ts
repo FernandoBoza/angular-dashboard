@@ -296,6 +296,26 @@ export default class CONSTANTS {
                   "https://randomuser.me/api/portraits/men/32.jpg"
                ]
             }
+         ],
+         files: [
+            {
+               src: "../../assets/imgs/daniel-sessler-szjOt_FzaXg-unsplash.jpg",
+               fileName: "bg_img_1.jpg",
+               uploader: "Jamie Smith",
+               fileSize: "1.4mb"
+            },
+            {
+               src: "../../assets/imgs/jose-carlos-cerdeno-martinez-EydnY2Yfd3U-unsplash.jpg",
+               fileName: "bg_img_1.jpg",
+               uploader: "Jamie Smith",
+               fileSize: "1.4mb"
+            },
+            {
+               src: "../../assets/imgs/vista-pan-9aa9KT-rEBM-unsplash.jpg",
+               fileName: "bg_img_1.jpg",
+               uploader: "Jamie Smith",
+               fileSize: "1.4mb"
+            },
          ]
       },
       {

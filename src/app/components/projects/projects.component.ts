@@ -12,8 +12,18 @@ export class ProjectsComponent implements OnInit {
   public projects = CONSTANTS.projects;
   public projectLayout: any = null;
   public selected: number = -1;
+  public filetaskOption: boolean = true;
 
   ngOnInit() {
+  }
+
+  public toggleFileTask(option: string) {
+
+    if (option == "Files") {
+      this.filetaskOption = true
+    } else {
+      this.filetaskOption = false;
+    }
   }
 
   public selectProject(project: any, index: number) {
