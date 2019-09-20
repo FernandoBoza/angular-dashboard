@@ -1,8 +1,8 @@
 <section class="one">
-   <h1 class="title"><i class="fas fa-chart-bar"></i> Project Performance</h1>
+   <h1 class="title" routerLink="/projects"><i class="fas fa-chart-bar"></i> Project Performance</h1>
 </section>
 <section class="two">
-   <h1 class="title"><i class="fas fa-tasks"></i> Tasks</h1>
+   <h1 class="title" routerLink="/tasks"><i class="fas fa-tasks"></i> Tasks</h1>
    <ul class="tasks">
       <li *ngFor="let task of tasks_completed">
          <p>{{task.message}}</p>
@@ -16,19 +16,9 @@
       </li>
    </ul>
 
-   <!-- <ul class="tasks">
-      <li *ngFor="let task of tasks_pending">
-         <p>{{task.message}}</p>
-         <span>
-            {{task.author}}
-            <i class="fas fa-circle"></i>
-            {{task.department}}
-         </span>
-      </li>
-   </ul> -->
 </section>
 <section class="three">
-   <h1 class="title"><i class="fas fa-users"></i> Departments</h1>
+   <h1 class="title" routerLink="/departments"><i class="fas fa-users"></i> Departments</h1>
    <ul class="department_blocks">
       <li class="department" *ngFor="let dep of departments">
          <span>
@@ -44,7 +34,7 @@
    </ul>
 </section>
 <section class="four">
-   <h1 class="title"><i class="fas fa-bell"></i> Notifications</h1>
+   <h1 class="title" routerLink="/notifications"><i class="fas fa-bell"></i> Notifications</h1>
    <ul class="notifications">
       <li *ngFor="let notif of notifications">
          <span class="{{notif.status}}"> <i class="fas fa-circle"></i> </span>

@@ -7,9 +7,9 @@ export class UserServiceService {
 
   public mockUser: any[] = [
     {
-      name: "Jane Smith",
+      name: "Lizzie Parker",
       department: "Development",
-      img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+      img: "https://randomuser.me/api/portraits/women/6.jpg",
       online: true
     },
     {
@@ -21,7 +21,7 @@ export class UserServiceService {
     {
       name: "Jean Parker",
       department: "Development",
-      img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+      img: "https://randomuser.me/api/portraits/men/32.jpg",
       online: false
     },
     {
@@ -39,7 +39,7 @@ export class UserServiceService {
     {
       name: "John Doe",
       department: "Development",
-      img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+      img: "https://randomuser.me/api/portraits/men/32.jpg",
       online: false
     },
     {

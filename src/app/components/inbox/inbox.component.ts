@@ -11,12 +11,14 @@ export class InboxComponent implements OnInit {
 
   public messages = Constants.messages;
   public chatHistory: any[];
+  public selected: number = -1;
 
   ngOnInit() {
   }
 
-  public selectMsg(message: any) {
+  public selectMsg(message: any, index: number) {
     this.chatHistory = message.thread;
+    this.selected = index;
   }
 
 }

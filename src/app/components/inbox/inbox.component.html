@@ -4,8 +4,9 @@
     <i class="fal fa-search"></i>
     <input type="text" placeholder="Search">
   </div>
-  <ul class="chat">
-    <li *ngFor="let message of messages" (click)="selectMsg(message)">
+  <ul class="chat container">
+    <li *ngFor="let message of messages; let index = index" (click)="selectMsg(message, index)"
+      [class.selected]="selected == index">
       <span class="img_holder"><img src="{{message.img}}"></span>
       <div class="chat_layout">
         <div class="top">
@@ -13,13 +14,15 @@
           <span>{{message.date}}</span>
         </div>
         <div class="btm">
-          <span>{{message.thread[0].message}}</span>
-          <span>{{message.unread}}</span>
+          <span class="short_msg">{{message.thread[message.thread.length - 1].message}}</span>
+          <span *ngIf="message.unread > 0" class="notif">{{message.unread}}</span>
         </div>
       </div>
 
     </li>
   </ul>
+
+  <i class="add fal fa-plus"></i>
 </section>
 <section class="right">
   <ul class="chat_history">
@@ -34,6 +37,7 @@
 
   <!-- <div class="chat_box" *ngIf="chatHistory.length != 0"> -->
   <div class="chat_box">
+    <span class="text_label">Type a message</span>
     <textarea name="" id="" cols="30" rows="10"></textarea>
     <i class="fal fa-link"></i>
     <i class="fal fa-paper-plane"></i>

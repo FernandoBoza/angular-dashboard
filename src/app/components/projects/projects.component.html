@@ -1,3 +1,23 @@
-<p>
-  projects works!
-</p>
+<section class="left">
+  <h1 class="title">Projects</h1>
+  <div class="search_messages">
+    <i class="fal fa-search"></i>
+    <input type="text" placeholder="Search">
+  </div>
+  <ul class="projects container">
+    <li *ngFor="let project of projects; let index = index" (click)="selectProject(project, index)"
+      [class.selected]="selected == index">
+      <h2>{{project.title}}</h2>
+      <span>{{project.department}}</span>
+      <div class="btm">
+        <span>{{getProjectRatio(project.tasks)}}</span>
+        <div class="users">
+          <span class="img_holder" *ngFor="let img of project.followers | slice:0:3"><img src="{{img}}"></span>
+          <span style="color: white;margin-left: .2rem;"> + {{project.followers.length - 3}}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <i class="add fal fa-plus"></i>
+</section>
+<section class="right"></section>

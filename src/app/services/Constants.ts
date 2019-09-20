@@ -9,7 +9,7 @@ export default class CONSTANTS {
       },
       {
          label: "Projects",
-         icon: "fa-chart-bar",
+         icon: "fa-folder",
          notification: 0,
          url: "projects"
       },
@@ -186,6 +186,219 @@ export default class CONSTANTS {
                message: "I knowwww",
                name: "John Doe",
                img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            }
+         ]
+      },
+      {
+         name: "Maggie Lopez",
+         img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+         date: "Sept 01",
+         unread: 0,
+         thread: [
+            {
+               time: "1:05 PM",
+               message: "Meeting @ 4",
+               name: "John Doe",
+               img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               time: "1:10 PM",
+               message: "got it",
+               name: "Jane Smith",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+            {
+               time: "1:32 PM",
+               message: "I'll order pizza",
+               name: "John Doe",
+               img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               time: "1:37 PM",
+               message: "yaaass",
+               name: "Jane Smith",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+         ]
+      },
+      {
+         name: "Lizzie Parker",
+         img: "https://randomuser.me/api/portraits/women/6.jpg",
+         date: "Aug 28",
+         unread: 0,
+         thread: [
+            {
+               time: "1:10 PM",
+               message: "Meeting at 4",
+               name: "Lizzie Parker",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+            },
+            {
+               time: "2:10 PM",
+               message: "got it, Maggie mentioned it to me",
+               name: "Jane Smith",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+            {
+               time: "1:20 AM",
+               message: "when you get in, please make sure the invoices have been sent",
+               name: "Lizzie Parker",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+            },
+            {
+               time: "9:47 AM",
+               message: "sure, just got it, i'll let you know when it's ready",
+               name: "Jane Smith",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+            {
+               time: "10:04 AM",
+               message: "perfect thanks!",
+               name: "Lizzie Parker",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+            },
+         ]
+      }
+   ]
+
+   public static projects = [
+      {
+         title: "Holiday 19 Social Media Campaign",
+         department: "Marketing",
+         followers: [
+            "https://randomuser.me/api/portraits/women/6.jpg",
+            "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            "https://randomuser.me/api/portraits/men/32.jpg"
+         ],
+         tasks: [
+            {
+               title: "Create copy for fall and winter months",
+               status: "complete",
+               description: "Need to work on the copy for IG, FB, TW, and LK @Maggie can you help with the TW and LK copy?",
+               dueDate: "Sept 29 2019",
+               creator: "Jamie Smith",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+               ]
+            },
+            {
+               title: "Visuals for Oct and November",
+               status: "In progress",
+               description: "We need the visuals imgs for FB, IG, and Twitter",
+               dueDate: "Sept 22 2019",
+               creator: "John Doe",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+                  "https://randomuser.me/api/portraits/men/32.jpg"
+               ]
+            }
+         ]
+      },
+      {
+         title: "Convert DB to SQL on AWS",
+         department: "Development",
+         followers: [
+            "https://randomuser.me/api/portraits/women/6.jpg",
+            "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            "https://randomuser.me/api/portraits/men/32.jpg"
+         ],
+         tasks: [
+            {
+               title: "Create copy for fall and winter months",
+               status: "complete",
+               description: "Need to work on the copy for IG, FB, TW, and LK @Maggie can you help with the TW and LK copy?",
+               dueDate: "Sept 29 2019",
+               creator: "Jamie Smith",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+               ]
+            },
+            {
+               title: "Visuals for Oct and November",
+               status: "In progress",
+               description: "We need the visuals imgs for FB, IG, and Twitter",
+               dueDate: "Sept 22 2019",
+               creator: "John Doe",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+                  "https://randomuser.me/api/portraits/men/32.jpg"
+               ]
+            }
+         ]
+      },
+      {
+         title: "Create UI native for iOS app",
+         department: "Development",
+         followers: [
+            "https://randomuser.me/api/portraits/women/6.jpg",
+            "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            "https://randomuser.me/api/portraits/men/32.jpg"
+         ],
+         tasks: [
+            {
+               title: "Create copy for fall and winter months",
+               status: "complete",
+               description: "Need to work on the copy for IG, FB, TW, and LK @Maggie can you help with the TW and LK copy?",
+               dueDate: "Sept 29 2019",
+               creator: "Jamie Smith",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+               ]
+            },
+            {
+               title: "Visuals for Oct and November",
+               status: "In progress",
+               description: "We need the visuals imgs for FB, IG, and Twitter",
+               dueDate: "Sept 22 2019",
+               creator: "John Doe",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+                  "https://randomuser.me/api/portraits/men/32.jpg"
+               ]
+            }
+         ]
+      },
+      {
+         title: "Convert Client A to platinum plan",
+         department: "Engineering",
+         followers: [
+            "https://randomuser.me/api/portraits/women/6.jpg",
+            "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            "https://randomuser.me/api/portraits/men/32.jpg"
+         ],
+         tasks: [
+            {
+               title: "Create copy for fall and winter months",
+               status: "complete",
+               description: "Need to work on the copy for IG, FB, TW, and LK @Maggie can you help with the TW and LK copy?",
+               dueDate: "Sept 29 2019",
+               creator: "Jamie Smith",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+               ]
+            },
+            {
+               title: "Visuals for Oct and November",
+               status: "In progress",
+               description: "We need the visuals imgs for FB, IG, and Twitter",
+               dueDate: "Sept 22 2019",
+               creator: "John Doe",
+               followers: [
+                  "https://randomuser.me/api/portraits/women/6.jpg",
+                  "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+                  "https://randomuser.me/api/portraits/men/32.jpg"
+               ]
             }
          ]
       }
