@@ -756,4 +756,18 @@ projects {
       }
     }
   }
+
+  .right {
+    .img_holder {
+      display: flex;
+      width: 47px;
+      height: 47px;
+      border-color: $block_bg;
+
+      img {
+        width: 4rem;
+        left: -6px;
+      }
+    }
+  }
 }

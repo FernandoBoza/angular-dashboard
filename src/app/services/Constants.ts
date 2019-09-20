@@ -265,6 +265,7 @@ export default class CONSTANTS {
       {
          title: "Holiday 19 Social Media Campaign",
          department: "Marketing",
+         dueDate: "Oct 01 2019",
          followers: [
             "https://randomuser.me/api/portraits/women/6.jpg",
             "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
@@ -300,6 +301,7 @@ export default class CONSTANTS {
       {
          title: "Convert DB to SQL on AWS",
          department: "Development",
+         dueDate: "Sept 30 2019",
          followers: [
             "https://randomuser.me/api/portraits/women/6.jpg",
             "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
@@ -335,6 +337,7 @@ export default class CONSTANTS {
       {
          title: "Create UI native for iOS app",
          department: "Development",
+         dueDate: "Sept 30 2019",
          followers: [
             "https://randomuser.me/api/portraits/women/6.jpg",
             "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
@@ -370,6 +373,7 @@ export default class CONSTANTS {
       {
          title: "Convert Client A to platinum plan",
          department: "Engineering",
+         dueDate: "Sept 30 2019",
          followers: [
             "https://randomuser.me/api/portraits/women/6.jpg",
             "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",

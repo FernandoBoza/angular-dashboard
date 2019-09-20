@@ -20,4 +20,14 @@
   </ul>
   <i class="add fal fa-plus"></i>
 </section>
-<section class="right"></section>
+<section class="right" *ngIf="projectLayout != null">
+  <ul style="display: flex;justify-content: space-between;">
+    <li>
+      <h1 class="title">{{projectLayout.title}}</h1>
+      <p><i class="fas fa-calendar-check"></i> {{projectLayout.dueDate}}</p>
+    </li>
+    <li style="display: grid;grid-template-columns: repeat(4, 32px);direction: rtl;">
+      <span class="img_holder" *ngFor="let img of projectLayout.followers"><img src="{{img}}"></span>
+    </li>
+  </ul>
+</section>

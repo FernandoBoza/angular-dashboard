@@ -10,7 +10,7 @@ export class ProjectsComponent implements OnInit {
   constructor() { }
 
   public projects = CONSTANTS.projects;
-  public projectLayout: any[];
+  public projectLayout: any = null;
   public selected: number = -1;
 
   ngOnInit() {
