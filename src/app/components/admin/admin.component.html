@@ -22,7 +22,7 @@
    <ul class="department_blocks">
       <li class="department" *ngFor="let dep of departments">
          <span>
-            <span class="department_title">{{dep}}</span>
+            <span class="department_title">{{dep.label}}</span>
             <i class="fas fa-ellipsis-h"></i></span>
          <ul>
             <li class="department_user" *ngFor="let user of users">

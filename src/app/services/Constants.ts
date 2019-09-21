@@ -9,13 +9,13 @@ export default class CONSTANTS {
       },
       {
          label: "Projects",
-         icon: "fa-folder",
+         icon: "fa-rocket",
          notification: 0,
          url: "projects"
       },
       {
          label: "Department",
-         icon: "fa-users",
+         icon: "fa-user-friends",
          notification: 0,
          url: "departments"
       },
@@ -95,10 +95,186 @@ export default class CONSTANTS {
    ]
 
    public static departments = [
-      "Development",
-      "Sales",
-      "Marketing",
-      "Engineering"
+      {
+         label: "Development - US",
+         users: [
+            {
+               name: "Lizzie Parker",
+               email: "lParker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+               depHead: true
+            },
+            {
+               name: "John Doe",
+               email: "jdoe@email.com",
+               phone: "305 888 4331",
+               img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               name: "Jean Parker",
+               email: "jparker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/men/32.jpg",
+            },
+            {
+               name: "Maggie Lopez",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               name: "Jane Smith",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+         ]
+      },
+      {
+         label: "Development - EU",
+         users: [
+            {
+               name: "Lizzie Parker",
+               email: "lParker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+               depHead: true
+            },
+            {
+               name: "John Doe",
+               email: "jdoe@email.com",
+               phone: "305 888 4331",
+               img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               name: "Jean Parker",
+               email: "jparker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/men/32.jpg",
+            },
+            {
+               name: "Maggie Lopez",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               name: "Jane Smith",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+         ]
+      },
+      {
+         label: "Sales",
+         users: [
+            {
+               name: "Lizzie Parker",
+               email: "lParker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+               depHead: true
+            },
+            {
+               name: "John Doe",
+               email: "jdoe@email.com",
+               phone: "305 888 4331",
+               img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               name: "Jean Parker",
+               email: "jparker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/men/32.jpg",
+            },
+            {
+               name: "Maggie Lopez",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               name: "Jane Smith",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+         ]
+      },
+      {
+         label: "Marketing",
+         users: [
+            {
+               name: "Lizzie Parker",
+               email: "lParker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+               depHead: true
+            },
+            {
+               name: "John Doe",
+               email: "jdoe@email.com",
+               phone: "305 888 4331",
+               img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               name: "Jean Parker",
+               email: "jparker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/men/32.jpg",
+            },
+            {
+               name: "Maggie Lopez",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               name: "Jane Smith",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+         ]
+      },
+      {
+         label: "Engineering",
+         users: [
+            {
+               name: "Lizzie Parker",
+               email: "lParker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/women/6.jpg",
+               depHead: true
+            },
+            {
+               name: "John Doe",
+               email: "jdoe@email.com",
+               phone: "305 888 4331",
+               img: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               name: "Jean Parker",
+               email: "jparker@email.com",
+               phone: "305 888 4331",
+               img: "https://randomuser.me/api/portraits/men/32.jpg",
+            },
+            {
+               name: "Maggie Lopez",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               name: "Jane Smith",
+               email: "mLopez@email.com",
+               phone: "305 888 4331",
+               img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb",
+            },
+         ]
+      },
    ]
 
    public static tasks_completed = [

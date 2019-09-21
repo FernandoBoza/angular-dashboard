@@ -4,11 +4,12 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { InboxComponent } from './components/inbox/inbox.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
 
 const routes: Routes = [
   { path: "", component: AdminComponent },
   { path: "projects", component: ProjectsComponent },
-  { path: "departments", component: AdminComponent },
+  { path: "departments", component: DepartmentsComponent },
   { path: "tasks", component: AdminComponent },
   { path: "inbox", component: InboxComponent },
   { path: "notifications", component: AdminComponent },
