@@ -13,8 +13,13 @@ export class ProjectsComponent implements OnInit {
   public projectLayout: any = null;
   public selected: number = -1;
   public filetaskOption: boolean = true;
+  public project_toggle: boolean = true;
 
   ngOnInit() {
+  }
+
+  public toggle_project(n: boolean) {
+    this.project_toggle = n
   }
 
   public toggleFileTask(option: string) {

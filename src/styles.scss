@@ -32,6 +32,23 @@ h2 {
   text-overflow: ellipsis;
 }
 
+.progress_bar {
+  background: $block_bg;
+  width: 100%;
+  display: flex;
+  height: 9px;
+  border-radius: 7px;
+  overflow: hidden;
+  align-self: center;
+
+  span.progress {
+    background: $green;
+    width: 80%;
+    display: block;
+    border-radius: 6px;
+  }
+}
+
 .chat_widget {
   z-index: 2;
   width: 3rem;
@@ -955,7 +972,113 @@ projects {
     }
 
     &.tasks {
+      overflow: auto;
       transform: translateX(-25%);
+      height: 73%;
+
+      .grid__one_two_col {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        position: sticky;
+        left: 0;
+
+        .progress_bar {
+          background: $block_fg;
+
+          .progress {
+            background: #f49c00;
+          }
+        }
+      }
+
+      ul.project_status_toggle {
+        display: flex;
+        border: 1px solid $blue;
+        border-radius: 4px;
+        width: max-content;
+        position: relative;
+
+        span.bg {
+          width: 50%;
+          background: $blue;
+          position: absolute;
+          height: 100%;
+          z-index: -1;
+          left: 50%;
+          border-radius: 2px;
+          transition: left 0.4s;
+
+          &.selected {
+            left: 0;
+          }
+        }
+
+        li {
+          padding: 0.5rem 1rem;
+          color: white;
+          cursor: pointer;
+        }
+      }
+
+      ul.task_card_container {
+        display: flex;
+        margin-top: 1rem;
+        height: 88%;
+        width: max-content;
+
+        li.task_card {
+          position: relative;
+          background: $block_fg;
+          padding: 1rem;
+          border-radius: 10px;
+          margin-right: 1rem;
+          display: grid;
+          grid-template-rows: 51px max-content 1fr repeat(3, max-content);
+          width: 290px;
+          grid-gap: 1rem;
+
+          i.fas.fa-ellipsis-v {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+          }
+
+          h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.4;
+          }
+
+          span i {
+            margin-right: 0.7rem;
+          }
+
+          p.description {
+            margin: 1rem 0;
+            line-height: 1.4;
+          }
+
+          ul {
+            display: flex;
+            margin-left: 24px;
+
+            li {
+              margin-left: -23px;
+            }
+
+            span.img_holder {
+              display: flex;
+              border-color: $block_fg;
+            }
+          }
+
+          i.fas.fa-external-link {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+          }
+        }
+      }
     }
   }
 }

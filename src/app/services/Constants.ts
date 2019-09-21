@@ -299,7 +299,7 @@ export default class CONSTANTS {
          ],
          files: [
             {
-               src: "../../assets/imgs/daniel-sessler-szjOt_FzaXg-unsplash.jpg",
+               src: "../../assets/imgs/daniel-sessler-szjOt_FzaXg-unsplash.jpeg",
                fileName: "bg_img_1.jpg",
                uploader: "Jamie Smith",
                fileSize: "1.4mb"

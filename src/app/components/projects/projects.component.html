@@ -66,7 +66,39 @@
     </div>
   </div>
   <div class="option_container tasks" [class.tasks_selected]="!filetaskOption">
-    tasks
+    <div class="grid__one_two_col">
+      <ul class="project_status_toggle">
+        <span class="bg" [class.selected]="project_toggle"></span>
+        <li (click)="toggle_project(true)">In progress</li>
+        <li (click)="toggle_project(false)">Completed</li>
+      </ul>
+
+      <div class="progress_bar">
+        <span class="progress"></span>
+      </div>
+    </div>
+
+    <ul class="task_card_container">
+      <li class="task_card" *ngFor="let task of projectLayout.tasks">
+        <i class="fas fa-ellipsis-v"></i>
+        <h3>{{task.title}}</h3>
+        <div class="progress_bar">
+          <span class="progress"></span>
+        </div>
+        <p class="description">{{task.description}}</p>
+        <span><i class="fas fa-calendar"></i> {{task.dueDate}}</span>
+        <span><i class="fas fa-user-circle"></i> {{task.creator}}</span>
+        <ul>
+          <li *ngFor="let img of task.followers">
+            <span class="img_holder">
+              <img src='{{img}}'>
+            </span>
+          </li>
+        </ul>
+        <i class="fas fa-external-link"></i>
+      </li>
+
+    </ul>
   </div>
 
 </section>
