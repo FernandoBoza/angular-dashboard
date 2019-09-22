@@ -1254,22 +1254,29 @@ notifications {
   .notifications_container {
     padding: 1rem;
     position: relative;
+    margin-bottom: 2rem;
 
-    li.date::after {
-      content: "";
-      background: grey;
-      width: 1px;
-      height: 100%;
-      display: block;
-      position: absolute;
-      left: 3%;
-      z-index: 0;
+    li.date {
+      font-size: 1.1rem;
+      font-weight: bold;
+      &::after {
+        content: "";
+        background: grey;
+        width: 1px;
+        height: 79%;
+        display: block;
+        position: absolute;
+        left: 52px;
+        z-index: 0;
+        margin-top: 10px;
+      }
     }
 
     li.notification_row {
       display: flex;
       position: relative;
       justify-content: space-between;
+      padding: 0 1rem;
 
       i.fal {
         display: flex;
