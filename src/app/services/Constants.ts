@@ -312,62 +312,67 @@ export default class CONSTANTS {
 
    public static tasks_completed = [
       {
-         message: "Set up aws SE2 for client",
+         title: "Set up aws SE2 for client",
          author: "Jane Smith",
          department: "Development",
-         timelog: "1 day ago"
+         dateLog: "1 day ago"
       },
       {
-         message: "Fix sales contract - EMEA",
+         title: "Fix sales contract - EMEA",
          author: "Jane Smith",
          department: "Sales",
-         timelog: "1 day ago"
+         dateLog: "1 day ago"
       },
       {
-         message: "Call with AWS",
+         title: "Call with AWS",
          author: "Jane Smith",
          department: "Development",
-         timelog: "6 hours ago"
+         dateLog: "6 hours ago"
       },
       {
-         message: "Finsish IBC broshure",
+         title: "Finsish IBC broshure",
          author: "Jane Smith",
          department: "Marketing",
-         timelog: "1 day ago"
+         dateLog: "1 day ago"
       },
       {
-         message: "Set up license for FOX",
+         title: "Set up license for FOX",
          author: "Jane Smith",
          department: "Engineering",
-         timelog: "1 day ago"
+         dateLog: "1 day ago"
       },
    ]
 
    public static tasks_pending = [
       {
-         message: "Finish media brochure for Intel",
+         title: "Finish media brochure for Intel",
          author: "Jane Smith",
          department: "Marketing",
+         dateLog: "10/10/2019"
       },
       {
-         message: "Working on upload panel",
+         title: "Working on upload panel",
          author: "John Doe",
          department: "Development",
+         dateLog: "10/14/2019"
       },
       {
-         message: "Seek interface on panel",
+         title: "Seek interface on panel",
          author: "Jean Parker",
          department: "Engineering",
+         dateLog: "10/19/2019"
       },
       {
-         message: "Fix AI for translation",
+         title: "Fix AI for translation",
          author: "Maggie Lopez",
          department: "Development",
+         dateLog: "10/20/2019"
       },
       {
-         message: "Create project",
+         title: "Create project",
          author: "Jane Smith",
          department: "Development",
+         dateLog: "10/10/2019"
       },
    ]
 

@@ -5,13 +5,13 @@
    <h1 class="title" routerLink="/tasks"><i class="fas fa-tasks"></i> Tasks</h1>
    <ul class="tasks">
       <li *ngFor="let task of tasks_completed">
-         <p>{{task.message}}</p>
+         <p>{{task.title}}</p>
          <span>
             {{task.author}}
             <i class="fas fa-circle"></i>
             {{task.department}}
             <i class="fas fa-circle"></i>
-            {{task.timelog}}
+            {{task.dateLog}}
          </span>
       </li>
    </ul>

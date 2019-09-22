@@ -9,6 +9,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { InboxComponent } from './components/inbox/inbox.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotificationsComponent } from './components/notifications/notifications
     SettingsComponent,
     InboxComponent,
     DepartmentsComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,

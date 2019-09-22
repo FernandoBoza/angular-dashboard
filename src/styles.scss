@@ -10,7 +10,8 @@ $block_bg: #2d3049;
 $block_fg: #3e4360;
 $blue: #667cff;
 $blueTwo: #1fc5ff;
-$green: #1dff88;
+$green: #2bcb73;
+$yellow: #fec211;
 $red: #ff2261;
 
 body {
@@ -1353,6 +1354,49 @@ notifications {
         padding: 0.5rem 0;
         align-self: center;
         flex-direction: column;
+      }
+    }
+  }
+}
+
+tasks {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+
+  section {
+    background: $block_bg;
+    border-radius: 5px;
+    padding: 1rem;
+
+    &.left {
+      width: 100%;
+      transition: width 0.4s;
+
+      &.dual_grid {
+        width: 50%;
+      }
+
+      .category_toggle {
+        display: flex;
+        li {
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    &.right {
+      position: absolute;
+      right: 1rem;
+      width: 45%;
+      height: 95%;
+      margin-left: 1rem;
+      transform: translateX(110%);
+      transition: transform 0.4s;
+
+      &.dual_grid {
+        transform: translateX(0);
+        opacity: 1;
       }
     }
   }
