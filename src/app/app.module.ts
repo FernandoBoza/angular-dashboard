@@ -8,6 +8,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { InboxComponent } from './components/inbox/inbox.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DepartmentsComponent } from './components/departments/departments.compo
     ProjectsComponent,
     SettingsComponent,
     InboxComponent,
-    DepartmentsComponent
+    DepartmentsComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,

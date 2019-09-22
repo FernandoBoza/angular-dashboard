@@ -5,6 +5,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { InboxComponent } from './components/inbox/inbox.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
 
 const routes: Routes = [
   { path: "", component: AdminComponent },
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: "departments", component: DepartmentsComponent },
   { path: "tasks", component: AdminComponent },
   { path: "inbox", component: InboxComponent },
-  { path: "notifications", component: AdminComponent },
+  { path: "notifications", component: NotificationsComponent },
   { path: "calendar", component: AdminComponent },
   { path: "settings", component: SettingsComponent },
 ];
