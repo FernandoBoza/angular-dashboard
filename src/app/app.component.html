@@ -1,5 +1,5 @@
+<i class="fas fa-comments-alt toggle fa-fw" [class.fa-compress-alt]="expanded" (click)="expandChat()"></i>
 <div class="chat_widget" [class.expanded]="expanded">
-  <i class="fas fa-comments-alt toggle" [class.fa-compress-alt]="expanded" (click)="expandChat()"></i>
   <div *ngIf="expanded">
     <p>
       <i class="fas fa-comment-alt-lines"></i>

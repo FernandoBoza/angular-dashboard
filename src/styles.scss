@@ -13,6 +13,11 @@ $blueTwo: #1fc5ff;
 $green: #1dff88;
 $red: #ff2261;
 
+body {
+  overflow: hidden;
+  width: 100%;
+}
+
 app-root {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -55,10 +60,23 @@ h2 {
   }
 }
 
+.toggle {
+  cursor: pointer;
+  position: absolute;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 50px !important;
+  height: 50px;
+  bottom: 2rem;
+  right: 2rem;
+  background: $purple;
+  z-index: 3;
+  border-radius: 6px;
+}
+
 .chat_widget {
   z-index: 2;
-  width: 3rem;
-  height: 3rem;
   position: absolute;
   background: #1d203a;
   padding: 1rem;
@@ -66,27 +84,13 @@ h2 {
   color: white;
   bottom: 0.5rem;
   right: 0.5rem;
-  transition: background 0.4s, height 0.4s, width 0.4s;
-
-  // &:hover,
-  // &:active {
-  //   background: darken($purple, 20%);
-  // }
-
-  .toggle {
-    cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: $purple;
-    z-index: 2;
-    padding: 1rem;
-    border-radius: 6px;
-  }
+  width: 21rem;
+  height: 80%;
+  transform: translate(100%);
+  transition: transform 0.4s;
 
   &.expanded {
-    width: 21rem;
-    height: 80%;
+    transform: translate(0);
   }
 
   p {
@@ -272,7 +276,7 @@ ul.department_blocks {
 }
 
 .notifications {
-  margin-top: 1.4rem;
+  // margin-top: 1.4rem;
   overflow: scroll;
   height: 37%;
   position: absolute;
@@ -1261,7 +1265,21 @@ notifications {
   .notifications_container {
     padding: 1rem;
     position: relative;
-    margin-bottom: 2rem;
+
+    &::after {
+      content: "";
+      background: #ffffff2b;
+      height: 1px;
+      width: 94%;
+      left: 3%;
+      display: flex;
+      position: absolute;
+      bottom: 0;
+    }
+
+    &:nth-last-child(1):after {
+      background: none;
+    }
 
     li.date {
       color: white;
