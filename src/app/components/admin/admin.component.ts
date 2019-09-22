@@ -9,7 +9,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class AdminComponent implements OnInit {
   constructor(private user: UserServiceService) { }
-  public notifications = CONSTANTS.notifications;
+  public notifications = CONSTANTS.notifications[0].notifArray;
   public departments = CONSTANTS.departments;
   public tasks_completed = CONSTANTS.tasks_completed;
   public tasks_pending = CONSTANTS.tasks_pending;

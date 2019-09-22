@@ -53,44 +53,77 @@ export default class CONSTANTS {
 
    public static notifications = [
       {
-         message: "Jane Smith completed Call with AWS",
-         status: "complete",
-         timelog: "6 hours ago"
+         date: "today",
+         notifArray: [
+            {
+               task_title: "Set up aws SE2 for client",
+               department: "Development",
+               message: "Jane Smith completed Call with AWS",
+               status: "complete",
+               timelog: "6 hours ago",
+               user: "Jane Smith",
+               src: "https://randomuser.me/api/portraits/women/6.jpg",
+            },
+            {
+               task_title: "Fix sales contract - EMEA",
+               department: "Sales",
+               message: "Maggie Lopez created task Transfer DB to Mongo",
+               status: "pending",
+               timelog: "8 hours ago",
+               user: "Maggie Lopez",
+               src: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               task_title: "Call with AWS",
+               department: "Development",
+               message: "Jean Parker added you to task Fix Calendar UI",
+               status: "pending",
+               timelog: "8 hours ago",
+               user: "Jean Parker",
+               src: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               task_title: "Finsish IBC broshure",
+               department: "Marketing",
+               message: "John Doe deleted task Migrate frontend to jQuery",
+               status: "deleted",
+               timelog: "2 days ago",
+               user: "John Doe",
+               src: "https://randomuser.me/api/portraits/men/32.jpg"
+            }
+         ]
       },
       {
-         message: "Maggie Lopez created task Transfer DB to Mongo",
-         status: "pending",
-         timelog: "8 hours ago"
-      },
-      {
-         message: "Jean Parker added you to task Fix Calendar UI",
-         status: "pending",
-         timelog: "8 hours ago"
-      },
-      {
-         message: "John Doe deleted task Migrate frontend to jQuery",
-         status: "deleted",
-         timelog: "2 days ago"
-      },
-      {
-         message: "Jane Smith completed Call with AWS",
-         status: "complete",
-         timelog: "6 hours ago"
-      },
-      {
-         message: "Maggie Lopez created task Transfer DB to Mongo",
-         status: "pending",
-         timelog: "8 hours ago"
-      },
-      {
-         message: "Jean Parker added you to task Fix Calendar UI",
-         status: "pending",
-         timelog: "8 hours ago"
-      },
-      {
-         message: "John Doe deleted task Migrate frontend to jQuery",
-         status: "deleted",
-         timelog: "2 days ago"
+         date: "Yesterday",
+         notifArray: [
+            {
+               task_title: "Fix sales contract - EMEA",
+               department: "Sales",
+               message: "Maggie Lopez created task Transfer DB to Mongo",
+               status: "pending",
+               timelog: "8 hours ago",
+               user: "Maggie Lopez",
+               src: "https://userstock.io/data/wp-content/uploads/2017/07/audrey-jackson-260657-1024x683.jpg",
+            },
+            {
+               task_title: "Create UI for iOS native",
+               department: "Development",
+               message: "Jean Parker added a new task",
+               status: "pending",
+               timelog: "8 hours ago",
+               user: "Jean Parker",
+               src: "https://pbs.twimg.com/profile_images/974736784906248192/gPZwCbdS.jpg",
+            },
+            {
+               task_title: "Working on NBC Medi aplan",
+               department: "Marketing",
+               message: "John Doe deleted task Migrate frontend to jQuery",
+               status: "deleted",
+               timelog: "2 days ago",
+               user: "John Doe",
+               src: "https://randomuser.me/api/portraits/men/32.jpg"
+            }
+         ]
       }
    ]
 

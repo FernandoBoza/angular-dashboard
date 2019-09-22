@@ -21,6 +21,12 @@ app-root {
   color: #ccc;
 }
 
+h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1.4rem;
+}
+
 h2 {
   width: 93%;
   height: 1rem;
@@ -348,12 +354,6 @@ departments {
     border-radius: 5px;
     padding: 1rem;
     position: relative;
-
-    h1 {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-bottom: 1.4rem;
-    }
   }
 }
 
@@ -1251,14 +1251,25 @@ notifications {
     padding: 1rem;
   }
 
+  ._container {
+    width: 90%;
+    height: 86%;
+    overflow: scroll;
+    position: absolute;
+  }
+
   .notifications_container {
     padding: 1rem;
     position: relative;
     margin-bottom: 2rem;
 
     li.date {
+      color: white;
       font-size: 1.1rem;
       font-weight: bold;
+      margin-bottom: 0.5rem;
+      text-transform: capitalize;
+
       &::after {
         content: "";
         background: grey;
@@ -1268,15 +1279,31 @@ notifications {
         position: absolute;
         left: 52px;
         z-index: 0;
-        margin-top: 10px;
+        margin-top: 1.6rem;
       }
     }
 
     li.notification_row {
-      display: flex;
-      position: relative;
-      justify-content: space-between;
+      display: grid;
       padding: 0 1rem;
+      grid-gap: 0 2rem;
+      position: relative;
+      margin-bottom: 1rem;
+      transition: background 0.4s, box-shadow 0.4s;
+      grid-template-columns: auto auto 160px 1fr 140px auto auto;
+
+      &:hover {
+        border-radius: 4px;
+        background: $block_fg;
+        box-shadow: 0px 6px 13px #0000002b;
+      }
+
+      span.img_holder {
+        width: 45px;
+        height: 45px;
+        align-self: center;
+        border: none;
+      }
 
       i.fal {
         display: flex;
@@ -1305,8 +1332,9 @@ notifications {
       .name_status,
       .notification_title {
         display: flex;
-        flex-direction: column;
+        padding: 0.5rem 0;
         align-self: center;
+        flex-direction: column;
       }
     }
   }

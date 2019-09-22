@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import CONSTANTS from 'src/app/services/Constants';
 
 @Component({
   selector: 'notifications',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class NotificationsComponent implements OnInit {
 
   constructor() { }
+  public notifications = CONSTANTS.notifications;
 
   ngOnInit() {
+    console.log(this.notifications);
   }
 
 }
