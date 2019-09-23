@@ -1,20 +1,23 @@
 <section class="left" [class.dual_grid]="col_toggle">
   <ul class="category_toggle">
-    <li (click)="select_task_category(1)">All</li>
-    <li (click)="select_task_category(2)">Pending</li>
-    <li>Overdue</li>
-    <li (click)="select_task_category(4)">Completed</li>
+    <li [class.selected]="selected == 1" (click)="select_task_category(1)">All</li>
+    <li [class.selected]="selected == 2" (click)="select_task_category(2)">Pending</li>
+    <li [class.selected]="selected == 3">Overdue</li>
+    <li [class.selected]="selected == 4" (click)="select_task_category(4)">Completed</li>
   </ul>
   <ul class="tasks">
-    <li *ngFor="let task of selectTaskCategory" (click)="expandTask(task)">
+    <li *ngFor="let task of selectTaskCategory" (click)="expandTask(task)" [class.selected]="selectedTask == task">
+      <p>{{task.dateLog}}</p>
       <p>{{task.title}}</p>
+      <p><span class="{{task.status}}">{{getStatus(task.status)}}</span></p>
+      <p class="department">{{task.department}}</p>
     </li>
   </ul>
 </section>
 <section class="right" [class.dual_grid]="col_toggle">
-  <i class="fas fa-times" (click)="expandTask(task)"></i>
+  <i class="fas fa-times" (click)="expandTask()"></i>
   <span>{{selectedTask != undefined ? selectedTask.title : ""}}</span>
-  <span>{{selectedTask != undefined ? selectedTask.author : ""}}</span>
+  <!-- <span>{{selectedTask != undefined ? selectedTask.author : ""}}</span> -->
   <span>{{selectedTask != undefined ? selectedTask.department : ""}}</span>
   <span>{{selectedTask != undefined ? selectedTask.dateLog : ""}}</span>
 </section>

@@ -13,6 +13,7 @@ export class TasksComponent implements OnInit {
   public col_toggle: boolean = false;
   public selectedTask: any;
   public selectTaskCategory;
+  public selected: number = 2;
 
 
   ngOnInit() {
@@ -26,13 +27,19 @@ export class TasksComponent implements OnInit {
       case 1:
         let arr = this.tasks_pending.concat(this.tasks_completed);
         this.selectTaskCategory = arr;
-        console.log(this.selectTaskCategory);
+        this.selected = 1;
         break;
       case 2:
         this.selectTaskCategory = this.tasks_pending
+        this.selected = 2;
+        break;
+      case 3:
+        this.selectTaskCategory = this.tasks_pending
+        this.selected = 3;
         break;
       case 4:
         this.selectTaskCategory = this.tasks_completed
+        this.selected = 4;
         break;
 
       default:
@@ -46,6 +53,20 @@ export class TasksComponent implements OnInit {
       this.col_toggle = true;
     } else {
       this.col_toggle = !this.col_toggle
+    }
+  }
+
+  public getStatus(status: string) {
+    switch (status) {
+      case "in_progress":
+        return "In Progress"
+        break;
+      case "complete":
+        return "Complete"
+        break;
+
+      default:
+        break;
     }
   }
 }

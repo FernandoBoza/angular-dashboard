@@ -315,31 +315,36 @@ export default class CONSTANTS {
          title: "Set up aws SE2 for client",
          author: "Jane Smith",
          department: "Development",
-         dateLog: "1 day ago"
+         dateLog: "1 day ago",
+         status: "complete"
       },
       {
          title: "Fix sales contract - EMEA",
          author: "Jane Smith",
          department: "Sales",
-         dateLog: "1 day ago"
+         dateLog: "1 day ago",
+         status: "complete"
       },
       {
          title: "Call with AWS",
          author: "Jane Smith",
          department: "Development",
-         dateLog: "6 hours ago"
+         dateLog: "6 hours ago",
+         status: "complete"
       },
       {
          title: "Finsish IBC broshure",
          author: "Jane Smith",
          department: "Marketing",
-         dateLog: "1 day ago"
+         dateLog: "1 day ago",
+         status: "complete"
       },
       {
          title: "Set up license for FOX",
          author: "Jane Smith",
          department: "Engineering",
-         dateLog: "1 day ago"
+         dateLog: "1 day ago",
+         status: "complete"
       },
    ]
 
@@ -348,31 +353,36 @@ export default class CONSTANTS {
          title: "Finish media brochure for Intel",
          author: "Jane Smith",
          department: "Marketing",
-         dateLog: "10/10/2019"
+         dateLog: "10/10/2019",
+         status: "in_progress"
       },
       {
          title: "Working on upload panel",
          author: "John Doe",
          department: "Development",
-         dateLog: "10/14/2019"
+         dateLog: "10/14/2019",
+         status: "in_progress"
       },
       {
          title: "Seek interface on panel",
          author: "Jean Parker",
          department: "Engineering",
-         dateLog: "10/19/2019"
+         dateLog: "10/19/2019",
+         status: "in_progress"
       },
       {
          title: "Fix AI for translation",
          author: "Maggie Lopez",
          department: "Development",
-         dateLog: "10/20/2019"
+         dateLog: "10/20/2019",
+         status: "in_progress"
       },
       {
          title: "Create project",
          author: "Jane Smith",
          department: "Development",
-         dateLog: "10/10/2019"
+         dateLog: "10/10/2019",
+         status: "in_progress"
       },
    ]
 
