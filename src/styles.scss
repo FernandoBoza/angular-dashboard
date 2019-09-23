@@ -11,12 +11,88 @@ $block_fg: #3e4360;
 $blue: #667cff;
 $blueTwo: #1fc5ff;
 $green: #2bcb73;
-$yellow: #fec211;
+$yellow: #ea7c00;
 $red: #ff2261;
 
 body {
   overflow: hidden;
   width: 100%;
+}
+
+.reject,
+.resolve {
+  color: white;
+  cursor: pointer;
+  transition: box-shadow 0.4s;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: 0px 4px 8px 1px #00000029;
+  }
+}
+
+.reject {
+  box-shadow: 0px 5px 12px #00000017;
+}
+
+.resolve {
+  background: $blue;
+}
+
+.modal {
+  border-radius: 7px;
+  position: absolute;
+  left: 25%;
+  top: 10%;
+  width: 50%;
+  height: 50%;
+  opacity: 0;
+  padding: 1rem;
+  pointer-events: none;
+  background: $block_fg;
+  transition: opacity 0.4s, top 0.4s;
+  box-shadow: 0px 9px 12px 2px #0000002b;
+
+  i.fas.fa-times {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  &.show {
+    top: 25%;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  ul.modal_btns {
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+      padding: 1rem;
+      margin-right: 1rem;
+      border-radius: 4px;
+    }
+  }
+}
+
+.overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background: black;
+  pointer-events: none;
+  transition: opacity 0.4s;
+
+  &.active {
+    opacity: 0.3;
+    pointer-events: all;
+  }
 }
 
 app-root {
@@ -481,6 +557,28 @@ settings {
   }
 }
 
+.text_label {
+  position: absolute;
+  left: 21px;
+  top: -9px;
+  background: $block_bg;
+  width: 141px;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 1rem;
+  color: #ccc;
+  font-size: 1rem;
+  font-family: $font;
+  resize: none;
+}
+
 .logout {
   position: absolute;
   bottom: 3rem;
@@ -639,26 +737,6 @@ inbox {
           align-items: center;
           box-shadow: 0px 9px 10px 0px #28316369;
         }
-      }
-      .text_label {
-        position: absolute;
-        left: 21px;
-        top: -9px;
-        background: $block_bg;
-        width: 141px;
-        text-align: center;
-      }
-
-      textarea {
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        border: 1px solid #ccc;
-        border-radius: 7px;
-        padding: 1rem;
-        color: #ccc;
-        font-size: 1rem;
-        font-family: $font;
       }
     }
   }
@@ -1454,9 +1532,24 @@ tasks {
           margin-right: 1rem;
           cursor: pointer;
           color: rgba(255, 255, 255, 0.425);
+          display: flex;
+          align-items: center;
 
           &.selected {
             color: white;
+          }
+
+          &.new_task {
+            padding: 1rem;
+            color: white;
+            border-radius: 4px;
+            margin-right: 4rem;
+            background: $yellow;
+            transition: background 0.4s;
+
+            &:hover {
+              background: #e87101;
+            }
           }
         }
       }
@@ -1477,5 +1570,29 @@ tasks {
         opacity: 1;
       }
     }
+  }
+
+  .modal {
+    .input_container {
+      span.label,
+      span.text_label {
+        left: 1rem;
+        background: $block_fg;
+      }
+    }
+  }
+}
+
+calendar {
+  padding: 1rem;
+  display: block;
+  height: 100%;
+
+  section {
+    height: 100%;
+    background: $block_bg;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px #00000030;
+    padding: 1rem;
   }
 }

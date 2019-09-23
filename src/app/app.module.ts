@@ -10,6 +10,7 @@ import { InboxComponent } from './components/inbox/inbox.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
     InboxComponent,
     DepartmentsComponent,
     NotificationsComponent,
-    TasksComponent
+    TasksComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

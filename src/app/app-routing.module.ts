@@ -7,6 +7,7 @@ import { InboxComponent } from './components/inbox/inbox.component';
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
   { path: "", component: AdminComponent },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: "tasks", component: TasksComponent },
   { path: "inbox", component: InboxComponent },
   { path: "notifications", component: NotificationsComponent },
-  { path: "calendar", component: AdminComponent },
+  { path: "calendar", component: CalendarComponent },
   { path: "settings", component: SettingsComponent },
 ];
 

@@ -12,8 +12,9 @@ export class TasksComponent implements OnInit {
   public tasks_pending = CONSTANTS.tasks_pending;
   public col_toggle: boolean = false;
   public selectedTask: any;
-  public selectTaskCategory;
+  public selectTaskCategory: any;
   public selected: number = 2;
+  public modalToggle: boolean = false;
 
 
   ngOnInit() {
@@ -68,5 +69,9 @@ export class TasksComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  public toggleModal() {
+    this.modalToggle = !this.modalToggle;
   }
 }
