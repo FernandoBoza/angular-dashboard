@@ -353,14 +353,14 @@ export default class CONSTANTS {
          title: "Finish media brochure for Intel",
          author: "Jane Smith",
          department: "Marketing",
-         dateLog: "10/10/2019",
+         dateLog: "09/28/2019",
          status: "in_progress"
       },
       {
          title: "Working on upload panel",
          author: "John Doe",
          department: "Development",
-         dateLog: "10/14/2019",
+         dateLog: "09/30/2019",
          status: "in_progress"
       },
       {

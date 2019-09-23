@@ -1,3 +1,20 @@
-<section>
-  <h1 class="title">Calendar</h1>
+<section class="left" [class.dual_grid]="col_toggle">
+  <h1 class="title"><i (click)="changeMonth('left')" class="fas fa-chevron-left"></i> {{currentMonth}} <i
+      (click)="changeMonth('right')" class="fas fa-chevron-right"></i></h1>
+  <div class="calendar">
+    <ul class="week col_header">
+      <li class="{{day.short}}" *ngFor="let day of daysLabel">{{day.long}}</li>
+    </ul>
+    <ul class="week row">
+      <li class="day {{day.label}}" (click)="selectDay(day)" *ngFor="let day of month">
+        <span class="day_number">{{day.day}}</span>
+        <span class="task_length" *ngIf="day.tasks != undefined"
+          (click)="expandCalendar(day.tasks)">{{ day.tasks.length }}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="right" [class.dual_grid]="col_toggle">
+  {{col_toggle}}
+  <div class="toggle_cols" (click)="expandCalendar()">hello</div>
 </section>
