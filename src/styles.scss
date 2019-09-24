@@ -2,6 +2,8 @@
 
 $font: "futura pt";
 
+$white: #ffffff;
+$gray: #cccccc;
 $sidebar: #222947;
 $darkOne: #202237;
 $darkTwo: #191f3f;
@@ -10,10 +12,23 @@ $block_bg: #2d3049;
 $block_fg: #3e4360;
 $blue: #667cff;
 $blueTwo: #1fc5ff;
-$green: #009644;
-// $green: #2bcb73;
+$green: #04bb40;
 $yellow: #ea7c00;
 $red: #ff2261;
+
+// $white: #505050;
+// $gray: #505050;
+// $sidebar: #bdc0cc;
+// $darkOne: #d4d4d4;
+// $darkTwo: #e4e4e4;
+// $purple: #7a4bb7;
+// $block_bg: #2d3049;
+// $block_fg: #3e4360;
+// $blue: #667cff;
+// $blueTwo: #1fc5ff;
+// $green: #009644;
+// $yellow: #ea7c00;
+// $red: #ff2261;
 
 body {
   overflow: hidden;
@@ -22,7 +37,7 @@ body {
 
 .reject,
 .resolve {
-  color: white;
+  color: $white;
   cursor: pointer;
   transition: box-shadow 0.4s;
   box-shadow: none;
@@ -101,7 +116,7 @@ app-root {
   grid-template-columns: auto 1fr;
   height: 100vh;
   font-family: $font;
-  color: #ccc;
+  color: $gray;
 }
 
 h1 {
@@ -116,7 +131,7 @@ h2 {
   font-size: 1rem;
   font-weight: 700;
   // overflow: hidden;
-  white-space: nowrap;
+  $white-space: nowrap;
   margin-bottom: 0.7rem;
   text-overflow: ellipsis;
 }
@@ -159,7 +174,7 @@ h2 {
   background: #1d203a;
   padding: 1rem;
   border-radius: 6px;
-  color: white;
+  color: $white;
   bottom: 0.5rem;
   right: 0.5rem;
   width: 21rem;
@@ -216,7 +231,7 @@ span.img_holder {
 }
 
 .sidebar {
-  color: #ccc;
+  color: $gray;
   padding: 0.5rem;
   background: $sidebar;
 
@@ -236,12 +251,12 @@ span.img_holder {
       &.active,
       &:hover {
         background: $purple;
-        color: white;
+        color: $white;
       }
 
       &:active {
         background: darken($purple, 20%);
-        color: white;
+        color: $white;
       }
 
       i {
@@ -289,7 +304,7 @@ span.img_holder {
       }
 
       h1.title {
-        color: white;
+        color: $white;
         font-size: 1.3rem;
 
         i {
@@ -317,7 +332,7 @@ ul.department_blocks {
   overflow: scroll;
 
   li.department {
-    color: #ccc;
+    color: $gray;
     width: 230px;
     padding: 1rem;
     display: block;
@@ -336,14 +351,22 @@ ul.department_blocks {
       }
 
       &.img_holder {
+        width: 37px;
+        height: 37px;
+        border: none;
         margin-right: 1rem;
+
+        img {
+          width: 3rem;
+          left: -4px;
+        }
       }
     }
 
     ul {
       margin-top: 1rem;
       overflow: scroll;
-      height: 180px;
+      height: 175px;
 
       li.department_user {
         margin-bottom: 1rem;
@@ -361,7 +384,7 @@ ul.department_blocks {
 
   li {
     background: $block_fg;
-    color: #ccc;
+    color: $gray;
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 5px;
@@ -397,7 +420,7 @@ section.two {
     position: absolute;
     overflow: scroll;
     margin-top: 2rem;
-    color: #ccc;
+    color: $gray;
     height: 37%;
 
     li {
@@ -425,7 +448,7 @@ settings,
 projects,
 departments {
   display: grid;
-  color: #ccc;
+  color: $gray;
   padding: 1rem;
   height: 100%;
   grid-template-columns: 1fr 2fr;
@@ -448,7 +471,7 @@ settings {
         justify-content: space-between;
 
         &.title {
-          border-bottom: 1px solid #cccccc78;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.322);
           margin: 1.5rem 0;
           padding-bottom: 0.5rem;
           h2 {
@@ -484,7 +507,7 @@ settings {
           span.img_whiteout {
             display: block;
             height: 100%;
-            background: white;
+            background: $white;
             position: absolute;
             width: 100%;
             opacity: 0;
@@ -549,9 +572,9 @@ settings {
   input {
     padding: 0.7rem 1rem;
     border-radius: 7px;
-    border: 1px solid #ccc;
+    border: 1px solid $gray;
     background: transparent;
-    color: white;
+    color: $white;
     width: 100%;
     font-family: $font;
     font-size: 1rem;
@@ -571,10 +594,10 @@ textarea {
   width: 100%;
   height: 100%;
   background: transparent;
-  border: 1px solid #ccc;
+  border: 1px solid $gray;
   border-radius: 7px;
   padding: 1rem;
-  color: #ccc;
+  color: $gray;
   font-size: 1rem;
   font-family: $font;
   resize: none;
@@ -626,7 +649,7 @@ inbox {
 
       .btm span {
         &.short_msg {
-          white-space: nowrap;
+          $white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
           width: 60%;
@@ -645,7 +668,7 @@ inbox {
           display: flex;
           justify-content: center;
           align-items: center;
-          color: white;
+          color: $white;
           box-shadow: 0px 3px 7px #00000061;
         }
       }
@@ -704,7 +727,7 @@ inbox {
         }
 
         span.msg_content {
-          color: white;
+          color: $white;
           display: flex;
           align-self: center;
           margin-left: 1rem;
@@ -744,22 +767,22 @@ inbox {
 }
 
 .search_messages {
-  color: #ccc;
+  color: $gray;
   position: relative;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #cccccc54;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.322);
 
   input {
     background: transparent;
     border: none;
     width: 100%;
-    color: #ccc;
+    color: $gray;
     padding-left: 2rem;
     font-size: 1rem;
     font-family: $font;
 
     &::placeholder {
-      color: #ccc;
+      color: $gray;
     }
   }
 
@@ -771,7 +794,7 @@ inbox {
 
 .add.fal.fa-plus {
   background: $blue;
-  color: white;
+  color: $white;
   height: 40px;
   width: 40px;
   border-radius: 45px;
@@ -909,7 +932,7 @@ projects {
     display: flex;
     margin: 1.5rem 0 1rem 0;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #cccccc54;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.322);
 
     h2 {
       margin-right: 2rem;
@@ -919,7 +942,7 @@ projects {
 
       &:hover,
       &.selected {
-        color: white;
+        color: $white;
       }
     }
   }
@@ -961,7 +984,7 @@ projects {
             padding: 1rem;
             justify-content: space-between;
             width: 100%;
-            color: white;
+            color: $white;
 
             li {
               position: absolute;
@@ -1092,7 +1115,7 @@ projects {
 
         li {
           padding: 0.5rem 1rem;
-          color: white;
+          color: $white;
           cursor: pointer;
         }
       }
@@ -1167,7 +1190,7 @@ projects {
 
 departments {
   h3 {
-    color: white;
+    color: $white;
   }
 
   .departments {
@@ -1268,7 +1291,7 @@ departments {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: $white;
         opacity: 0;
       }
 
@@ -1362,7 +1385,7 @@ notifications {
     }
 
     li.date {
-      color: white;
+      color: $white;
       font-size: 1.1rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
@@ -1408,13 +1431,24 @@ notifications {
         align-self: center;
         align-items: center;
         justify-content: center;
-        color: white;
-        &.fa-paper-plane {
-          width: 40px;
-          height: 40px;
-          background: $blue;
-          border-radius: 45px;
+        color: $white;
+        width: 40px;
+        height: 40px;
+        border-radius: 45px;
+        // &.fa-paper-plane {
+
+        &.complete {
+          background: $green;
         }
+
+        &.pending {
+          background: $blue;
+        }
+
+        &.deleted {
+          background: $red;
+        }
+        // }
 
         &:nth-last-child(1),
         &:nth-last-child(2) {
@@ -1548,7 +1582,7 @@ tasks {
             }
 
             p {
-              color: white;
+              color: $white;
             }
           }
 
@@ -1574,12 +1608,12 @@ tasks {
           align-items: center;
 
           &.selected {
-            color: white;
+            color: $white;
           }
 
           &.new_task {
             padding: 1rem;
-            color: white;
+            color: $white;
             border-radius: 4px;
             margin-right: 4rem;
             background: $yellow;
@@ -1626,7 +1660,7 @@ calendar {
       &.year {
         font-size: 1rem;
         font-weight: 100;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
       }
     }
   }
@@ -1670,7 +1704,7 @@ calendar {
       text-align: center;
       border-radius: 4px;
       position: relative;
-      transition: background 0.4s;
+      transition: background 0.4s, box-shadow 0.4s;
 
       &.currentDay {
         font-weight: 100;
@@ -1688,6 +1722,7 @@ calendar {
 
       &:hover {
         background: $block_fg;
+        box-shadow: 0px 4px 14px 0px #0000000f;
 
         span.day_number {
           opacity: 1;
@@ -1726,7 +1761,7 @@ calendar {
         border-radius: 54px;
         width: 20px;
         height: 20px;
-        color: white;
+        color: $white;
         display: flex;
         justify-content: center;
         align-items: center;

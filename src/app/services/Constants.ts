@@ -523,19 +523,19 @@ export default class CONSTANTS {
          ],
          files: [
             {
-               src: "../../assets/imgs/daniel-sessler-szjOt_FzaXg-unsplash.jpeg",
+               src: "../../assets/imgs/file_1.jpg",
                fileName: "bg_img_1.jpg",
                uploader: "Jamie Smith",
                fileSize: "1.4mb"
             },
             {
-               src: "../../assets/imgs/jose-carlos-cerdeno-martinez-EydnY2Yfd3U-unsplash.jpg",
+               src: "../../assets/imgs/file_2.jpg",
                fileName: "bg_img_1.jpg",
                uploader: "Jamie Smith",
                fileSize: "1.4mb"
             },
             {
-               src: "../../assets/imgs/vista-pan-9aa9KT-rEBM-unsplash.jpg",
+               src: "../../assets/imgs/file_3.jpg",
                fileName: "bg_img_1.jpg",
                uploader: "Jamie Smith",
                fileSize: "1.4mb"

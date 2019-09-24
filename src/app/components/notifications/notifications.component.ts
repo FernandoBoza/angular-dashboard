@@ -12,7 +12,28 @@ export class NotificationsComponent implements OnInit {
   public notifications = CONSTANTS.notifications;
 
   ngOnInit() {
-    console.log(this.notifications);
+  }
+
+  public notifIcon(department: string) {
+    let icon: string;
+
+    switch (department) {
+      case "Development":
+        icon = "fa-code"
+        break;
+      case "Sales":
+        icon = "fa-analytics"
+        break;
+      case "Marketing":
+        icon = "fa-megaphone"
+        break;
+
+      default:
+        icon = "fa-paper-plane"
+        break;
+    }
+
+    return icon
   }
 
 }

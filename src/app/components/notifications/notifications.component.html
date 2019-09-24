@@ -4,7 +4,7 @@
     <ul class="notifications_container" *ngFor="let notif of notifications">
       <li class="date">{{notif.date}}</li>
       <li class="notification_row" *ngFor="let n of notif.notifArray">
-        <i class="fal fa-paper-plane"></i>
+        <i class="fal {{notifIcon(n.department)}} {{n.status}}"></i>
         <span class="img_holder">
           <img src="{{n.src}}">
         </span>
