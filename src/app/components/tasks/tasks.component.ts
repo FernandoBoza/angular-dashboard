@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import CONSTANTS from 'src/app/services/Constants';
 
 @Component({
@@ -19,6 +19,13 @@ export class TasksComponent implements OnInit {
 
   ngOnInit() {
     this.selectTaskCategory = this.tasks_pending;
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.keyCode === 27) {
+      this.col_toggle = false;
+    }
   }
 
   public select_task_category(n: number) {

@@ -1524,7 +1524,7 @@ tasks {
       }
 
       ul.tasks {
-        width: 100%;
+        width: 97%;
         height: 84%;
         padding: 0 1rem;
         overflow: scroll;
@@ -1611,18 +1611,32 @@ calendar {
     flex-direction: row;
 
     i,
-    span {
+    li {
+      opacity: 0.7;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    span {
+    li {
       width: 200px;
       text-align: center;
+
+      &.year {
+        font-size: 1rem;
+        font-weight: 100;
+        margin-bottom: 1rem;
+      }
     }
   }
 
   .dual_grid ul.week {
     padding: 0;
+
+    span.task_length {
+      right: 0.5rem !important;
+    }
   }
 
   ul.week {
@@ -1632,20 +1646,52 @@ calendar {
     transition: padding 0.4s;
     grid-template-columns: repeat(7, 1fr);
 
+    &.col_header {
+      li.currentDay::after {
+        content: "";
+        display: flex;
+        height: 4px;
+        width: 40%;
+        background: #ff2261;
+        position: relative;
+        bottom: -6px;
+        margin: 0 auto;
+        border-radius: 4px;
+      }
+    }
+
     &.row {
-      height: 507px;
+      height: 467px;
       margin-top: 2rem;
     }
 
     li.day {
       padding: 1rem;
-      text-align: right;
+      text-align: center;
+      border-radius: 4px;
       position: relative;
-      border: 1px solid #ffffff45;
       transition: background 0.4s;
+
+      &.currentDay {
+        font-weight: 100;
+        font-size: 2rem;
+      }
+
+      &.today {
+        background: #3e43607a;
+
+        span.day_number {
+          color: #ff2261;
+          opacity: 1;
+        }
+      }
 
       &:hover {
         background: $block_fg;
+
+        span.day_number {
+          opacity: 1;
+        }
       }
 
       &.mon {
@@ -1671,11 +1717,12 @@ calendar {
       }
 
       span.task_length {
+        transition: right 0.4s;
         cursor: pointer;
         position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        background: $green;
+        top: 1.2rem;
+        right: 3rem;
+        background: $red;
         border-radius: 54px;
         width: 20px;
         height: 20px;
@@ -1687,7 +1734,35 @@ calendar {
 
       span.day_number {
         cursor: pointer;
+        opacity: 0.5;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        margin: 0 auto;
+        border-radius: 34px;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.4s, opacity 0.4s, box-shadow 0.4s;
+
+        &:hover {
+          box-shadow: 0px 5px 6px #0000003b;
+          background: #464b6d;
+          opacity: 1;
+        }
       }
     }
   }
 }
+
+// *****************
+// Testing with BG Colors
+
+// section {
+//   .left {
+//     background: linear-gradient(112deg, #644781, #3a4178);
+//   }
+//   .right {
+//     background: linear-gradient(112deg,#3a4178 , #644781);
+//   }
+// }
+// *****************

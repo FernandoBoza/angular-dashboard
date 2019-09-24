@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import * as moment from 'moment';
 import CONSTANTS from 'src/app/services/Constants';
 
@@ -16,6 +16,9 @@ export class CalendarComponent implements OnInit {
   public month: any = [];
   public tasks = CONSTANTS.tasks_pending;
   public taskToggle: boolean = false;
+  public today: string = moment().format("MM/DD/YYYY");
+  public dayOfWeek: string = moment().format("dddd");
+  public currentDay: string = moment().format("dddd D");
   public daysLabel = [
     {
       long: "Monday",
@@ -52,6 +55,13 @@ export class CalendarComponent implements OnInit {
     this.addTasksToMonthObj();
   }
 
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.keyCode === 27) {
+      this.col_toggle = false;
+    }
+  }
+
   public changeMonth(dir) {
     if (dir == "left") {
       let back = moment(`${this.currentMonth} 01 ${moment().format("YYYY")}`).subtract(1, 'months')
@@ -82,19 +92,16 @@ export class CalendarComponent implements OnInit {
     });
   }
 
-  public expandCalendar(tasks?) {
-    if (tasks != undefined) {
-      this.currentTasks = tasks
+  public expandCalendar(day?) {
+    if (day != undefined) {
+      this.currentDay = moment(day.fullDate).format("dddd D");
+      this.currentTasks = day.tasks
       this.col_toggle = true;
       this.taskToggle = false;
     } else {
       this.col_toggle = !this.col_toggle
     }
   }
-
-  // public selectDay(day) {
-  //   console.log(day);
-  // }
 
   public getDaysArray(dateString) {
     let year = dateString.split(' ').slice(0, -1).join(' ')
@@ -114,6 +121,7 @@ export class CalendarComponent implements OnInit {
   }
 
   public createTask(day) {
+    this.currentDay = moment(day.fullDate).format("dddd D");
     this.taskToggle = true
     this.col_toggle = true;
   }
