@@ -1050,7 +1050,7 @@ projects {
 
     &.tasks {
       overflow: auto;
-      transform: translateX(-25%);
+      transform: translateX(25%);
       height: 73%;
 
       .grid__one_two_col {
@@ -1076,7 +1076,7 @@ projects {
         position: relative;
 
         span.bg {
-          width: 50%;
+          width: 50.1%;
           background: $blue;
           position: absolute;
           height: 100%;
@@ -1451,6 +1451,13 @@ calendar {
     box-shadow: 0px 0px 5px 2px #00000030;
     padding: 1rem;
 
+    i.fas.fa-times {
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+      position: absolute;
+    }
+
     &.left {
       width: 100%;
       position: relative;
@@ -1599,13 +1606,35 @@ tasks {
 }
 
 calendar {
+  h1.title {
+    display: flex;
+    flex-direction: row;
+
+    i,
+    span {
+      cursor: pointer;
+    }
+
+    span {
+      width: 200px;
+      text-align: center;
+    }
+  }
+
+  .dual_grid ul.week {
+    padding: 0;
+  }
+
   ul.week {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    // padding: 0 7rem;
     text-align: center;
+    transition: padding 0.4s;
+    grid-template-columns: repeat(7, 1fr);
 
     &.row {
-      height: 537px;
+      height: 507px;
+      margin-top: 2rem;
     }
 
     li.day {
@@ -1613,6 +1642,11 @@ calendar {
       text-align: right;
       position: relative;
       border: 1px solid #ffffff45;
+      transition: background 0.4s;
+
+      &:hover {
+        background: $block_fg;
+      }
 
       &.mon {
         grid-column: 1/2;
@@ -1649,6 +1683,10 @@ calendar {
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+
+      span.day_number {
+        cursor: pointer;
       }
     }
   }

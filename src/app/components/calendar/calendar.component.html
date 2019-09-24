@@ -1,13 +1,17 @@
 <section class="left" [class.dual_grid]="col_toggle">
-  <h1 class="title"><i (click)="changeMonth('left')" class="fas fa-chevron-left"></i> {{currentMonth}} <i
-      (click)="changeMonth('right')" class="fas fa-chevron-right"></i></h1>
+  <h1 class="title">
+    <i (click)="changeMonth('left')" class="fas fa-chevron-left"></i>
+    <span (click)="changeMonth('current')">{{currentMonth}}</span>
+    <i (click)="changeMonth('right')" class="fas fa-chevron-right"></i>
+  </h1>
   <div class="calendar">
     <ul class="week col_header">
       <li class="{{day.short}}" *ngFor="let day of daysLabel">{{day.long}}</li>
     </ul>
     <ul class="week row">
-      <li class="day {{day.label}}" (click)="selectDay(day)" *ngFor="let day of month">
-        <span class="day_number">{{day.day}}</span>
+      <!-- <li class="day {{day.label}}" (click)="selectDay(day)" *ngFor="let day of month"> -->
+      <li class="day {{day.label}}" *ngFor="let day of month">
+        <span class="day_number" (click)="createTask(day)">{{day.day}}</span>
         <span class="task_length" *ngIf="day.tasks != undefined"
           (click)="expandCalendar(day.tasks)">{{ day.tasks.length }}</span>
       </li>
@@ -15,6 +19,11 @@
   </div>
 </section>
 <section class="right" [class.dual_grid]="col_toggle">
-  {{col_toggle}}
-  <div class="toggle_cols" (click)="expandCalendar()">hello</div>
+  <i class="fas fa-times" (click)="expandCalendar()"></i>
+  <ul *ngIf="!taskToggle">
+    <li *ngFor="let task of currentTasks">{{task.title}}</li>
+  </ul>
+  <div *ngIf="taskToggle">
+    Create Task
+  </div>
 </section>
