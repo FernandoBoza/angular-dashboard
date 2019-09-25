@@ -1,0 +1,18 @@
+<section class="form_toggle" [class.left]="toggle == 'login'" [class.right]="toggle == 'register'">
+   <div class="btn_container">
+      <button (click)="toggleViews('login')" class="login">Login</button>
+      <button (click)="toggleViews('register')" class="register">Register</button>
+   </div>
+</section>
+
+<section class="form_container" [class.login]="toggle == 'login'" [class.register]="toggle == 'register'">
+   <div class="form login">
+      <input type="text" placeholder="email">
+      <input type="text" placeholder="password">
+   </div>
+   <div class="form register">
+      <input type="text" placeholder="name">
+      <input type="text" placeholder="email">
+      <input type="text" placeholder="password">
+   </div>
+</section>

@@ -11,6 +11,7 @@ import { DepartmentsComponent } from './components/departments/departments.compo
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     DepartmentsComponent,
     NotificationsComponent,
     TasksComponent,
-    CalendarComponent
+    CalendarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

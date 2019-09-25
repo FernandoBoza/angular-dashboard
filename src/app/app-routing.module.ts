@@ -8,6 +8,7 @@ import { DepartmentsComponent } from './components/departments/departments.compo
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: "", component: AdminComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "notifications", component: NotificationsComponent },
   { path: "calendar", component: CalendarComponent },
   { path: "settings", component: SettingsComponent },
+  { path: "login", component: LoginComponent }
 ];
 
 @NgModule({

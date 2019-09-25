@@ -11,6 +11,12 @@ export class AppComponent {
 
   public expanded: boolean = false;
   public menu = CONSTANTS.menu;
+  public hide: boolean;
+
+  ngOnInit() {
+    this.hide = location.href.includes("login")
+  }
+
 
   public get users(): any[] {
     return this.user.mockUser
