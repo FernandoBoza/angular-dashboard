@@ -194,23 +194,64 @@ login {
 
       &.left {
         left: 0;
+
+        li.login {
+          opacity: 0;
+          pointer-events: none;
+        }
       }
 
       &.right {
         left: calc(100% - 30%);
+
+        li.register {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      .btn_container {
+        width: 100%;
+        height: 50px;
+        border-radius: 6px;
+        position: relative;
+
+        li {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          color: $white;
+          flex-direction: column;
+          transition: opacity 0.5s;
+          @include vert_hori_align;
+
+          button {
+            color: $white;
+            border: none;
+            border-radius: 6px;
+            background: $blue;
+            width: 100%;
+            height: 50px;
+          }
+        }
       }
     }
 
     &.form_container {
       width: 100%;
       height: 100vh;
-      position: relative;
+      padding: 9rem;
       display: flex;
+      position: relative;
       flex-direction: row-reverse;
       justify-content: space-around;
 
       .form {
         transition: opacity 0.4s 0.1s, transform 1s;
+        width: 30vw;
+        .label {
+          background: linear-gradient($darkOne, $darkTwo);
+        }
       }
 
       &.login .register {
@@ -580,13 +621,15 @@ settings {
   position: relative;
   margin-bottom: 2rem;
 
-  span.label {
-    background: $block_bg;
-    position: absolute;
-    top: -0.5rem;
+  .label {
     left: 1rem;
     width: 90px;
+    top: -0.5rem;
+    cursor: pointer;
+    position: absolute;
     text-align: center;
+    background: $block_bg;
+    text-transform: capitalize;
   }
 
   input {

@@ -1,18 +1,39 @@
 <section class="form_toggle" [class.left]="toggle == 'login'" [class.right]="toggle == 'register'">
-   <div class="btn_container">
-      <button (click)="toggleViews('login')" class="login">Login</button>
-      <button (click)="toggleViews('register')" class="register">Register</button>
-   </div>
+   <ul class="btn_container">
+      <li class="login">
+         <p>Already registered and setup</p>
+         <button (click)="toggleViews('login')">Go to login</button>
+      </li>
+      <li class="register">
+         <p>Don't have an account</p>
+         <button (click)="toggleViews('register')">Go to register</button>
+      </li>
+   </ul>
 </section>
 
 <section class="form_container" [class.login]="toggle == 'login'" [class.register]="toggle == 'register'">
-   <div class="form login">
-      <input type="text" placeholder="email">
-      <input type="text" placeholder="password">
-   </div>
-   <div class="form register">
-      <input type="text" placeholder="name">
-      <input type="text" placeholder="email">
-      <input type="text" placeholder="password">
-   </div>
+   <ul class="form login">
+      <li class="input_container">
+         <label for="login_email" class="label">Email</label>
+         <input id="login_email" type="text">
+      </li>
+      <li class="input_container">
+         <label for="login_pssword" class="label">Password</label>
+         <input id="login_pssword" type="text">
+      </li>
+   </ul>
+   <ul class="form register">
+      <li class="input_container">
+         <label for="regi_name" class="label">name</label>
+         <input id="regi_name" type="text">
+      </li>
+      <li class="input_container">
+         <label for="regi_email" class="label">email</label>
+         <input id="regi_email" type="text">
+      </li>
+      <li class="input_container">
+         <label for="regi_password" class="label">password</label>
+         <input id="regi_password" type="text">
+      </li>
+   </ul>
 </section>
