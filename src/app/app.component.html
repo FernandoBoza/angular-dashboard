@@ -1,4 +1,4 @@
-<i class="fas fa-comments-alt toggle fa-fw" [class.fa-compress-alt]="expanded" (click)="expandChat()"></i>
+<i class="fas fa-comments-alt toggle" [class.fa-compress-alt]="expanded" (click)="expandChat()"></i>
 <div class="chat_widget" [class.expanded]="expanded">
   <div *ngIf="expanded">
     <p>
@@ -17,7 +17,9 @@
 </div>
 <section class="sidebar">
   <ul>
-    <li>Logo</li>
+    <li class="img_holder">
+      <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb">
+    </li>
     <li *ngFor="let i of menu" routerLink="/{{i.url}}" [routerLinkActiveOptions]="{ exact: true }"
       routerLinkActive="active">
       <span class="notification" *ngIf="i.notification > 0">{{i.notification}}</span>

@@ -1,34 +1,6 @@
-@import "reset.scss";
-
-$font: "futura pt";
-
-$white: #ffffff;
-$gray: #cccccc;
-$sidebar: #222947;
-$darkOne: #202237;
-$darkTwo: #191f3f;
-$purple: #7a4bb7;
-$block_bg: #2d3049;
-$block_fg: #3e4360;
-$blue: #667cff;
-$blueTwo: #1fc5ff;
-$green: #04bb40;
-$yellow: #ea7c00;
-$red: #ff2261;
-
-// $white: #505050;
-// $gray: #505050;
-// $sidebar: #bdc0cc;
-// $darkOne: #d4d4d4;
-// $darkTwo: #e4e4e4;
-// $purple: #7a4bb7;
-// $block_bg: #2d3049;
-// $block_fg: #3e4360;
-// $blue: #667cff;
-// $blueTwo: #1fc5ff;
-// $green: #009644;
-// $yellow: #ea7c00;
-// $red: #ff2261;
+@import "../src/scss/reset.scss";
+@import "../src/scss/variables";
+@import "../src/scss/mixins";
 
 body {
   overflow: hidden;
@@ -56,7 +28,7 @@ body {
 }
 
 .modal {
-  border-radius: 7px;
+  border-radius: $round_radius;
   position: absolute;
   left: 25%;
   top: 10%;
@@ -88,7 +60,7 @@ body {
     li {
       padding: 1rem;
       margin-right: 1rem;
-      border-radius: 4px;
+      border-radius: $round_radius;
     }
   }
 }
@@ -141,7 +113,7 @@ h2 {
   width: 100%;
   display: flex;
   height: 9px;
-  border-radius: 7px;
+  border-radius: $round_radius;
   overflow: hidden;
   align-self: center;
 
@@ -149,23 +121,18 @@ h2 {
     background: $green;
     width: 80%;
     display: block;
-    border-radius: 6px;
+    border-radius: $round_radius;
   }
 }
 
-.toggle {
-  cursor: pointer;
+i.fas.fa-comments-alt.toggle {
+  @include icon_btn;
   position: absolute;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  width: 50px !important;
-  height: 50px;
   bottom: 0.5rem;
   right: 0.5rem;
   background: $purple;
   z-index: 3;
-  border-radius: 6px;
+  border-radius: $round_radius;
 }
 
 .chat_widget {
@@ -173,7 +140,7 @@ h2 {
   position: absolute;
   background: #1d203a;
   padding: 1rem;
-  border-radius: 6px;
+  border-radius: $round_radius;
   color: $white;
   bottom: 0.5rem;
   right: 0.5rem;
@@ -210,10 +177,10 @@ h2 {
   }
 }
 
-span.img_holder {
+.img_holder {
   width: 57px;
   height: 57px;
-  border-radius: 7rem;
+  border-radius: $circle_radius;
   overflow: hidden;
   position: relative;
   border: 2px solid gray;
@@ -244,7 +211,7 @@ span.img_holder {
     text-align: center;
 
     li {
-      border-radius: 5px;
+      border-radius: $round_radius;
       transition: background 0.4s;
       cursor: pointer;
 
@@ -270,11 +237,15 @@ span.img_holder {
         background: $red;
         width: 1.5rem;
         height: 1.5rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 56px;
+        @include vert_hori_align;
+        border-radius: $circle_radius;
         box-shadow: -2px 5px 4px #38000042;
+      }
+
+      &.img_holder {
+        border: none;
+        box-shadow: 0px 6px 10px #0000001f;
+        border-radius: $circle_radius;
       }
     }
   }
@@ -293,7 +264,7 @@ span.img_holder {
 
     section {
       background: $block_bg;
-      border-radius: 7px;
+      border-radius: $round_radius;
       box-shadow: 0px 0px 5px 2px #00000030;
       transition: border 0.3s;
       border: 1px solid transparent;
@@ -337,7 +308,7 @@ ul.department_blocks {
     padding: 1rem;
     display: block;
     margin-right: 2rem;
-    border-radius: 4px;
+    border-radius: $round_radius;
     background: $block_fg;
     justify-content: space-between;
 
@@ -387,7 +358,7 @@ ul.department_blocks {
     color: $gray;
     padding: 1rem;
     margin-bottom: 1rem;
-    border-radius: 5px;
+    border-radius: $round_radius;
     display: grid;
     grid-template-columns: 22px 1fr 81px auto auto;
     grid-gap: 1rem;
@@ -456,7 +427,7 @@ departments {
 
   section {
     background: $block_bg;
-    border-radius: 5px;
+    border-radius: $round_radius;
     padding: 1rem;
     position: relative;
   }
@@ -494,7 +465,7 @@ settings {
         width: 42%;
         margin: 0 auto;
 
-        span.img_holder {
+        .img_holder {
           display: block;
           margin: 0 auto;
           width: 120px;
@@ -521,7 +492,7 @@ settings {
             z-index: 1;
             background: $block_fg;
             padding: 1rem;
-            border-radius: 44px;
+            border-radius: $round_radius;
             transition: left 0.4s ease-in-out;
           }
 
@@ -571,7 +542,7 @@ settings {
 
   input {
     padding: 0.7rem 1rem;
-    border-radius: 7px;
+    border-radius: $round_radius;
     border: 1px solid $gray;
     background: transparent;
     color: $white;
@@ -595,7 +566,7 @@ textarea {
   height: 100%;
   background: transparent;
   border: 1px solid $gray;
-  border-radius: 7px;
+  border-radius: $round_radius;
   padding: 1rem;
   color: $gray;
   font-size: 1rem;
@@ -609,7 +580,7 @@ textarea {
   left: 40%;
   cursor: pointer;
   padding: 1rem;
-  border-radius: 45px;
+  border-radius: $round_radius;
   transition: box-shadow 0.4s;
 
   &:hover {
@@ -622,7 +593,7 @@ textarea {
 }
 
 inbox {
-  span.img_holder {
+  .img_holder {
     display: block;
     img {
       left: -13px;
@@ -657,17 +628,15 @@ inbox {
         }
 
         &.notif {
+          @include vert_hori_align;
           cursor: pointer;
           position: absolute;
           right: 0;
           bottom: -5px;
           background: $red;
-          border-radius: 30px;
+          border-radius: $circle_radius;
           width: 20px;
           height: 20px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           color: $white;
           box-shadow: 0px 3px 7px #00000061;
         }
@@ -713,7 +682,7 @@ inbox {
             width: 110%;
           }
 
-          span.img_holder {
+          .img_holder {
             width: 53px;
             height: 53px;
             border: none;
@@ -733,7 +702,7 @@ inbox {
           margin-left: 1rem;
           padding: 0.7rem 1rem;
           background: $block_fg;
-          border-radius: 56px;
+          border-radius: $round_radius;
         }
       }
     }
@@ -750,15 +719,13 @@ inbox {
         }
 
         &.fa-paper-plane {
+          @include icon_btn;
           right: 1rem;
           background: $blue;
           width: 30px;
           height: 30px;
-          border-radius: 45px;
-          display: flex;
+          border-radius: $circle_radius;
           bottom: 1rem;
-          justify-content: center;
-          align-items: center;
           box-shadow: 0px 9px 10px 0px #28316369;
         }
       }
@@ -793,14 +760,12 @@ inbox {
 }
 
 .add.fal.fa-plus {
+  @include vert_hori_align;
   background: $blue;
   color: $white;
   height: 40px;
   width: 40px;
-  border-radius: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: $circle_radius;
   margin: 0 auto;
   cursor: pointer;
   position: absolute;
@@ -816,7 +781,7 @@ inbox {
   li {
     box-shadow: 0px 5px 8px #00000024;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: $round_radius;
     margin-bottom: 1rem;
     padding: 0.5rem 1rem;
     background: $block_fg;
@@ -972,7 +937,7 @@ projects {
           height: 225px;
           overflow: hidden;
           position: relative;
-          border-radius: 5px;
+          border-radius: $round_radius;
           border: 2px solid transparent;
           transition: border 0.4s, background 0.4s;
 
@@ -1011,14 +976,9 @@ projects {
               }
 
               i.fal.fa-arrow-to-bottom {
-                width: 40px;
-                height: 40px;
-                border-radius: 45px;
+                @include icon_btn;
+                border-radius: $circle_radius;
                 background: $blue;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
                 transition: background 0.4s, transform 0.4s, box-shadow 0.4s;
 
                 &:hover {
@@ -1094,7 +1054,7 @@ projects {
       ul.project_status_toggle {
         display: flex;
         border: 1px solid $blue;
-        border-radius: 4px;
+        border-radius: $round_radius;
         width: max-content;
         position: relative;
 
@@ -1105,7 +1065,7 @@ projects {
           height: 100%;
           z-index: -1;
           left: 50%;
-          border-radius: 2px;
+          border-radius: $round_radius - 5px;
           transition: left 0.4s;
 
           &.selected {
@@ -1130,7 +1090,7 @@ projects {
           position: relative;
           background: $block_fg;
           padding: 1rem;
-          border-radius: 10px;
+          border-radius: $round_radius;
           margin-right: 1rem;
           display: grid;
           grid-template-rows: 51px max-content 1fr repeat(3, max-content);
@@ -1171,7 +1131,7 @@ projects {
               margin-left: -23px;
             }
 
-            span.img_holder {
+            .img_holder {
               display: flex;
               border-color: $block_fg;
             }
@@ -1251,7 +1211,7 @@ departments {
 
     li.card {
       border: 2px solid transparent;
-      border-radius: 5px;
+      border-radius: $round_radius;
       position: relative;
       text-align: center;
       display: grid;
@@ -1263,7 +1223,7 @@ departments {
 
       &:hover {
         &,
-        span.img_holder {
+        .img_holder {
           box-shadow: 0px 8px 7px 0px #00000021;
           border-color: $blue;
         }
@@ -1284,13 +1244,9 @@ departments {
       }
 
       .user_options {
+        @include icon_btn;
         position: absolute;
-        border-radius: 65px;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        border-radius: $circle_radius;
         color: $white;
         opacity: 0;
       }
@@ -1309,7 +1265,7 @@ departments {
         transition: opacity 0.4s, bottom 0.4s;
       }
 
-      span.img_holder {
+      .img_holder {
         display: flex;
         transition: border 0.4s, box-shadow 0.3s 0.1s;
         border: 4px solid $block_bg;
@@ -1331,7 +1287,7 @@ departments {
           display: block;
           padding: 0.5rem;
           position: absolute;
-          border-radius: 4px;
+          border-radius: $round_radius;
           background: $purple;
           box-shadow: 4px 4px 7px 0px #00000026;
         }
@@ -1352,7 +1308,7 @@ notifications {
   section {
     height: 100%;
     background: $block_bg;
-    border-radius: 7px;
+    border-radius: $round_radius;
     box-shadow: 0px 0px 5px 2px #00000030;
     transition: border 0.3s;
     padding: 1rem;
@@ -1410,16 +1366,16 @@ notifications {
       grid-gap: 0 2rem;
       position: relative;
       margin-bottom: 1rem;
+      border-radius: $round_radius;
       transition: background 0.4s, box-shadow 0.4s;
       grid-template-columns: auto auto 160px 1fr 140px auto auto;
 
       &:hover {
-        border-radius: 4px;
         background: $block_fg;
         box-shadow: 0px 6px 13px #0000002b;
       }
 
-      span.img_holder {
+      .img_holder {
         width: 45px;
         height: 45px;
         align-self: center;
@@ -1427,15 +1383,10 @@ notifications {
       }
 
       i.fal {
-        display: flex;
+        @include icon_btn;
         align-self: center;
-        align-items: center;
-        justify-content: center;
         color: $white;
-        width: 40px;
-        height: 40px;
-        border-radius: 45px;
-        // &.fa-paper-plane {
+        border-radius: $circle_radius;
 
         &.complete {
           background: $green;
@@ -1448,7 +1399,6 @@ notifications {
         &.deleted {
           background: $red;
         }
-        // }
 
         &:nth-last-child(1),
         &:nth-last-child(2) {
@@ -1481,7 +1431,7 @@ calendar {
   section {
     height: 100%;
     background: $block_bg;
-    border-radius: 7px;
+    border-radius: $round_radius;
     box-shadow: 0px 0px 5px 2px #00000030;
     padding: 1rem;
 
@@ -1529,7 +1479,7 @@ tasks {
           display: block;
           padding: 0.5rem;
           cursor: pointer;
-          border-radius: 4px;
+          border-radius: $round_radius;
           text-align: center;
           box-shadow: 0px 5px 6px #0000002e;
 
@@ -1573,7 +1523,7 @@ tasks {
           &.selected,
           &:hover {
             background: $block_fg;
-            border-radius: 4px;
+            border-radius: $round_radius;
             box-shadow: 0px 4px 7px #0000002e;
 
             &,
@@ -1614,7 +1564,7 @@ tasks {
           &.new_task {
             padding: 1rem;
             color: $white;
-            border-radius: 4px;
+            border-radius: $round_radius;
             margin-right: 4rem;
             background: $yellow;
             transition: background 0.4s;
@@ -1648,9 +1598,7 @@ calendar {
     li {
       opacity: 0.7;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include vert_hori_align;
     }
 
     li {
@@ -1690,7 +1638,7 @@ calendar {
         position: relative;
         bottom: -6px;
         margin: 0 auto;
-        border-radius: 4px;
+        border-radius: $round_radius;
       }
     }
 
@@ -1702,7 +1650,7 @@ calendar {
     li.day {
       padding: 1rem;
       text-align: center;
-      border-radius: 4px;
+      border-radius: $round_radius;
       position: relative;
       transition: background 0.4s, box-shadow 0.4s;
 
@@ -1758,25 +1706,21 @@ calendar {
         top: 1.2rem;
         right: 3rem;
         background: $red;
-        border-radius: 54px;
+        border-radius: $circle_radius;
         width: 20px;
         height: 20px;
         color: $white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include vert_hori_align;
       }
 
       span.day_number {
+        @include vert_hori_align;
         cursor: pointer;
         opacity: 0.5;
         width: 30px;
         height: 30px;
-        display: flex;
         margin: 0 auto;
-        border-radius: 34px;
-        justify-content: center;
-        align-items: center;
+        border-radius: $circle_radius;
         transition: background 0.4s, opacity 0.4s, box-shadow 0.4s;
 
         &:hover {
