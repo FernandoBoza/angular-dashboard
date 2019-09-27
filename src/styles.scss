@@ -1,10 +1,17 @@
 @import "../src/scss/reset.scss";
 @import "../src/scss/variables";
 @import "../src/scss/mixins";
+@import "../src/scss/typography";
+// @import "../src/scss/lightMode";
 
 body {
   overflow: hidden;
   width: 100%;
+
+  &,
+  * {
+    font-family: $font;
+  }
 }
 
 .reject,
@@ -80,6 +87,7 @@ body {
   &.active {
     opacity: 0.3;
     pointer-events: all;
+    z-index: 1;
   }
 }
 
@@ -87,7 +95,6 @@ app-root {
   display: grid;
   grid-template-columns: auto 1fr;
   height: 100vh;
-  font-family: $font;
   color: $gray;
 }
 
@@ -182,14 +189,18 @@ login {
   width: 100vw;
   position: relative;
 
+  .resolve h1 {
+    font-weight: 200;
+  }
+
   section {
     &.form_toggle {
-      transition: left 1s, right 1s;
+      transition: left 1.3s, right 1.3s;
       position: absolute;
       width: 30%;
       height: 100vh;
       z-index: 1;
-      background: #88baff;
+      background: $blueTwo;
       padding: 1rem;
 
       &.left {
@@ -212,7 +223,7 @@ login {
 
       .btn_container {
         width: 100%;
-        height: 50px;
+        height: 100%;
         border-radius: 6px;
         position: relative;
 
@@ -225,6 +236,21 @@ login {
           transition: opacity 0.5s;
           @include vert_hori_align;
 
+          img {
+            pointer-events: none;
+            width: inherit;
+            margin-bottom: 7rem;
+          }
+
+          p,
+          h1 {
+            margin-bottom: 0;
+          }
+
+          p {
+            margin: 1rem 0;
+          }
+
           button {
             color: $white;
             border: none;
@@ -232,6 +258,11 @@ login {
             background: $blue;
             width: 100%;
             height: 50px;
+
+            &,
+            * {
+              cursor: pointer;
+            }
           }
         }
       }
@@ -240,28 +271,97 @@ login {
     &.form_container {
       width: 100%;
       height: 100vh;
-      padding: 9rem;
+      padding: 8rem 13rem;
       display: flex;
       position: relative;
+      background: $white;
       flex-direction: row-reverse;
       justify-content: space-around;
 
-      .form {
-        transition: opacity 0.4s 0.1s, transform 1s;
-        width: 30vw;
-        .label {
-          background: linear-gradient($darkOne, $darkTwo);
+      img {
+        position: absolute;
+        width: 100vh;
+        transition: opacity 0.7s 0.1s, transform 1s;
+        opacity: 0;
+
+        &.signup_left {
+          left: 1rem;
+          transform: translateX(90px);
+        }
+
+        &.login_right {
+          top: 11vh;
+          right: 8vw;
+          transform: translateX(-90px);
         }
       }
 
-      &.login .register {
-        opacity: 0;
-        transform: translateX(90px);
+      .form {
+        transition: opacity 0.4s 0.1s, transform 1s 0.3s;
+        width: 30vw;
+        padding: 1rem;
+        background: white;
+        z-index: 0;
+        border-radius: 7px;
+        color: #555;
+        box-shadow: 0px 4px 9px 1px #0000007a;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+
+        .resolve {
+          padding: 1rem;
+          border-radius: 6px;
+          text-align: center;
+
+          h1 {
+            font-weight: 100;
+            margin: 0;
+          }
+        }
+
+        .label {
+          color: #555;
+          background: white;
+
+          span {
+            color: $blue;
+            cursor: pointer;
+            font-weight: bold;
+            pointer-events: all;
+          }
+        }
+
+        input {
+          border-color: $blue;
+          color: #555;
+        }
       }
 
-      &.register .login {
-        opacity: 0;
-        transform: translateX(-90px);
+      &.login {
+        .login_right {
+          opacity: 1;
+          pointer-events: all;
+          transform: translateX(0);
+        }
+        .register {
+          opacity: 0;
+          pointer-events: none;
+          transform: translateX(90px);
+        }
+      }
+
+      &.register {
+        .signup_left {
+          opacity: 1;
+          pointer-events: all;
+          transform: translateX(0);
+        }
+        .login {
+          opacity: 0;
+          pointer-events: none;
+          transform: translateX(-90px);
+        }
       }
     }
   }
@@ -342,7 +442,7 @@ login {
 }
 
 .content {
-  background: linear-gradient($darkOne, $darkTwo);
+  background: linear-gradient($gradientOne, $gradientTwo);
 
   admin {
     display: grid;
@@ -615,6 +715,10 @@ settings {
       }
     }
   }
+}
+
+.checkbox_container {
+  margin-bottom: 2rem;
 }
 
 .input_container {

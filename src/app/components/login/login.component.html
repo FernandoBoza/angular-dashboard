@@ -1,18 +1,30 @@
 <section class="form_toggle" [class.left]="toggle == 'login'" [class.right]="toggle == 'register'">
    <ul class="btn_container">
       <li class="login">
-         <p>Already registered and setup</p>
-         <button (click)="toggleViews('login')">Go to login</button>
+         <img src="../../../assets/imgs/signup_right.svg" alt="taeki sign up">
+         <p>Already registered?</p>
+         <button class="resolve" (click)="toggleViews('login')">
+            <h1>Sign up</h1>
+         </button>
       </li>
       <li class="register">
-         <p>Don't have an account</p>
-         <button (click)="toggleViews('register')">Go to register</button>
+         <img src="../../../assets/imgs/login_left.svg" alt="taeki sign up">
+         <h1>New?</h1>
+         <p>sign up for a free account.</p>
+         <button class="resolve" (click)="toggleViews('register')">
+            <h1>Sign up</h1>
+         </button>
       </li>
    </ul>
 </section>
 
 <section class="form_container" [class.login]="toggle == 'login'" [class.register]="toggle == 'register'">
+   <img class="login_right" src="../../../assets/imgs/login_right.svg">
+   <img class="signup_left" src="../../../assets/imgs/signup_left.svg">
    <ul class="form login">
+      <li>
+         <h1>Welcome Back</h1>
+      </li>
       <li class="input_container">
          <label for="login_email" class="label">Email</label>
          <input id="login_email" type="text">
@@ -21,8 +33,14 @@
          <label for="login_pssword" class="label">Password</label>
          <input id="login_pssword" type="text">
       </li>
+      <li class="resolve">
+         <h1>Login</h1>
+      </li>
    </ul>
    <ul class="form register">
+      <li>
+         <h1>Welcome to Taeki</h1>
+      </li>
       <li class="input_container">
          <label for="regi_name" class="label">name</label>
          <input id="regi_name" type="text">
@@ -35,5 +53,15 @@
          <label for="regi_password" class="label">password</label>
          <input id="regi_password" type="text">
       </li>
+      <li class="checkbox_container">
+         <input id="terms_condition" type="text" type="checkbox" [checked]="terms_condition">
+         <label for="terms_condition" class="label">I agree to the <span (click)="showTerms()">terms and
+               condition</span></label>
+      </li>
+      <li class="resolve">
+         <h1>Login</h1>
+      </li>
    </ul>
 </section>
+
+<div class="overlay" [class.active]="term_modal" (click)="term_modal = false"></div>
