@@ -25,15 +25,17 @@
       <li>
          <h1>Welcome Back</h1>
       </li>
-      <li class="input_container">
+      <li class="input_container" [class.error]="err.email.length != 0">
+         <span>{{err.email}}</span>
          <label for="login_email" class="label">Email</label>
-         <input id="login_email" type="text">
+         <input id="login_email" [(ngModel)]="user.email" type="text">
       </li>
-      <li class="input_container">
-         <label for="login_pssword" class="label">Password</label>
-         <input id="login_pssword" type="text">
+      <li class="input_container" [class.error]="err.password.length != 0">
+         <span>{{err.password}}</span>
+         <label for="login_password" class="label">Password</label>
+         <input id="login_password" (keyup.enter)="loginUser()" [(ngModel)]="user.password" type="text">
       </li>
-      <li class="resolve" routerLink="">
+      <li class="resolve" (click)="loginUser()">
          <h1>Login</h1>
       </li>
    </ul>
@@ -41,27 +43,36 @@
       <li>
          <h1>Welcome to Taeki</h1>
       </li>
-      <li class="input_container">
+      <li class="input_container" [class.error]="err.name.length != 0">
+         <span>{{err.name}}</span>
          <label for="regi_name" class="label">name</label>
-         <input id="regi_name" type="text">
+         <input [(ngModel)]="user.name" id="regi_name" type="text">
       </li>
-      <li class="input_container">
+      <li class="input_container" [class.error]="err.email.length != 0">
+         <span>{{err.email}}</span>
          <label for="regi_email" class="label">email</label>
-         <input id="regi_email" type="text">
+         <input [(ngModel)]="user.email" id="regi_email" type="text">
       </li>
-      <li class="input_container">
+      <li class="input_container" [class.error]="err.password.length != 0">
+         <span>{{err.password}}</span>
          <label for="regi_password" class="label">password</label>
-         <input id="regi_password" type="text">
+         <input [(ngModel)]="user.password" id="regi_password" type="text" (keyup.enter)="createUser()">
       </li>
       <li class="checkbox_container">
-         <input id="terms_condition" type="text" type="checkbox" [checked]="terms_condition">
-         <label for="terms_condition" class="label">I agree to the <span (click)="showTerms()">terms and
-               condition</span></label>
+         <input id="terms_condition" type="text" [(ngModel)]="terms_condition" type="checkbox"
+            [checked]="terms_condition">
+         <label for="terms_condition" class="label">I agree to the
+            <span (click)="showTerms($event)">terms and condition</span>
+         </label>
       </li>
-      <li class="resolve" routerLink="">
+      <li class="resolve" [class.disabled]="!terms_condition" (click)="createUser()">
          <h1>Login</h1>
       </li>
    </ul>
 </section>
 
 <div class="overlay" [class.active]="term_modal" (click)="term_modal = false"></div>
+
+<div class="modal" [class.show]="term_modal">
+   <p>Termsn and condition go here</p>
+</div>

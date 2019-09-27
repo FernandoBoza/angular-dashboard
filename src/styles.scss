@@ -17,9 +17,13 @@ body {
 .reject,
 .resolve {
   color: $white;
-  cursor: pointer;
-  transition: box-shadow 0.4s;
+  transition: box-shadow 0.4s, opacity 0.4s;
   box-shadow: none;
+
+  &,
+  * {
+    cursor: pointer;
+  }
 
   &:hover {
     box-shadow: 0px 4px 8px 1px #00000029;
@@ -32,6 +36,11 @@ body {
 
 .resolve {
   background: $blue;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .modal {
@@ -725,6 +734,23 @@ settings {
 .input_container {
   position: relative;
   margin-bottom: 2rem;
+
+  &.error {
+    span {
+      position: absolute;
+      left: 0;
+      top: -28px;
+      color: red;
+    }
+
+    label,
+    input {
+      transition: border-color 0.4s, color 0.4s !important;
+
+      border-color: $red !important;
+      color: $red !important;
+    }
+  }
 
   .label {
     left: 1rem;
