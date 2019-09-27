@@ -350,6 +350,13 @@ export default class CONSTANTS {
 
    public static tasks_pending = [
       {
+         title: "Set up azure AI",
+         author: "John Doe",
+         department: "Development",
+         dateLog: "09/28/2019",
+         status: "in_progress"
+      },
+      {
          title: "Finish media brochure for Intel",
          author: "Jane Smith",
          department: "Marketing",

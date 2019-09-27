@@ -37,6 +37,7 @@ body {
 .modal {
   border-radius: $round_radius;
   position: absolute;
+  z-index: 2;
   left: 25%;
   top: 10%;
   width: 50%;
@@ -1180,7 +1181,7 @@ projects {
                 &:hover {
                   transform: scale(1.1);
                   background: darken($blue, 5%);
-                  box-shadow: 0 5px 5px 2px #0000008f;
+                  box-shadow: 0 5px 5px 2px #0000002b;
                 }
               }
             }
@@ -1786,6 +1787,9 @@ tasks {
 }
 
 calendar {
+  task span.dateLog {
+    display: none;
+  }
   h1.title {
     display: flex;
     flex-direction: row;
@@ -1929,15 +1933,15 @@ calendar {
   }
 }
 
-// *****************
-// Testing with BG Colors
+task {
+  h1 {
+    font-weight: 100;
+    font-size: 1.2rem;
+    display: unset !important;
 
-// section {
-//   .left {
-//     background: linear-gradient(112deg, #644781, #3a4178);
-//   }
-//   .right {
-//     background: linear-gradient(112deg,#3a4178 , #644781);
-//   }
-// }
-// *****************
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
+}

@@ -17,30 +17,11 @@
 </section>
 <section class="right" [class.dual_grid]="col_toggle">
   <i class="fas fa-times" (click)="expandTask()"></i>
-  <span>{{selectedTask != undefined ? selectedTask.title : ""}}</span>
-  <!-- <span>{{selectedTask != undefined ? selectedTask.author : ""}}</span> -->
-  <span>{{selectedTask != undefined ? selectedTask.department : ""}}</span>
-  <span>{{selectedTask != undefined ? selectedTask.dateLog : ""}}</span>
+  <task *ngIf="selectedTask != null" [task]="selectedTask"></task>
 </section>
 
 <div class="overlay" [class.active]="modalToggle" (click)="toggleModal()"></div>
 
 <div class="modal" [class.show]="modalToggle">
-  <h2>Add a new task</h2>
-  <i class="fas fa-times"></i>
-
-  <div class="input_container">
-    <span class="label">Task title</span>
-    <input type="text">
-  </div>
-
-  <div class="input_container">
-    <span class="text_label">Task description</span>
-    <textarea></textarea>
-  </div>
-
-  <ul class="modal_btns">
-    <li class="reject">Cancel</li>
-    <li class="resolve">Create Task</li>
-  </ul>
+  <create-task></create-task>
 </div>

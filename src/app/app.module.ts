@@ -12,6 +12,8 @@ import { NotificationsComponent } from './components/notifications/notifications
 import { TasksComponent } from './components/tasks/tasks.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { LoginComponent } from './components/login/login.component';
+import { CreateTaskComponent } from './components/shared/create-task/create-task.component';
+import { TaskComponent } from './components/shared/task/task.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { LoginComponent } from './components/login/login.component';
     NotificationsComponent,
     TasksComponent,
     CalendarComponent,
-    LoginComponent
+    LoginComponent,
+    CreateTaskComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,

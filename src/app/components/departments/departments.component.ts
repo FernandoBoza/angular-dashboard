@@ -19,7 +19,6 @@ export class DepartmentsComponent implements OnInit {
   public selectDepartment(department: any, index: number) {
     this.department = department;
     this.selected = index;
-    console.log(department);
   }
 
 }

@@ -34,7 +34,6 @@ export class ProjectsComponent implements OnInit {
   public selectProject(project: any, index: number) {
     this.projectLayout = project;
     this.selected = index;
-    console.log(project);
   }
 
   public getProjectRatio(tasks: any) {

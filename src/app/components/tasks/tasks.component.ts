@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import CONSTANTS from 'src/app/services/Constants';
+import Util from "../../Util";
 
 @Component({
   selector: 'tasks',
@@ -26,6 +27,10 @@ export class TasksComponent implements OnInit {
     if (event.keyCode === 27) {
       this.col_toggle = false;
     }
+  }
+
+  public getStatus(status: string) {
+    return Util.getStatus(status);
   }
 
   public select_task_category(n: number) {
@@ -61,20 +66,6 @@ export class TasksComponent implements OnInit {
       this.col_toggle = true;
     } else {
       this.col_toggle = !this.col_toggle
-    }
-  }
-
-  public getStatus(status: string) {
-    switch (status) {
-      case "in_progress":
-        return "In Progress"
-        break;
-      case "complete":
-        return "Complete"
-        break;
-
-      default:
-        break;
     }
   }
 

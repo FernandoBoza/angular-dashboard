@@ -80,11 +80,11 @@ export class CalendarComponent implements OnInit {
   }
 
   public addTasksToMonthObj() {
-    this.tasks.forEach(task => {
-      let taskDate = moment(task.dateLog).format("MM/DD/YYYY")
-      this.month.forEach(day => {
+    this.month.forEach((day: any) => {
+      let x = []
+      this.tasks.forEach(task => {
+        let taskDate = moment(task.dateLog).format("MM/DD/YYYY")
         if (day.fullDate == taskDate) {
-          let x = []
           x.push(task)
           day.tasks = x
         }

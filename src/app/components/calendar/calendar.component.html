@@ -27,9 +27,9 @@
   <i class="fas fa-times" (click)="expandCalendar()"></i>
   <h1 class="currentDay">{{currentDay}}</h1>
   <ul *ngIf="!taskToggle">
-    <li *ngFor="let task of currentTasks">{{task.title}}</li>
+    <task *ngFor="let task of currentTasks" [task]="task"></task>
   </ul>
   <div *ngIf="taskToggle">
-    Create Task
+    <create-task></create-task>
   </div>
 </section>
