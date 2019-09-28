@@ -385,7 +385,7 @@ login {
   }
 }
 
-.img_holder {
+img-holder {
   width: 57px;
   height: 57px;
   border-radius: $circle_radius;
@@ -450,7 +450,7 @@ login {
         box-shadow: -2px 5px 4px #38000042;
       }
 
-      &.img_holder {
+      &img-holder {
         border: none;
         box-shadow: 0px 6px 10px #0000001f;
         border-radius: $circle_radius;
@@ -529,7 +529,7 @@ ul.department_blocks {
         font-weight: bold;
       }
 
-      &.img_holder {
+      &img-holder {
         width: 37px;
         height: 37px;
         border: none;
@@ -677,7 +677,7 @@ settings {
         width: 42%;
         margin: 0 auto;
 
-        .img_holder {
+        img-holder {
           display: block;
           margin: 0 auto;
           width: 120px;
@@ -829,7 +829,7 @@ textarea {
 }
 
 inbox {
-  .img_holder {
+  img-holder {
     display: block;
     img {
       left: -13px;
@@ -918,7 +918,7 @@ inbox {
             width: 110%;
           }
 
-          .img_holder {
+          img-holder {
             width: 53px;
             height: 53px;
             border: none;
@@ -1033,7 +1033,7 @@ input-search {
       cursor: pointer;
     }
 
-    .img_holder {
+    img-holder {
       display: flex;
     }
   }
@@ -1060,7 +1060,7 @@ projects {
           display: flex;
           justify-content: flex-end;
 
-          .img_holder {
+          img-holder {
             opacity: 1;
             display: flex;
             width: 37px;
@@ -1117,7 +1117,7 @@ projects {
         -webkit-text-stroke-color: #2d3049;
       }
 
-      .img_holder {
+      img-holder {
         display: flex;
         width: 47px;
         height: 47px;
@@ -1369,7 +1369,7 @@ projects {
               margin-left: -23px;
             }
 
-            .img_holder {
+            img-holder {
               display: flex;
               border-color: $block_fg;
             }
@@ -1409,7 +1409,7 @@ departments {
           padding-left: 5px;
         }
 
-        .img_holder {
+        img-holder {
           height: 40px;
           width: 40px;
           margin-left: -22px;
@@ -1461,7 +1461,7 @@ departments {
 
       &:hover {
         &,
-        .img_holder {
+        img-holder {
           box-shadow: 0px 8px 7px 0px #00000021;
           border-color: $blue;
         }
@@ -1503,7 +1503,7 @@ departments {
         transition: opacity 0.4s, bottom 0.4s;
       }
 
-      .img_holder {
+      img-holder {
         display: flex;
         transition: border 0.4s, box-shadow 0.3s 0.1s;
         border: 4px solid $block_bg;
@@ -1613,7 +1613,7 @@ notifications {
         box-shadow: 0px 6px 13px #0000002b;
       }
 
-      .img_holder {
+      img-holder {
         width: 45px;
         height: 45px;
         align-self: center;

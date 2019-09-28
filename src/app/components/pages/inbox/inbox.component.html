@@ -4,7 +4,7 @@
   <ul class="chat container">
     <li *ngFor="let message of messages; let index = index" (click)="selectMsg(message, index)"
       [class.selected]="selected == index">
-      <span class="img_holder"><img src="{{message.img}}"></span>
+      <img-holder [src]="message.img"></img-holder>
       <div class="chat_layout">
         <div class="top">
           <span>{{message.name}}</span>
@@ -25,7 +25,7 @@
   <ul class="chat_history">
     <li *ngFor="let msg of chatHistory" [class.user]="msg.name =='Jane Smith'">
       <div class="img_time">
-        <span class="img_holder"><img src="{{msg.img}}"></span>
+        <img-holder [src]="msg.img"></img-holder>
         <span>{{msg.time}}</span>
       </div>
       <span class="msg_content">{{msg.message}}</span>

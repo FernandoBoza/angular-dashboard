@@ -17,6 +17,7 @@ import { InputSearchComponent } from './components/shared/input-search/input-sea
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { InboxComponent } from './components/pages/inbox/inbox.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
+import { ImgHolderComponent } from './components/shared/img-holder/img-holder.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SettingsComponent } from './components/pages/settings/settings.componen
     CreateTaskComponent,
     TaskComponent,
     InputTextComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    ImgHolderComponent
   ],
   imports: [
     FormsModule,
