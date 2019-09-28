@@ -34,17 +34,8 @@
         <span class="new_img"><i class="fas fa-camera-alt"></i></span>
       </span>
     </li>
-    <li class="input_container">
-      <span class="label">Full Name</span>
-      <input type="text" value="Jane Smith">
-    </li>
-    <li class="input_container">
-      <span class="label">Email</span>
-      <input type="email" value="jsmith@email.com">
-    </li>
-    <li class="input_container">
-      <span class="label">Password</span>
-      <input type="password" value="jsmith@email.com" disabled>
-    </li>
+    <input-text [label]="'Full Name'" [model]="'Jane Smith'"></input-text>
+    <input-text [label]="'Email'" [model]="'jsmith@email.com'" [type]="'email'"></input-text>
+    <input-text [label]="'Password'" [model]="'password'" [type]="'password'" [disabled]="true"></input-text>
   </ul>
 </section>

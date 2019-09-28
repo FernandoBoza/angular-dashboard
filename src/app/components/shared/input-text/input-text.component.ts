@@ -11,6 +11,8 @@ export class InputTextComponent implements OnInit {
   @Input("class") class: string;
   @Input("label") label: string;
   @Input("model") model: any;
+  @Input("type") type: any = "text";
+  @Input("disabled") disabled: boolean = false;
 
   ngOnInit() {
   }

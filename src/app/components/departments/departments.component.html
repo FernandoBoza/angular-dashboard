@@ -1,9 +1,6 @@
 <section class="left">
   <h1 class="title"><i class="fal fa-user-friends"></i> Departments</h1>
-  <div class="search_messages">
-    <i class="fal fa-search"></i>
-    <input type="text" placeholder="Search">
-  </div>
+  <input-search [model]=""></input-search>
   <ul class="departments container">
     <li *ngFor="let department of departments; let index = index" (click)="selectDepartment(department, index)"
       [class.selected]="selected == index">

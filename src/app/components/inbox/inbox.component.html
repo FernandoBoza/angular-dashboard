@@ -1,9 +1,6 @@
 <section class="left">
   <h1>Chat</h1>
-  <div class="search_messages">
-    <i class="fal fa-search"></i>
-    <input type="text" placeholder="Search">
-  </div>
+  <input-search [model]=""></input-search>
   <ul class="chat container">
     <li *ngFor="let message of messages; let index = index" (click)="selectMsg(message, index)"
       [class.selected]="selected == index">

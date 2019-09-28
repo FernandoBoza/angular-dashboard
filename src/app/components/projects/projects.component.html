@@ -1,9 +1,6 @@
 <section class="left">
   <h1 class="title">Projects</h1>
-  <div class="search_messages">
-    <i class="fal fa-search"></i>
-    <input type="text" placeholder="Search">
-  </div>
+  <input-search [model]=""></input-search>
   <ul class="projects container">
     <li *ngFor="let project of projects; let index = index" (click)="selectProject(project, index)"
       [class.selected]="selected == index">
