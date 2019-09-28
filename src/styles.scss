@@ -69,16 +69,16 @@ body {
     opacity: 1;
     pointer-events: all;
   }
+}
 
-  ul.modal_btns {
-    display: flex;
-    justify-content: flex-end;
+ul.modal_btns {
+  display: flex;
+  justify-content: flex-end;
 
-    li {
-      padding: 1rem;
-      margin-right: 1rem;
-      border-radius: $round_radius;
-    }
+  li {
+    padding: 1rem;
+    margin-right: 1rem;
+    border-radius: $round_radius;
   }
 }
 
@@ -99,6 +99,14 @@ body {
     pointer-events: all;
     z-index: 1;
   }
+}
+
+.new_project,
+.project_layout {
+  padding: 0;
+  position: unset;
+  border-radius: unset;
+  background: unset;
 }
 
 app-root {
@@ -581,10 +589,12 @@ ul.department_blocks {
 section.two {
   display: grid;
   grid-gap: 0 2rem;
+  position: relative;
   grid-template-columns: 1fr;
 
   h1 {
     position: absolute;
+    padding: 1rem;
   }
 
   .tasks {
@@ -592,7 +602,9 @@ section.two {
     overflow: scroll;
     margin-top: 2rem;
     color: $gray;
-    height: 37%;
+    height: 85%;
+    width: 100%;
+    padding: 1rem;
 
     li {
       margin-bottom: 1rem;
@@ -752,6 +764,7 @@ settings {
     }
   }
 
+  label,
   .label {
     left: 1rem;
     width: 90px;
@@ -926,6 +939,7 @@ inbox {
           padding: 0.7rem 1rem;
           background: $block_fg;
           border-radius: $round_radius;
+          box-shadow: 0px 6px 11px #00000026;
         }
       }
     }

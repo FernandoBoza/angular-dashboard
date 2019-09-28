@@ -26,6 +26,7 @@ export class TasksComponent implements OnInit {
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.keyCode === 27) {
       this.col_toggle = false;
+      this.modalToggle = false;
     }
   }
 

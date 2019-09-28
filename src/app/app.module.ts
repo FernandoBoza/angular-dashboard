@@ -15,6 +15,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { LoginComponent } from './components/login/login.component';
 import { CreateTaskComponent } from './components/shared/create-task/create-task.component';
 import { TaskComponent } from './components/shared/task/task.component';
+import { InputTextComponent } from './components/shared/input-text/input-text.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TaskComponent } from './components/shared/task/task.component';
     CalendarComponent,
     LoginComponent,
     CreateTaskComponent,
-    TaskComponent
+    TaskComponent,
+    InputTextComponent
   ],
   imports: [
     FormsModule,

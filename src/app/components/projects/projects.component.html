@@ -18,87 +18,90 @@
       </div>
     </li>
   </ul>
-  <i class="add fal fa-plus"></i>
+  <i class="add fal fa-plus" (click)="showCreateProject()"></i>
 </section>
-<section class="right" *ngIf="projectLayout != null">
+<section class="right">
+  <section *ngIf="project_or_create_project == 1" class="project_layout">
+    <!-- top layer -->
+    <ul class="user_top_right" style="display: flex;justify-content: space-between;">
+      <li>
+        <h1 class="title">{{projectLayout.title}}</h1>
+        <p><i class="fas fa-calendar-check"></i> {{projectLayout.dueDate}}</p>
+      </li>
+      <li>
+        <i class="add fal fa-plus"></i>
+        <h2>{{projectLayout.followers.length - 3}} +</h2>
+        <div class="users_status" *ngFor="let img of projectLayout.followers | slice:0:3">
+          <span class="img_holder">
+            <img src="{{img}}">
+          </span>
+          <i class="fas fa-circle"></i>
+        </div>
+      </li>
+    </ul>
 
-  <!-- top layer -->
-  <ul class="user_top_right" style="display: flex;justify-content: space-between;">
-    <li>
-      <h1 class="title">{{projectLayout.title}}</h1>
-      <p><i class="fas fa-calendar-check"></i> {{projectLayout.dueDate}}</p>
-    </li>
-    <li>
-      <i class="add fal fa-plus"></i>
-      <h2>{{projectLayout.followers.length - 3}} +</h2>
-      <div class="users_status" *ngFor="let img of projectLayout.followers | slice:0:3">
-        <span class="img_holder">
-          <img src="{{img}}">
-        </span>
-        <i class="fas fa-circle"></i>
+    <!-- Files and Task panel -->
+
+    <div class="files_task_toggle">
+      <h2 (click)="toggleFileTask('Files')" [class.selected]="filetaskOption">Files</h2>
+      <h2 (click)="toggleFileTask('Tasks')" [class.selected]="!filetaskOption">Tasks</h2>
+    </div>
+
+    <div class="option_container files" [class.files_selected]="filetaskOption">
+      <div class="file_grid">
+        <div class="file_holder" *ngFor="let file of projectLayout.files">
+          <ul class="img_info_options">
+            <li>
+              <h2>{{file.fileName}}</h2>
+              <span>
+                {{file.uploader}} <i class="fas fa-circle"></i> {{file.fileSize}}
+              </span>
+            </li>
+            <li>
+              <i class="fal fa-arrow-to-bottom"></i>
+            </li>
+          </ul>
+          <img src="{{file.src}}">
+        </div>
       </div>
-    </li>
-  </ul>
-
-  <!-- Files and Task panel -->
-
-  <div class="files_task_toggle">
-    <h2 (click)="toggleFileTask('Files')" [class.selected]="filetaskOption">Files</h2>
-    <h2 (click)="toggleFileTask('Tasks')" [class.selected]="!filetaskOption">Tasks</h2>
-  </div>
-
-  <div class="option_container files" [class.files_selected]="filetaskOption">
-    <div class="file_grid">
-      <div class="file_holder" *ngFor="let file of projectLayout.files">
-        <ul class="img_info_options">
-          <li>
-            <h2>{{file.fileName}}</h2>
-            <span>
-              {{file.uploader}} <i class="fas fa-circle"></i> {{file.fileSize}}
-            </span>
-          </li>
-          <li>
-            <i class="fal fa-arrow-to-bottom"></i>
-          </li>
+    </div>
+    <div class="option_container tasks" [class.tasks_selected]="!filetaskOption">
+      <div class="grid__one_two_col">
+        <ul class="project_status_toggle">
+          <span class="bg" [class.selected]="project_toggle"></span>
+          <li (click)="toggle_project(true)">In progress</li>
+          <li (click)="toggle_project(false)">Completed</li>
         </ul>
-        <img src="{{file.src}}">
-      </div>
-    </div>
-  </div>
-  <div class="option_container tasks" [class.tasks_selected]="!filetaskOption">
-    <div class="grid__one_two_col">
-      <ul class="project_status_toggle">
-        <span class="bg" [class.selected]="project_toggle"></span>
-        <li (click)="toggle_project(true)">In progress</li>
-        <li (click)="toggle_project(false)">Completed</li>
-      </ul>
 
-      <div class="progress_bar">
-        <span class="progress"></span>
-      </div>
-    </div>
-
-    <ul class="task_card_container">
-      <li class="task_card" *ngFor="let task of projectLayout.tasks">
-        <i class="fas fa-ellipsis-v"></i>
-        <h3>{{task.title}}</h3>
         <div class="progress_bar">
           <span class="progress"></span>
         </div>
-        <p class="description">{{task.description}}</p>
-        <span><i class="fas fa-calendar"></i> {{task.dueDate}}</span>
-        <span><i class="fas fa-user-circle"></i> {{task.creator}}</span>
-        <ul>
-          <li *ngFor="let img of task.followers">
-            <span class="img_holder">
-              <img src='{{img}}'>
-            </span>
-          </li>
-        </ul>
-        <i class="fas fa-external-link"></i>
-      </li>
+      </div>
 
-    </ul>
-  </div>
-
+      <ul class="task_card_container">
+        <li class="task_card" *ngFor="let task of projectLayout.tasks">
+          <i class="fas fa-ellipsis-v"></i>
+          <h3>{{task.title}}</h3>
+          <div class="progress_bar">
+            <span class="progress"></span>
+          </div>
+          <p class="description">{{task.description}}</p>
+          <span><i class="fas fa-calendar"></i> {{task.dueDate}}</span>
+          <span><i class="fas fa-user-circle"></i> {{task.creator}}</span>
+          <ul>
+            <li *ngFor="let img of task.followers">
+              <span class="img_holder">
+                <img src='{{img}}'>
+              </span>
+            </li>
+          </ul>
+          <i class="fas fa-external-link"></i>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section *ngIf="project_or_create_project == 2" class="new_project">
+    <h1>Create Project</h1>
+    <input-text [class]="'project'" [label]="'Title'" [model]="project.title"></input-text>
+  </section>
 </section>

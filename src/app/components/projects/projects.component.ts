@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import CONSTANTS from 'src/app/services/Constants';
+import { Project } from "../../models/Project"
 
 @Component({
   selector: 'projects',
@@ -14,8 +15,14 @@ export class ProjectsComponent implements OnInit {
   public selected: number = -1;
   public filetaskOption: boolean = true;
   public project_toggle: boolean = true;
+  public project_or_create_project: number = 0;
+  public project: Project = new Project();
 
   ngOnInit() {
+  }
+
+  public showCreateProject() {
+    this.project_or_create_project = 2;
   }
 
   public toggle_project(n: boolean) {
@@ -32,6 +39,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   public selectProject(project: any, index: number) {
+    this.project_or_create_project = 1
     this.projectLayout = project;
     this.selected = index;
   }
