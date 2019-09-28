@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'create-task',
@@ -8,7 +8,13 @@ export class CreateTaskComponent implements OnInit {
 
   constructor() { }
 
+  @Output() close = new EventEmitter<boolean>();
+
   ngOnInit() {
+  }
+
+  method() {
+    this.close.emit();
   }
 
 }

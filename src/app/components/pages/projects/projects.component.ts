@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import CONSTANTS from 'src/app/services/Constants';
-import { Project } from "../../models/Project"
+import { Project } from "../../../models/Project"
 
 @Component({
   selector: 'projects',

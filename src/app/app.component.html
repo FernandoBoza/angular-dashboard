@@ -17,9 +17,9 @@
 </div>
 <section class="sidebar" *ngIf="!hide">
   <ul>
-    <li class="img_holder">
+    <!-- <li class="img_holder">
       <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb">
-    </li>
+    </li> -->
     <li *ngFor="let i of menu" routerLink="/{{i.url}}" [routerLinkActiveOptions]="{ exact: true }"
       routerLinkActive="active">
       <span class="notification" *ngIf="i.notification > 0">{{i.notification}}</span>

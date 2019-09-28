@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './components/admin/admin.component';
-import { ProjectsComponent } from './components/projects/projects.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { InboxComponent } from './components/inbox/inbox.component';
-import { DepartmentsComponent } from './components/departments/departments.component';
-import { NotificationsComponent } from './components/notifications/notifications.component';
-import { TasksComponent } from './components/tasks/tasks.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
-import { LoginComponent } from './components/login/login.component';
+import { ProjectsComponent } from './components/pages/projects/projects.component';
+import { DepartmentsComponent } from './components/pages/departments/departments.component';
+import { NotificationsComponent } from './components/pages/notifications/notifications.component';
+import { TasksComponent } from './components/pages/tasks/tasks.component';
+import { CalendarComponent } from './components/pages/calendar/calendar.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { AdminComponent } from './components/pages/admin/admin.component';
+import { InboxComponent } from './components/pages/inbox/inbox.component';
+import { SettingsComponent } from './components/pages/settings/settings.component';
 
 const routes: Routes = [
   { path: "", component: AdminComponent },

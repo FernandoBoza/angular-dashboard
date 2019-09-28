@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import CONSTANTS from '../../services/Constants';
 import { UserServiceService } from 'src/app/services/user-service.service';
+import CONSTANTS from 'src/app/services/Constants';
 
 @Component({
   selector: 'admin',

@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import CONSTANTS from 'src/app/services/Constants';
-import Util from "../../Util";
+import Util from "../../../Util";
 
 @Component({
   selector: 'tasks',

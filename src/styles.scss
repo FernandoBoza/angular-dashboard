@@ -242,7 +242,7 @@ login {
       .btn_container {
         width: 100%;
         height: 100%;
-        border-radius: 6px;
+        border-radius: $round_radius;
         position: relative;
 
         li {
@@ -272,7 +272,7 @@ login {
           button {
             color: $white;
             border: none;
-            border-radius: 6px;
+            border-radius: $round_radius;
             background: $blue;
             width: 100%;
             height: 50px;
@@ -320,7 +320,7 @@ login {
         padding: 1rem;
         background: white;
         z-index: 0;
-        border-radius: 7px;
+        border-radius: $round_radius;
         color: #555;
         box-shadow: 0px 4px 9px 1px #0000007a;
         display: flex;
@@ -329,7 +329,7 @@ login {
 
         .resolve {
           padding: 1rem;
-          border-radius: 6px;
+          border-radius: $round_radius;
           text-align: center;
 
           h1 {
@@ -1858,7 +1858,8 @@ calendar {
     padding: 0;
 
     span.task_length {
-      right: 0.5rem !important;
+      right: 35% !important;
+      top: 3.2rem !important;
     }
   }
 
@@ -1941,7 +1942,7 @@ calendar {
       }
 
       span.task_length {
-        transition: right 0.4s;
+        transition: right 0.4s, top 0.4s;
         cursor: pointer;
         position: absolute;
         top: 1.2rem;

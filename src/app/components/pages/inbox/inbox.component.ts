@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Constants from "../../services/Constants"
+import CONSTANTS from 'src/app/services/Constants';
 
 @Component({
   selector: 'inbox',
@@ -9,7 +9,7 @@ export class InboxComponent implements OnInit {
 
   constructor() { }
 
-  public messages = Constants.messages;
+  public messages = CONSTANTS.messages;
   public chatHistory: any[];
   public selected: number = -1;
 
