@@ -6,11 +6,8 @@
       [class.selected]="selected == index">
       <h2>{{department.label}}</h2>
       <div class="users">
-        <span class="img_holder" *ngFor="let user of department.users | slice:0:3">
-          <img src="{{user.img}}">
-        </span>
+        <img-holder *ngFor="let user of department.users | slice:0:3" [src]="user.img"></img-holder>
         <h2>+ {{department.users.length - 3}}</h2>
-
       </div>
     </li>
   </ul>
@@ -34,7 +31,7 @@
       <span class="hide" [class.depHead]="user.depHead">Department Head</span>
       <i *ngIf="!user.depHead" class="user_options fal fa-user-minus"></i>
       <i class="user_options fal fa-comment-alt-lines"></i>
-      <span class="img_holder"><img src="{{user.img}}"></span>
+      <img-holder [src]="user.img"></img-holder>
     </li>
   </ul>
 </section>

@@ -9,7 +9,7 @@
       <div class="btm">
         <span>{{getProjectRatio(project.tasks)}}</span>
         <div class="users">
-          <span class="img_holder" *ngFor="let img of project.followers | slice:0:3"><img src="{{img}}"></span>
+          <img-holder *ngFor="let img of project.followers | slice:0:3" [src]="img"></img-holder>
           <span style="color: white;margin-left: .2rem;"> + {{project.followers.length - 3}}</span>
         </div>
       </div>
@@ -28,10 +28,8 @@
       <li>
         <i class="add fal fa-plus"></i>
         <h2>{{projectLayout.followers.length - 3}} +</h2>
-        <div class="users_status" *ngFor="let img of projectLayout.followers | slice:0:3">
-          <span class="img_holder">
-            <img src="{{img}}">
-          </span>
+        <div class="users_status">
+          <img-holder *ngFor="let img of projectLayout.followers | slice:0:3" [src]="img"></img-holder>
           <i class="fas fa-circle"></i>
         </div>
       </li>
@@ -86,11 +84,7 @@
           <span><i class="fas fa-calendar"></i> {{task.dueDate}}</span>
           <span><i class="fas fa-user-circle"></i> {{task.creator}}</span>
           <ul>
-            <li *ngFor="let img of task.followers">
-              <span class="img_holder">
-                <img src='{{img}}'>
-              </span>
-            </li>
+            <img-holder *ngFor="let img of task.followers" [src]="img"></img-holder>
           </ul>
           <i class="fas fa-external-link"></i>
         </li>

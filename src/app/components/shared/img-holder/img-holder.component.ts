@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ImgHolderComponent implements OnInit {
 
   constructor() { }
-
+  @Input("class") class: string;
   @Input("src") src: string;
 
   ngOnInit() {

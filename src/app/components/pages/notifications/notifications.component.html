@@ -5,9 +5,7 @@
       <li class="date">{{notif.date}}</li>
       <li class="notification_row" *ngFor="let n of notif.notifArray">
         <i class="fal {{notifIcon(n.department)}} {{n.status}}"></i>
-        <span class="img_holder">
-          <img src="{{n.src}}">
-        </span>
+        <img-holder [src]="n.src"></img-holder>
         <div class="name_status">
           <h2>
             {{n.user.split(' ').slice(0, -1).join(' ')}}
