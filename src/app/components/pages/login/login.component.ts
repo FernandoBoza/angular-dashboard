@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   public toggle: String = "login";
   public terms_condition: boolean = false;
   public term_modal: boolean = false;
+  public passwordViewToggle: boolean = false;
   public user: User = new User();
   public err = {
     email: [],
@@ -27,6 +28,10 @@ export class LoginComponent implements OnInit {
     if (event.keyCode === 27) {
       this.term_modal = false;
     }
+  }
+
+  public togglePasswordView() {
+    this.passwordViewToggle = !this.passwordViewToggle;
   }
 
   public toggleViews(n: string) {

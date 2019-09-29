@@ -758,6 +758,15 @@ settings {
   position: relative;
   margin-bottom: 2rem;
 
+  i.fal.fa-eye,
+  i.fal.fa-eye-slash {
+    top: 1rem;
+    right: 1rem;
+    color: $blue;
+    cursor: pointer;
+    position: absolute;
+  }
+
   &.error {
     span {
       position: absolute;

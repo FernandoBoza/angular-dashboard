@@ -33,7 +33,9 @@
       <li class="input_container" [class.error]="err.password.length != 0">
          <span>{{err.password}}</span>
          <label for="login_password" class="label">Password</label>
-         <input id="login_password" (keyup.enter)="loginUser()" [(ngModel)]="user.password" type="text">
+         <input id="login_password" (keyup.enter)="loginUser()" [(ngModel)]="user.password"
+            type="{{passwordViewToggle ? 'text' : 'password'}}">
+         <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
       </li>
       <li class="resolve" (click)="loginUser()">
          <h1>Login</h1>
@@ -56,7 +58,9 @@
       <li class="input_container" [class.error]="err.password.length != 0">
          <span>{{err.password}}</span>
          <label for="regi_password" class="label">password</label>
-         <input [(ngModel)]="user.password" id="regi_password" type="text" (keyup.enter)="createUser()">
+         <input [(ngModel)]="user.password" id="regi_password" type="{{passwordViewToggle ? 'text' : 'password'}}"
+            (keyup.enter)="createUser()">
+         <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
       </li>
       <li class="checkbox_container">
          <input id="terms_condition" type="text" [(ngModel)]="terms_condition" type="checkbox"
