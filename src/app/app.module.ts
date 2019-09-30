@@ -18,6 +18,8 @@ import { AdminComponent } from './components/pages/admin/admin.component';
 import { InboxComponent } from './components/pages/inbox/inbox.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
 import { ImgHolderComponent } from './components/shared/img-holder/img-holder.component';
+import { EditProfileComponent } from './components/pages/settings/setting_components/edit-profile/edit-profile.component';
+import { ChangePasswordComponent } from './components/pages/settings/setting_components/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ImgHolderComponent } from './components/shared/img-holder/img-holder.co
     TaskComponent,
     InputTextComponent,
     InputSearchComponent,
-    ImgHolderComponent
+    ImgHolderComponent,
+    EditProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     FormsModule,

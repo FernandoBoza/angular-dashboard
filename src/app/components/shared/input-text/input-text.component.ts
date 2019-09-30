@@ -14,7 +14,13 @@ export class InputTextComponent implements OnInit {
   @Input("type") type: any = "text";
   @Input("disabled") disabled: boolean = false;
 
+  public passwordViewToggle: boolean = false;
+
   ngOnInit() {
+  }
+
+  public togglePasswordView() {
+    this.passwordViewToggle = !this.passwordViewToggle;
   }
 
 }

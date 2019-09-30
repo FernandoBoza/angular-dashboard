@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 export class SettingsComponent implements OnInit {
 
   constructor() { }
+  public selected: number = 1;
 
   ngOnInit() {
+  }
+
+  public selectSettings(n: number) {
+    this.selected = n;
   }
 
 }

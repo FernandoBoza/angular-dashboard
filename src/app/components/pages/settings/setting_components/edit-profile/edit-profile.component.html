@@ -1,0 +1,14 @@
+<h1>Edit Profile</h1>
+<ul>
+  <li>
+    <img-holder
+      [src]="'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb'">
+    </img-holder>
+    <span class="img_whiteout"></span>
+    <span class="new_img"><i class="fas fa-camera-alt"></i></span>
+  </li>
+  <input-text [label]="'Full Name'" [model]="'Jane Smith'"></input-text>
+  <input-text [label]="'Email'" [model]="'jsmith@email.com'" [type]="'email'"></input-text>
+  <input-text [label]="'Password'" [model]="'password'" [type]="'password'" [disabled]="true"></input-text>
+  <li style="width: 100%"><button class="resolve">Update Profile</button></li>
+</ul>
