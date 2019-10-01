@@ -37,6 +37,11 @@ export class LoginComponent implements OnInit {
   public toggleViews(n: string) {
     this.user = new User();
     this.toggle = n;
+    this.err = {
+      email: [],
+      password: [],
+      name: []
+    }
   }
 
   public showTerms(evt: Event) {
