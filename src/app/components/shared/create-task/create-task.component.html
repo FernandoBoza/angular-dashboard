@@ -7,7 +7,11 @@
   <textarea></textarea>
 </div>
 
-<date-picker (dateSelected)="dateSelect($event)"></date-picker>
+<div class="task_items">
+  <date-picker (dateSelected)="dateSelect($event)"></date-picker>
+  <dropdown-user (userSelected)="userSelected($event)"></dropdown-user>
+</div>
+
 
 <ul class="modal_btns">
   <li class="reject">Cancel</li>

@@ -21,6 +21,7 @@ import { ImgHolderComponent } from './components/shared/img-holder/img-holder.co
 import { EditProfileComponent } from './components/pages/settings/setting_components/edit-profile/edit-profile.component';
 import { ChangePasswordComponent } from './components/pages/settings/setting_components/change-password/change-password.component';
 import { DatePickerComponent } from './components/shared/date-picker/date-picker.component';
+import { DropdownUserComponent } from './components/shared/dropdown-user/dropdown-user.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DatePickerComponent } from './components/shared/date-picker/date-picker
     ImgHolderComponent,
     EditProfileComponent,
     ChangePasswordComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    DropdownUserComponent
   ],
   imports: [
     FormsModule,

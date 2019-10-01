@@ -17,4 +17,8 @@ export class CreateTaskComponent implements OnInit {
     this.dateSelected = date;
   }
 
+  userSelected(user: any) {
+    console.log(user);
+  }
+
 }
