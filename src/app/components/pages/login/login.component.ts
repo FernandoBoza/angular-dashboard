@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   public toggleViews(n: string) {
+    this.user = new User();
     this.toggle = n;
   }
 
