@@ -3,7 +3,6 @@
 @import "../src/scss/variables_two";
 @import "../src/scss/mixins";
 @import "../src/scss/typography";
-// @import "../src/scss/lightMode";
 
 body {
   overflow: hidden;
@@ -51,6 +50,27 @@ body {
   pointer-events: none;
 }
 
+app-root .circle {
+  @include vert_hori_align;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: white;
+  border-radius: $circle_radius;
+
+  &.primary {
+    background: $primary;
+  }
+
+  &.danger {
+    background: $danger;
+  }
+
+  &.info {
+    background: $info;
+  }
+}
+
 .modal {
   border-radius: $round_radius;
   position: absolute;
@@ -95,8 +115,8 @@ ul.modal_btns {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  right: -1vw;
-  top: -3vh;
+  right: 0;
+  top: 0;
   opacity: 0;
   background: black;
   pointer-events: none;
@@ -155,7 +175,7 @@ h2 {
   align-self: center;
 
   span.progress {
-    background: $green;
+    background: $success;
     width: 80%;
     display: block;
     border-radius: $round_radius;
@@ -164,6 +184,7 @@ h2 {
 
 i.fas.fa-comments-alt.toggle {
   @include icon_btn;
+  color: $white;
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
@@ -426,7 +447,7 @@ img-holder {
   display: flex;
 
   &.online {
-    border: 2px solid $green;
+    border: 2px solid $success;
   }
 
   img {
@@ -492,7 +513,7 @@ img-holder {
 }
 
 .content {
-  background: linear-gradient($gradientOne, $gradientTwo);
+  background: $base;
 
   admin {
     display: grid;
@@ -608,7 +629,7 @@ ul.department_blocks {
     }
   }
   .complete {
-    color: $green;
+    color: $success;
   }
   .pending {
     color: $info;
@@ -891,7 +912,7 @@ textarea {
   transition: box-shadow 0.4s;
 
   &:hover {
-    box-shadow: 0px 5px 11px #151a3166;
+    box-shadow: 0px 5px 11px #00000033;
   }
 
   &:active {
@@ -1068,15 +1089,8 @@ input-search {
   }
 }
 
-.add.fal.fa-plus {
-  @include vert_hori_align;
-  background: $primary;
-  color: $white;
-  height: 40px;
-  width: 40px;
-  border-radius: $circle_radius;
+i.add.fal {
   margin: 0 auto;
-  cursor: pointer;
   position: absolute;
   left: 44%;
   bottom: 1rem;
@@ -1181,7 +1195,7 @@ projects {
       }
 
       .fas {
-        color: $green;
+        color: $success;
         font-size: 0.7rem;
         position: absolute;
         right: 9px;
@@ -1287,9 +1301,6 @@ projects {
               }
 
               i.fal.fa-arrow-to-bottom {
-                @include icon_btn;
-                border-radius: $circle_radius;
-                background: $primary;
                 transition: background 0.4s, transform 0.4s, box-shadow 0.4s;
 
                 &:hover {
@@ -1357,7 +1368,7 @@ projects {
           background: $block_fg;
 
           .progress {
-            background: #f49c00;
+            background: $warning;
           }
         }
       }
@@ -1598,8 +1609,9 @@ departments {
           display: block;
           padding: 0.5rem;
           position: absolute;
-          border-radius: $round_radius;
           background: $info;
+          color: $white;
+          border-radius: $round_radius;
           box-shadow: 4px 4px 7px 0px #00000026;
         }
       }
@@ -1700,7 +1712,7 @@ notifications {
         border-radius: $circle_radius;
 
         &.complete {
-          background: $green;
+          background: $success;
         }
 
         &.pending {
@@ -1799,7 +1811,7 @@ tasks {
           }
 
           &.complete {
-            background: $green;
+            background: $success;
           }
         }
       }
@@ -1877,11 +1889,11 @@ tasks {
             color: $white;
             border-radius: $round_radius;
             margin-right: 4rem;
-            background: $yellow;
+            background: $warning;
             transition: background 0.4s;
 
             &:hover {
-              background: #e87101;
+              background: darken($warning, 5%);
             }
           }
         }
@@ -2024,7 +2036,7 @@ calendar {
         position: absolute;
         top: 1.2rem;
         right: 3rem;
-        background: $danger;
+        background: $primary;
         border-radius: $circle_radius;
         width: 20px;
         height: 20px;
@@ -2109,6 +2121,7 @@ date-picker {
     grid-template-columns: repeat(7, 46px);
     height: unset;
     margin: 0;
+    margin-top: 12px;
 
     li.day {
       cursor: pointer;

@@ -15,7 +15,7 @@
       </div>
     </li>
   </ul>
-  <i class="add fal fa-plus" (click)="showCreateProject()"></i>
+  <i class="add circle primary fal fa-plus" (click)="showCreateProject()"></i>
 </section>
 <section class="right">
   <section *ngIf="project_or_create_project == 1" class="project_layout">
@@ -26,7 +26,7 @@
         <p><i class="fas fa-calendar-check"></i> {{projectLayout.dueDate}}</p>
       </li>
       <li>
-        <i class="add fal fa-plus"></i>
+        <i class="fal fa-plus circle primary"></i>
         <h2>{{projectLayout.followers.length - 3}} +</h2>
         <div class="users_status">
           <img-holder *ngFor="let img of projectLayout.followers | slice:0:3" [src]="img"></img-holder>
@@ -53,7 +53,7 @@
               </span>
             </li>
             <li>
-              <i class="fal fa-arrow-to-bottom"></i>
+              <i class="fal fa-arrow-to-bottom circle primary"></i>
             </li>
           </ul>
           <img src="{{file.src}}">
