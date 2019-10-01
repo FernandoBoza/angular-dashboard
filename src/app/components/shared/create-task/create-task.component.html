@@ -1,15 +1,13 @@
 <h2>Add a new task</h2>
-<!-- <i class="fas fa-times" (click)="method()"></i> -->
 
-<div class="input_container">
-  <span class="label">Task title</span>
-  <input type="text">
-</div>
+<input-text [label]="'Task title'"></input-text>
 
 <div class="input_container">
   <span class="text_label">Task description</span>
   <textarea></textarea>
 </div>
+
+<date-picker (dateSelected)="dateSelect($event)"></date-picker>
 
 <ul class="modal_btns">
   <li class="reject">Cancel</li>

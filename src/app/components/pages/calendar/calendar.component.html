@@ -14,7 +14,6 @@
       </li>
     </ul>
     <ul class="week row">
-      <!-- <li class="day {{day.label}}" (click)="selectDay(day)" *ngFor="let day of month"> -->
       <li class="day {{day.label}}" *ngFor="let day of month" [class.today]="day.fullDate == today">
         <span class="day_number" (click)="createTask(day)">{{day.day}}</span>
         <span class="task_length" *ngIf="day.tasks != undefined"

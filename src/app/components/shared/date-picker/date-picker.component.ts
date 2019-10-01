@@ -1,25 +1,22 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import * as moment from 'moment';
-import CONSTANTS from 'src/app/services/Constants';
 import Utils from 'src/app/Util';
 
-
 @Component({
-  selector: 'calendar',
-  templateUrl: './calendar.component.html',
+  selector: 'date-picker',
+  templateUrl: './date-picker.component.html',
 })
-export class CalendarComponent implements OnInit {
+export class DatePickerComponent implements OnInit {
 
   constructor() { }
-  public col_toggle: boolean = false;
+  @Output() dateSelected = new EventEmitter<string>();
+  public dueDate: string;
   public currentMonth = moment().format("MMMM YYYY");
-  public currentTasks: any;
   public month: any = [];
-  public tasks = CONSTANTS.tasks_pending;
-  public taskToggle: boolean = false;
   public today: string = moment().format("MM/DD/YYYY");
   public dayOfWeek: string = moment().format("dddd");
   public currentDay: string = moment().format("dddd D");
+  public datePickerToggle: boolean = false;
   public daysLabel = [
     {
       long: "Monday",
@@ -53,14 +50,20 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     this.getDaysArray(moment().format('Y MM'));
-    this.addTasksToMonthObj();
   }
 
-  @HostListener('document:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.keyCode === 27) {
-      this.col_toggle = false;
-    }
+  public getDaysArray(dateString: any) {
+    this.month = Utils.getDaysArray(dateString);
+  }
+
+  public selectDate(date: string) {
+    this.dueDate = `: ${moment(date).format('MMM DD YYYY')}`;
+    this.dateSelected.emit(date);
+    this.datePickerToggle = false;
+  }
+
+  public showDatePicker() {
+    this.datePickerToggle = !this.datePickerToggle
   }
 
   public changeMonth(dir: string) {
@@ -76,41 +79,6 @@ export class CalendarComponent implements OnInit {
       this.currentMonth = moment().format("MMMM YYYY");
       this.getDaysArray(moment().format('Y MM'));
     }
-
-    this.addTasksToMonthObj();
   }
 
-  public addTasksToMonthObj() {
-    this.month.forEach((day: any) => {
-      let x = []
-      this.tasks.forEach(task => {
-        let taskDate = moment(task.dateLog).format("MM/DD/YYYY")
-        if (day.fullDate == taskDate) {
-          x.push(task)
-          day.tasks = x
-        }
-      });
-    });
-  }
-
-  public expandCalendar(day?) {
-    if (day != undefined) {
-      this.currentDay = moment(day.fullDate).format("dddd D");
-      this.currentTasks = day.tasks
-      this.col_toggle = true;
-      this.taskToggle = false;
-    } else {
-      this.col_toggle = !this.col_toggle
-    }
-  }
-
-  public getDaysArray(dateString: any) {
-    this.month = Utils.getDaysArray(dateString);
-  }
-
-  public createTask(day) {
-    this.currentDay = moment(day.fullDate).format("dddd D");
-    this.taskToggle = true
-    this.col_toggle = true;
-  }
 }

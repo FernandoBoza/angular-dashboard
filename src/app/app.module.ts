@@ -20,6 +20,7 @@ import { SettingsComponent } from './components/pages/settings/settings.componen
 import { ImgHolderComponent } from './components/shared/img-holder/img-holder.component';
 import { EditProfileComponent } from './components/pages/settings/setting_components/edit-profile/edit-profile.component';
 import { ChangePasswordComponent } from './components/pages/settings/setting_components/change-password/change-password.component';
+import { DatePickerComponent } from './components/shared/date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ChangePasswordComponent } from './components/pages/settings/setting_com
     InputSearchComponent,
     ImgHolderComponent,
     EditProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    DatePickerComponent
   ],
   imports: [
     FormsModule,

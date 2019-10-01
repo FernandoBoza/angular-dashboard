@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'create-task',
@@ -8,13 +8,13 @@ export class CreateTaskComponent implements OnInit {
 
   constructor() { }
 
-  @Output() close = new EventEmitter<boolean>();
+  public dateSelected: string;
 
   ngOnInit() {
   }
 
-  method() {
-    this.close.emit();
+  dateSelect(date: string) {
+    this.dateSelected = date;
   }
 
 }
