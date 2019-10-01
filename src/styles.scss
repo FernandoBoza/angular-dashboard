@@ -2119,20 +2119,23 @@ ul.dropdown {
 
   span {
     margin-left: 1rem;
+    padding: 0.5rem 0;
   }
 
   .resolve {
     width: 170px;
     display: flex;
+    padding: 0.4rem 1rem;
     align-items: center;
   }
 
   ul.items {
+    right: 0;
     opacity: 0;
-    width: 100%;
     height: 250px;
     overflow: scroll;
     margin-top: 1rem;
+    width: max-content;
     position: absolute;
     pointer-events: none;
     background: $block_bg;
@@ -2162,8 +2165,6 @@ ul.dropdown {
   img-holder {
     width: 41px;
     height: 41px;
-    position: absolute;
-    top: 7px;
 
     img {
       width: 3rem;
