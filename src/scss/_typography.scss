@@ -4,7 +4,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label:before {
-  border: 1px solid $blue;
+  border: 1px solid $primary;
   content: "\00a0";
   display: inline-block;
   font: 16px/1em sans-serif;
@@ -17,7 +17,7 @@ input[type="checkbox"] + label:before {
   font-family: "Font Awesome 5 Pro";
 }
 input[type="checkbox"]:checked + label:before {
-  color: $blue;
+  color: $primary;
   content: "\f00c";
   text-align: center;
 }
