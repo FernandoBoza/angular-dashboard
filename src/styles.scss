@@ -2214,4 +2214,19 @@ create-task {
   }
 }
 
+tooltip {
+  position: fixed;
+  padding: 0.5rem;
+  background: $primary;
+  color: $white;
+  border-radius: 6px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+tooltip.tooltip-show {
+  opacity: 1;
+}
+
 @import "../src/scss/mediaQueries";

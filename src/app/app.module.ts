@@ -22,6 +22,8 @@ import { EditProfileComponent } from './components/pages/settings/setting_compon
 import { ChangePasswordComponent } from './components/pages/settings/setting_components/change-password/change-password.component';
 import { DatePickerComponent } from './components/shared/date-picker/date-picker.component';
 import { DropdownUserComponent } from './components/shared/dropdown-user/dropdown-user.component';
+import { TooltipComponent } from './components/shared/tooltip/tooltip.component';
+import { TooltipDirective } from './components/shared/tooltip/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -43,13 +45,17 @@ import { DropdownUserComponent } from './components/shared/dropdown-user/dropdow
     EditProfileComponent,
     ChangePasswordComponent,
     DatePickerComponent,
-    DropdownUserComponent
+    DropdownUserComponent,
+    TooltipComponent,
+    TooltipDirective
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule
   ],
+  // Component Factory for the tooltip
+  entryComponents: [TooltipComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
