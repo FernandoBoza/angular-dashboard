@@ -3,7 +3,7 @@ export const defaultOptions = {
    'autoPlacement': true,
    'contentType': 'string',
    'showDelay': 0,
-   'hideDelay': 300,
+   'hideDelay': 100,
    'hideDelayMobile': 0,
    'hideDelayTouchscreen': 0,
    'zIndex': 0,
