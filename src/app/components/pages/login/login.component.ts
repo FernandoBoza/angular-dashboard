@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   public term_modal: boolean = false;
   public passwordViewToggle: boolean = false;
   public user: User = new User();
+  public confirmedPassword: string;
   public err = {
     email: [],
     password: [],
@@ -69,7 +70,7 @@ export class LoginComponent implements OnInit {
 
     if (email == "" || email == null || email == undefined) {
       this.err.email.push("Please enter an email")
-    } else if (email.indexOf('@') == -1) {
+    } else if (!this.validateEmail(email)) {
       this.err.email.push("Not a valid email")
     }
 
@@ -81,6 +82,8 @@ export class LoginComponent implements OnInit {
       this.err.password.push("Please enter a password")
     } else if (password.length < 8) {
       this.err.password.push("Please enter a password 8 or more characters long")
+    } else if (password != this.confirmedPassword) {
+      this.err.password.push("Password doesn't match")
     }
 
     if (this.err.email.length == 0 && this.err.name.length == 0 && this.err.password.length == 0) {
@@ -97,7 +100,7 @@ export class LoginComponent implements OnInit {
 
     if (email == "" || email == null || email == undefined) {
       this.err.email.push("Please enter an email")
-    } else if (email.indexOf('@') == -1) {
+    } else if (!this.validateEmail(email)) {
       this.err.email.push("Not a valid email")
     }
     if (password == "" || password == null || password == undefined) {
@@ -111,6 +114,11 @@ export class LoginComponent implements OnInit {
     } else {
       return false
     }
+  }
+
+  public validateEmail(email: String) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
   public flushErr() {

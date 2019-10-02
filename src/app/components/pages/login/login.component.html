@@ -62,6 +62,12 @@
             (keyup.enter)="createUser()">
          <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
       </li>
+      <li class="input_container" [class.error]="confirmedPassword != user.password">
+         <label for="regi_password" class="label">confirm password</label>
+         <input [(ngModel)]="confirmedPassword" id="regi_password" type="{{passwordViewToggle ? 'text' : 'password'}}"
+            (keyup.enter)="createUser()">
+         <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
+      </li>
       <li class="checkbox_container">
          <input id="terms_condition" type="text" [(ngModel)]="terms_condition" type="checkbox"
             [checked]="terms_condition">
