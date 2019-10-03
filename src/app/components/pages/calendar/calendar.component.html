@@ -10,7 +10,7 @@
   <div class="calendar">
     <ul class="week col_header">
       <li class="{{day.short}}" [class.currentDay]="dayOfWeek == day.long" *ngFor="let day of daysLabel">
-        {{day.long}}
+        <span>{{day.long}}</span>
       </li>
     </ul>
     <ul class="week row">

@@ -488,7 +488,7 @@ img-holder {
       }
 
       &:active {
-        background: darken($info, 20%);
+        background: darken($info, 5%);
         color: $white;
       }
 
@@ -988,16 +988,27 @@ inbox {
     grid-template-rows: 1fr 57px;
 
     ul.chat_history {
-      height: 80%;
+      height: 80vh;
+      overflow: scroll;
+
       li {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         display: flex;
 
         &.user {
           flex-direction: row-reverse;
 
           .img_time {
-            display: none;
+            img-holder {
+              display: none;
+            }
+
+            span {
+              right: 0;
+              height: 21px;
+              width: max-content !important;
+              top: 49px !important;
+            }
           }
 
           span.msg_content {
@@ -1595,7 +1606,7 @@ departments {
       img-holder {
         display: flex;
         transition: border 0.4s, box-shadow 0.3s 0.1s;
-        border: 4px solid $block_bg;
+        border: 3px solid $block_bg;
         position: absolute;
         left: 35%;
         bottom: -25%;
@@ -1812,7 +1823,7 @@ tasks {
           box-shadow: 0px 5px 6px #0000002e;
 
           &.in_progress {
-            background: $primary;
+            background: $info;
           }
 
           &.complete {
@@ -1865,7 +1876,7 @@ tasks {
           }
 
           p {
-            padding: 1rem;
+            padding: 0.7rem;
             align-items: center;
             display: flex;
           }
@@ -1965,16 +1976,8 @@ calendar {
     grid-template-columns: repeat(7, 1fr);
 
     &.col_header {
-      li.currentDay::after {
-        content: "";
-        display: flex;
-        height: 4px;
-        width: 70%;
-        background: $primary;
-        position: relative;
-        bottom: -6px;
-        margin: 0 auto;
-        border-radius: $round_radius;
+      li.currentDay span {
+        border-bottom: 3px solid $primary;
       }
     }
 
@@ -2237,13 +2240,17 @@ tooltip.tooltip-show {
   padding: 1rem;
   color: white;
   position: absolute;
-  background: #5f5e5e;
-  transition: left 0.4s;
+  background: $info;
   border-radius: $round_radius;
   box-shadow: 0px 3px 6px #00000042;
+  transition: left 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
   &.show {
     left: 2rem;
+  }
+
+  h1.title {
+    margin-bottom: 1rem;
   }
 
   i.fas.fa-times {
