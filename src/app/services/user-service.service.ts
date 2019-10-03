@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root'
@@ -69,6 +70,15 @@ export class UserServiceService {
       online: false
     },
   ]
+
+  public user: User = {
+    id: "0123",
+    name: "Jane Smith",
+    email: "jsmith@email.com",
+    password: "password",
+    imageURL: "../../../../../../assets/imgs/user_imgs/pexels-photo-415829.jpeg",
+    role: "ADMIN"
+  }
 
   constructor() { }
 }

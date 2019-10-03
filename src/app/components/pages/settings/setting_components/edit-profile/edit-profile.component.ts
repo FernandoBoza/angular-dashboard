@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/User';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'edit-profile',
@@ -7,16 +8,9 @@ import { User } from 'src/app/models/User';
 })
 export class EditProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private us: UserServiceService) { }
 
-  public user: User = {
-    id: "0123",
-    name: "Jane Smith",
-    email: "jsmith@email.com",
-    password: "password",
-    imageURL: "../../../../../../assets/imgs/user_imgs/pexels-photo-415829.jpeg",
-    role: "ADMIN"
-  }
+  public user: User = this.us.user;
 
   ngOnInit() {
   }

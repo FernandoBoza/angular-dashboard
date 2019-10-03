@@ -1007,7 +1007,8 @@ inbox {
               right: 0;
               height: 21px;
               width: max-content !important;
-              top: 49px !important;
+              top: unset !important;
+              bottom: -2rem;
             }
           }
 
