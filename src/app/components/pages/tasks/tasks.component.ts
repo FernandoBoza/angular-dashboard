@@ -35,8 +35,6 @@ export class TasksComponent implements OnInit {
   }
 
   public select_task_category(n: number) {
-    this.col_toggle = false;
-
     switch (n) {
       case 1:
         let arr = this.tasks_pending.concat(this.tasks_completed);
@@ -63,11 +61,11 @@ export class TasksComponent implements OnInit {
 
   public expandTask(task?: any) {
     this.selectedTask = task;
-    if (task != undefined) {
-      this.col_toggle = true;
-    } else {
-      this.col_toggle = !this.col_toggle
-    }
+    this.col_toggle = true;
+  }
+
+  public closePanel() {
+    this.col_toggle = false;
   }
 
   public toggleModal() {

@@ -16,7 +16,7 @@
   </ul>
 </section>
 <section class="right" [class.dual_grid]="col_toggle">
-  <i class="fas fa-times" (click)="expandTask()"></i>
+  <i class="fas fa-times" (click)="closePanel()"></i>
   <task *ngIf="selectedTask != null" [task]="selectedTask"></task>
   <create-task *ngIf="selectedTask == null"></create-task>
 </section>
