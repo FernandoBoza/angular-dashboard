@@ -1,8 +1,14 @@
+<div class="notification_card" [class.show]="u.notif_card">
+  <i class="fas fa-times" (click)="u.notif_card = false"></i>
+  <h1 class="title">{{u.notif_info.title}}</h1>
+  <p>{{u.notif_info.body}}</p>
+</div>
+
 <i class="fas fa-comments-alt toggle" [class.fa-compress-alt]="expanded" (click)="expandChat()" *ngIf="!hide"></i>
 <div class="chat_widget" [class.expanded]="expanded" *ngIf="!hide">
   <div *ngIf="expanded">
     <p>
-      <i class="fas fa-comment-alt-lines"></i>
+      <i (click)="show_notif()" class="fas fa-comment-alt-lines"></i>
       Chat
     </p>
 

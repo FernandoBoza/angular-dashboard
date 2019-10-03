@@ -2229,4 +2229,28 @@ tooltip.tooltip-show {
   opacity: 1;
 }
 
+.notification_card {
+  top: 2rem;
+  left: -380px;
+  z-index: 1;
+  width: 380px;
+  padding: 1rem;
+  color: white;
+  position: absolute;
+  background: #5f5e5e;
+  transition: left 0.4s;
+  border-radius: $round_radius;
+  box-shadow: 0px 3px 6px #00000042;
+
+  &.show {
+    left: 2rem;
+  }
+
+  i.fas.fa-times {
+    right: 1rem;
+    cursor: pointer;
+    position: absolute;
+  }
+}
+
 @import "../src/scss/mediaQueries";

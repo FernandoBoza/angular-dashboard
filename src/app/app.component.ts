@@ -9,6 +9,7 @@ import CONSTANTS from './services/Constants';
 export class AppComponent {
   constructor(private user: UserServiceService) { }
 
+  public u = this.user;
   public expanded: boolean = false;
   public menu = CONSTANTS.menu;
   public hide: boolean;
@@ -17,6 +18,9 @@ export class AppComponent {
     this.hide = location.href.includes("login")
   }
 
+  public show_notif() {
+    return this.user.show_notif();
+  }
 
   public get users(): any[] {
     return this.user.mockUser
