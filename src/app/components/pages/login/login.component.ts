@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Location } from '@angular/common';
 import { User } from 'src/app/models/User';
 
 @Component({
@@ -7,7 +8,7 @@ import { User } from 'src/app/models/User';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   public toggle: String = "login";
   public terms_condition: boolean = false;
@@ -36,6 +37,11 @@ export class LoginComponent implements OnInit {
   }
 
   public toggleViews(n: string) {
+    if (n == 'register') {
+      this.location.replaceState('/register');
+    } else {
+      this.location.replaceState('/login');
+    }
     this.user = new User();
     this.toggle = n;
     this.err = {
