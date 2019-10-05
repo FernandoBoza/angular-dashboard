@@ -11,7 +11,7 @@ import { InboxComponent } from './components/pages/inbox/inbox.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
 
 const routes: Routes = [
-  { path: "", component: AdminComponent },
+  { path: "dashboard", component: AdminComponent },
   { path: "projects", component: ProjectsComponent },
   { path: "departments", component: DepartmentsComponent },
   { path: "tasks", component: TasksComponent },

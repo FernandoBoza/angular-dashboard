@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +24,8 @@ import { DatePickerComponent } from './components/shared/date-picker/date-picker
 import { DropdownUserComponent } from './components/shared/dropdown-user/dropdown-user.component';
 import { TooltipComponent } from './components/shared/tooltip/tooltip.component';
 import { TooltipDirective } from './components/shared/tooltip/tooltip.directive';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -52,13 +53,20 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  // Component Factory for the tooltip
+  // entryComponents ComponentFactory for the tooltip
   entryComponents: [TooltipComponent],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

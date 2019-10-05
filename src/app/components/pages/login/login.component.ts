@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { User } from 'src/app/models/User';
+import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
@@ -9,14 +11,26 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private location: Location, private us: UserServiceService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private location: Location,
+    private us: UserServiceService,
+    private router: Router
+  ) { }
 
   public toggle: String = "login";
   public terms_condition: boolean = false;
   public term_modal: boolean = false;
   public passwordViewToggle: boolean = false;
-  public user: User = new User();
   public confirmedPassword: string;
+  public isLoadingResults: boolean = false;
+
+  public loginForm: FormGroup;
+  public user: User = new User();
+
+  public email: string;
+  public password: string;
+
   public err = {
     email: [],
     password: [],
@@ -24,6 +38,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      'email': [null, Validators.required],
+      'password': [null, Validators.required]
+    });
   }
 
   @HostListener('document:keydown', ['$event'])
@@ -33,37 +51,22 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public togglePasswordView() {
-    this.passwordViewToggle = !this.passwordViewToggle;
+  login(form: NgForm) {
+    console.log(form);
+    // this.us.login(form)
+    //   .subscribe(res => {
+    //     console.log(res);
+    //     if (res.token) {
+    //       localStorage.setItem('token', res.token);
+    //       this.router.navigate(['dashboard']);
+    //     }
+    //   }, (err) => {
+    //     console.log(err);
+    //   });
   }
 
-  public toggleViews(n: string) {
-    if (n == 'register') {
-      this.location.replaceState('/register');
-    } else {
-      this.location.replaceState('/login');
-    }
-    this.user = new User();
-    this.toggle = n;
-    this.err = {
-      email: [],
-      password: [],
-      name: []
-    }
-  }
-
-  public showTerms(evt: Event) {
-    evt.preventDefault();
-    this.term_modal = !this.term_modal;
-  }
-
-  public loginUser() {
-    if (this.validationUserLogin()) {
-      console.log({ email: this.user.email, password: this.user.password });
-    }
-  }
-
-  public createUser() {
+  register() {
+    this.router.navigate(['register']);
     if (this.terms_condition && this.validationUserSignUp()) {
       console.log({ email: this.user.email, name: this.user.name, password: this.user.password });
     }
@@ -134,6 +137,30 @@ export class LoginComponent implements OnInit {
       password: [],
       name: []
     }
+  }
+
+  public togglePasswordView() {
+    this.passwordViewToggle = !this.passwordViewToggle;
+  }
+
+  public toggleViews(n: string) {
+    if (n == 'register') {
+      this.location.replaceState('/register');
+    } else {
+      this.location.replaceState('/login');
+    }
+    this.user = new User();
+    this.toggle = n;
+    this.err = {
+      email: [],
+      password: [],
+      name: []
+    }
+  }
+
+  public showTerms(evt: Event) {
+    evt.preventDefault();
+    this.term_modal = !this.term_modal;
   }
 
 }

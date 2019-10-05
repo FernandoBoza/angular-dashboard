@@ -5,7 +5,7 @@ export default class CONSTANTS {
          label: "Home",
          icon: "fa-home-alt",
          notification: 0,
-         url: ""
+         url: "dashboard"
       },
       {
          label: "Projects",
