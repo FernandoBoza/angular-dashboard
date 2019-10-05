@@ -1,4 +1,5 @@
 <section class="form_toggle" [class.left]="toggle == 'login'" [class.right]="toggle == 'register'">
+   <h1 *ngIf="isLoadingResults ">Loading</h1>
    <ul class="btn_container">
       <li class="login">
          <img src="../../../assets/imgs/signup_right.svg" alt="taeki sign up">
@@ -22,26 +23,25 @@
    <img class="login_right" src="../../../assets/imgs/login_right.svg">
    <img class="signup_left" src="../../../assets/imgs/signup_left.svg">
    <ul class="form login">
-      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-         <li>
-            <h1>Welcome Back</h1>
-         </li>
-         <li class="input_container" [class.error]="err.email.length != 0">
-            <span>{{err.email}}</span>
-            <label for="login_email" class="label">Email</label>
-            <input id="login_email" formControlName="email" type="email">
-
-         </li>
-         <li class="input_container" [class.error]="err.password.length != 0">
-            <span>{{err.password}}</span>
-            <label for="login_password" class="label">Password</label>
-            <input id="login_password" formControlName="password" type="{{passwordViewToggle ? 'text' : 'password'}}">
-            <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
-         </li>
-         <li class="resolve">
-            <button type="submit">Login</button>
-         </li>
-      </form>
+      <li>
+         <h1>Welcome Back</h1>
+      </li>
+      <li class="input_container" [class.error]="err.email.length != 0">
+         <span>{{err.email}}</span>
+         <label for="login_email" class="label">Email</label>
+         <input id="login_email" [(ngModel)]="user.email" type="email">
+      </li>
+      <li class="input_container" [class.error]="err.password.length != 0">
+         <span>{{err.password}}</span>
+         <label for="login_password" class="label">Password</label>
+         <input id="login_password" (keyup.enter)="login()" [(ngModel)]="user.password"
+            type="{{passwordViewToggle ? 'text' : 'password'}}">
+         <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
+      </li>
+      <li class="resolve" (click)="login()">
+         <h1>Login</h1>
+         <span>{{err.noAccount}}</span>
+      </li>
    </ul>
    <ul class="form register">
       <li>
@@ -60,13 +60,14 @@
       <li class="input_container" [class.error]="err.password.length != 0">
          <span>{{err.password}}</span>
          <label for="regi_password" class="label">password</label>
-         <input [(ngModel)]="user.password" id="regi_password" type="{{passwordViewToggle ? 'text' : 'password'}}">
+         <input [(ngModel)]="user.password" id="regi_password" type="{{passwordViewToggle ? 'text' : 'password'}}"
+            (keyup.enter)="register()">
          <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
       </li>
       <li class="input_container" [class.error]="confirmedPassword != user.password">
          <label for="confirm_password" class="label">confirm password</label>
          <input [(ngModel)]="confirmedPassword" id="confirm_password"
-            type="{{passwordViewToggle ? 'text' : 'password'}}">
+            type="{{passwordViewToggle ? 'text' : 'password'}}" (keyup.enter)="register()">
          <i class="fal fa-fw {{passwordViewToggle ? 'fa-eye' : 'fa-eye-slash'}}" (click)="togglePasswordView()"></i>
       </li>
       <li class="checkbox_container">

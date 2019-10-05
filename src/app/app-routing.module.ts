@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: "notifications", component: NotificationsComponent },
   { path: "calendar", component: CalendarComponent },
   { path: "settings", component: SettingsComponent },
-  { path: "login", component: LoginComponent, data: { title: 'Login' } }
+  { path: "login", component: LoginComponent, data: { title: 'Login' } },
+  { path: "register", component: LoginComponent, data: { title: 'Register' } }
 ];
 
 @NgModule({

@@ -15,7 +15,9 @@ export class AppComponent {
   public hide: boolean;
 
   ngOnInit() {
-    this.hide = location.href.includes("login")
+    if (location.href.includes("login") || location.href.includes("register")) {
+      this.hide = true
+    }
   }
 
   public show_notif() {

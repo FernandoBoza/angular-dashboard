@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { User } from 'src/app/models/User';
 import { Router } from '@angular/router';
@@ -12,7 +11,6 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private formBuilder: FormBuilder,
     private location: Location,
     private us: UserServiceService,
     private router: Router
@@ -25,23 +23,16 @@ export class LoginComponent implements OnInit {
   public confirmedPassword: string;
   public isLoadingResults: boolean = false;
 
-  public loginForm: FormGroup;
   public user: User = new User();
-
-  public email: string;
-  public password: string;
 
   public err = {
     email: [],
     password: [],
-    name: []
+    name: [],
+    noAccount: "",
   }
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      'email': [null, Validators.required],
-      'password': [null, Validators.required]
-    });
   }
 
   @HostListener('document:keydown', ['$event'])
@@ -51,24 +42,29 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  login(form: NgForm) {
-    console.log(form);
-    // this.us.login(form)
-    //   .subscribe(res => {
-    //     console.log(res);
-    //     if (res.token) {
-    //       localStorage.setItem('token', res.token);
-    //       this.router.navigate(['dashboard']);
-    //     }
-    //   }, (err) => {
-    //     console.log(err);
-    //   });
+  public login() {
+    if (this.validationUserLogin()) {
+      this.us.login(this.user)
+        .subscribe(res => {
+          if (res.token) {
+            localStorage.setItem('token', res.token);
+            this.router.navigate(['dashboard']);
+          } else {
+            this.err.noAccount = "No account found";
+          }
+        })
+    }
   }
 
-  register() {
-    this.router.navigate(['register']);
+  public register() {
     if (this.terms_condition && this.validationUserSignUp()) {
-      console.log({ email: this.user.email, name: this.user.name, password: this.user.password });
+      this.us.register(this.user)
+        .subscribe(res => {
+          this.toggle = "login"
+        }, (err) => {
+          console.log(err);
+          alert(err.error);
+        });
     }
   }
 
@@ -133,6 +129,7 @@ export class LoginComponent implements OnInit {
 
   public flushErr() {
     this.err = {
+      noAccount: "",
       email: [],
       password: [],
       name: []
@@ -154,7 +151,8 @@ export class LoginComponent implements OnInit {
     this.err = {
       email: [],
       password: [],
-      name: []
+      name: [],
+      noAccount: ""
     }
   }
 

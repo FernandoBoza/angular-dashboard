@@ -13,7 +13,7 @@ export class UserServiceService {
 
   public isLoggedIn: boolean = false;
   public redirectUrl: string;
-  private api = 'http://localhost:8080/login';
+  private api = 'http://localhost:8080/';
 
 
   public notif_card: boolean = false;
@@ -25,10 +25,18 @@ export class UserServiceService {
   constructor(private http: HttpClient) { }
 
   public login(data: any): Observable<any> {
-    return this.http.post<any>(this.api, data)
+    return this.http.post<any>(`${this.api}login`, data)
       .pipe(
         tap(_ => this.isLoggedIn = true),
         catchError(this.handleError('login', []))
+      );
+  }
+
+  public register(data: any): Observable<any> {
+    return this.http.post<any>(`${this.api}register`, data)
+      .pipe(
+        tap(_ => this.isLoggedIn = true),
+        catchError(this.handleError('register', []))
       );
   }
 
