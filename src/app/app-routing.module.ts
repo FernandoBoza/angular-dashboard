@@ -9,16 +9,18 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { AdminComponent } from './components/pages/admin/admin.component';
 import { InboxComponent } from './components/pages/inbox/inbox.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
+import { AuthGuard } from './auth/auth.guard';
+
 
 const routes: Routes = [
-  { path: "dashboard", component: AdminComponent },
-  { path: "projects", component: ProjectsComponent },
-  { path: "departments", component: DepartmentsComponent },
-  { path: "tasks", component: TasksComponent },
-  { path: "inbox", component: InboxComponent },
-  { path: "notifications", component: NotificationsComponent },
-  { path: "calendar", component: CalendarComponent },
-  { path: "settings", component: SettingsComponent },
+  { path: "dashboard", canActivate: [AuthGuard], component: AdminComponent },
+  { path: "projects", canActivate: [AuthGuard], component: ProjectsComponent },
+  { path: "departments", canActivate: [AuthGuard], component: DepartmentsComponent },
+  { path: "tasks", canActivate: [AuthGuard], component: TasksComponent },
+  { path: "inbox", canActivate: [AuthGuard], component: InboxComponent },
+  { path: "notifications", canActivate: [AuthGuard], component: NotificationsComponent },
+  { path: "calendar", canActivate: [AuthGuard], component: CalendarComponent },
+  { path: "settings", canActivate: [AuthGuard], component: SettingsComponent },
   { path: "login", component: LoginComponent, data: { title: 'Login' } },
   { path: "register", component: LoginComponent, data: { title: 'Register' } }
 ];

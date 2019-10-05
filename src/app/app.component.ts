@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { UserServiceService } from './services/user-service.service';
 import CONSTANTS from './services/Constants';
+import { UtilsService } from './services/utils.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  constructor(private user: UserServiceService) { }
+  constructor(
+    private user: UserServiceService,
+    public util: UtilsService
+  ) { }
 
-  public u = this.user;
   public expanded: boolean = false;
   public menu = CONSTANTS.menu;
   public hide: boolean;
@@ -20,8 +23,17 @@ export class AppComponent {
     }
   }
 
+
+  public get notif_card(): boolean {
+    return this.util.notif_card;
+  }
+
   public show_notif() {
-    return this.user.show_notif();
+    return this.util.show_notif();
+  }
+
+  public close_notif() {
+    return this.util.close_notif();
   }
 
   public get users(): any[] {

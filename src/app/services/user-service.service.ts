@@ -10,17 +10,11 @@ import { catchError, tap } from 'rxjs/operators';
 })
 
 export class UserServiceService {
-
+  public user: User;
   public isLoggedIn: boolean = false;
   public redirectUrl: string;
   private api = 'http://localhost:8080/';
 
-
-  public notif_card: boolean = false;
-  public notif_info: any = {
-    title: "This is fake data",
-    body: "Lorem ipsum dolor sit, amet consectetur adipisicing."
-  }
 
   constructor(private http: HttpClient) { }
 
@@ -35,27 +29,20 @@ export class UserServiceService {
   public register(data: any): Observable<any> {
     return this.http.post<any>(`${this.api}register`, data)
       .pipe(
-        tap(_ => this.isLoggedIn = true),
+        tap(_ => console.log("login")),
         catchError(this.handleError('register', []))
       );
   }
 
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
       console.error(error); // log to console instead
       console.log(`${operation} failed: ${error.message}`);
-
       return of(result as T);
     };
   }
 
-  public show_notif() {
-    this.notif_card = true;
-    setTimeout(() => {
-      this.notif_card = false;
-    }, 5000);
-  }
   public mockUser: any[] = [
     {
       name: "Lizzie Parker",
@@ -106,12 +93,4 @@ export class UserServiceService {
       online: false
     },
   ]
-  public user: User = {
-    id: "0123",
-    name: "Jane Smith",
-    email: "jsmith@email.com",
-    password: "password",
-    imageURL: "../../../../../../assets/imgs/user_imgs/pexels-photo-415829.jpeg",
-    role: "ADMIN"
-  }
 }

@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
     if (this.validationUserLogin()) {
       this.us.login(this.user)
         .subscribe(res => {
+          this.us.user = res.user
           if (res.token) {
             localStorage.setItem('token', res.token);
             this.router.navigate(['dashboard']);
