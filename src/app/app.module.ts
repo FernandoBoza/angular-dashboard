@@ -24,6 +24,7 @@ import { DatePickerComponent } from './components/shared/date-picker/date-picker
 import { DropdownUserComponent } from './components/shared/dropdown-user/dropdown-user.component';
 import { TooltipComponent } from './components/shared/tooltip/tooltip.component';
 import { TooltipDirective } from './components/shared/tooltip/tooltip.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { TooltipDirective } from './components/shared/tooltip/tooltip.directive'
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   // Component Factory for the tooltip
   entryComponents: [TooltipComponent],

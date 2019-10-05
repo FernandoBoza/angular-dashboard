@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Location } from '@angular/common';
 import { User } from 'src/app/models/User';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'login',
@@ -8,7 +9,7 @@ import { User } from 'src/app/models/User';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private us: UserServiceService) { }
 
   public toggle: String = "login";
   public terms_condition: boolean = false;

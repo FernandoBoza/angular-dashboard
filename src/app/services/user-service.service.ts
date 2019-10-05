@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/User';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,19 +9,24 @@ import { User } from '../models/User';
 
 export class UserServiceService {
 
+  private baseUrl = 'http://localhost:8080/login';
+  constructor(private http: HttpClient) { }
+
+  public loginUser(user: any): Observable<any> {
+    return this.http.post(this.baseUrl, user, { responseType: 'text' as 'json' })
+  }
+
   public notif_card: boolean = false;
   public notif_info: any = {
     title: "This is fake data",
     body: "Lorem ipsum dolor sit, amet consectetur adipisicing."
   }
-
   public show_notif() {
     this.notif_card = true;
     setTimeout(() => {
       this.notif_card = false;
     }, 5000);
   }
-
   public mockUser: any[] = [
     {
       name: "Lizzie Parker",
@@ -70,7 +77,6 @@ export class UserServiceService {
       online: false
     },
   ]
-
   public user: User = {
     id: "0123",
     name: "Jane Smith",
@@ -79,6 +85,4 @@ export class UserServiceService {
     imageURL: "../../../../../../assets/imgs/user_imgs/pexels-photo-415829.jpeg",
     role: "ADMIN"
   }
-
-  constructor() { }
 }

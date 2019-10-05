@@ -28,7 +28,7 @@
       <li class="input_container" [class.error]="err.email.length != 0">
          <span>{{err.email}}</span>
          <label for="login_email" class="label">Email</label>
-         <input id="login_email" [(ngModel)]="user.email" type="text">
+         <input id="login_email" [(ngModel)]="user.email" type="email">
       </li>
       <li class="input_container" [class.error]="err.password.length != 0">
          <span>{{err.password}}</span>
