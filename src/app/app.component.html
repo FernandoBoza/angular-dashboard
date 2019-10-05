@@ -4,7 +4,8 @@
   <p>{{util.notif_info.body}}</p>
 </div>
 
-<i class="fas fa-comments-alt toggle" [class.fa-compress-alt]="expanded" (click)="expandChat()"></i>
+<i [style.display]="isLoggedIn ? 'flex' : 'none'" class="fas fa-comments-alt toggle" [class.fa-compress-alt]="expanded"
+  (click)="expandChat()"></i>
 <div class="chat_widget" [class.expanded]="expanded">
   <div *ngIf="expanded">
     <p>
@@ -21,7 +22,7 @@
     </ul>
   </div>
 </div>
-<section class="sidebar">
+<section class="sidebar" [style.display]="isLoggedIn ? 'unset' : 'none'">
   <ul>
     <li tooltip="{{i.label}}" placement="right" *ngFor="let i of menu" routerLink="/{{i.url}}"
       [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active">
