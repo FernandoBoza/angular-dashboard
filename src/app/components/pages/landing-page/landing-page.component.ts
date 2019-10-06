@@ -13,6 +13,7 @@ export class LandingPageComponent implements OnInit {
   @ViewChild('container') container: ElementRef;
 
   ngOnInit() {
+    this.lp.barWidth = "0";
   }
 
   public scroll() {

@@ -17,7 +17,16 @@ navbar {
 
     &.menu li {
       cursor: pointer;
-      padding: 0 2rem 0 1rem;
+      margin: 0 2rem 0 1rem;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $primary;
+      }
+
+      &.active {
+        border-color: $primary;
+      }
     }
 
     li {
@@ -87,47 +96,47 @@ landing-page {
     width: 50%;
     font-size: 1.3rem;
   }
-}
 
-landing-page .container {
-  height: 90vh;
-  overflow: scroll;
-  margin: 0;
+  .container {
+    height: 90vh;
+    overflow: scroll;
+    margin: 0;
 
-  li {
-    box-shadow: unset;
-    border: unset;
-    border-radius: unset;
-    margin-bottom: unset;
-    padding: unset;
-    background: unset;
-  }
-}
-
-.col {
-  margin-bottom: 4rem;
-}
-
-.col-2 {
-  display: grid;
-  grid-template-columns: 50% 50%;
-
-  .left,
-  .right {
-    width: 100%;
-    display: flex;
-    align-self: center;
-    position: relative;
-    flex-direction: column;
-
-    img {
-      width: inherit;
+    li {
+      box-shadow: unset;
+      border: unset;
+      border-radius: unset;
+      margin-bottom: unset;
+      padding: unset;
+      background: unset;
     }
   }
-}
 
-.col-3 {
-  display: grid;
-  grid-gap: 4rem;
-  grid-template-columns: repeat(3, 1fr);
+  .col {
+    margin-bottom: 4rem;
+  }
+
+  .col-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .left,
+    .right {
+      width: 100%;
+      display: flex;
+      align-self: center;
+      position: relative;
+      flex-direction: column;
+
+      img {
+        width: inherit;
+      }
+    }
+  }
+
+  .col-3 {
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

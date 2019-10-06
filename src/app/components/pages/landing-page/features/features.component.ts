@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { LandingPageService } from '../landing-page.service';
 
 @Component({
   selector: 'features',
@@ -6,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lp: LandingPageService) { }
+
+  public src: string = "../../../../assets/imgs/landing_page/"
+  @ViewChild('container') container: ElementRef;
 
   ngOnInit() {
+    this.lp.barWidth = "0";
   }
 
+  public scroll() {
+    this.lp.scroll(this.container) + "%";
+  }
 }
