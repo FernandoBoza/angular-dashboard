@@ -15,7 +15,7 @@ export class EditProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  public updateUser(e?: string, name?: string) {
+  public getValFromTxtCompo(e?: string, name?: string) {
     this.user[name] = e;
   }
 
