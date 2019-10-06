@@ -27,6 +27,8 @@ import { TooltipDirective } from './components/shared/tooltip/tooltip.directive'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
+import { FeaturesComponent } from './components/pages/landing-page/features/features.component';
+import { NavbarComponent } from './components/pages/landing-page/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { LandingPageComponent } from './components/pages/landing-page/landing-pa
     DropdownUserComponent,
     TooltipComponent,
     TooltipDirective,
-    LandingPageComponent
+    LandingPageComponent,
+    FeaturesComponent,
+    NavbarComponent
   ],
   imports: [
     FormsModule,

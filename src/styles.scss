@@ -66,6 +66,10 @@ app-root .circle {
     background: $danger;
   }
 
+  &.success {
+    background: $success;
+  }
+
   &.info {
     background: $info;
   }

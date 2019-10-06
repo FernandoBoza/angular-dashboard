@@ -33,6 +33,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (location.href == "http://localhost:4200/register") {
+      this.toggle = "register"
+    }
   }
 
   @HostListener('document:keydown', ['$event'])

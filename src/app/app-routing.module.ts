@@ -11,10 +11,12 @@ import { InboxComponent } from './components/pages/inbox/inbox.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
+import { FeaturesComponent } from './components/pages/landing-page/features/features.component';
 
 
 const routes: Routes = [
   { path: "", component: LandingPageComponent, data: { title: 'Taeki' } },
+  { path: "features", component: FeaturesComponent, data: { title: 'Taeki - Features' } },
   { path: "login", component: LoginComponent, data: { title: 'Login' } },
   { path: "register", component: LoginComponent, data: { title: 'Register' } },
   { path: "dashboard", canActivate: [AuthGuard], component: AdminComponent },
