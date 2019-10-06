@@ -1,0 +1,29 @@
+<ul class="navbar">
+  <li class="logo">
+    <img src="../../../../assets/imgs/logo_dark.svg">
+  </li>
+
+  <ul class="center menu">
+    <li>About</li>
+    <li>Features</li>
+    <li>Pricing</li>
+    <li>Contact</li>
+  </ul>
+
+  <ul class="right menu">
+    <li>Sign in</li>
+    <li>Register</li>
+  </ul>
+  <div class="barScroll" [style.width]="barWidth"></div>
+</ul>
+<section #container (scroll)="scroll()" class="container">
+  <section class="hero">
+    <div class="left">
+      <h1 class="title">Lorem, ipsum dolor.</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore earum ab praesentium illo quo consectetur?</p>
+    </div>
+    <div class="right">
+      <img src="{{this.src}}selecting.svg">
+    </div>
+  </section>
+</section>

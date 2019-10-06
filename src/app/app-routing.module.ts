@@ -10,9 +10,13 @@ import { AdminComponent } from './components/pages/admin/admin.component';
 import { InboxComponent } from './components/pages/inbox/inbox.component';
 import { SettingsComponent } from './components/pages/settings/settings.component';
 import { AuthGuard } from './auth/auth.guard';
+import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 
 
 const routes: Routes = [
+  { path: "", component: LandingPageComponent, data: { title: 'Taeki' } },
+  { path: "login", component: LoginComponent, data: { title: 'Login' } },
+  { path: "register", component: LoginComponent, data: { title: 'Register' } },
   { path: "dashboard", canActivate: [AuthGuard], component: AdminComponent },
   { path: "projects", canActivate: [AuthGuard], component: ProjectsComponent },
   { path: "departments", canActivate: [AuthGuard], component: DepartmentsComponent },
@@ -21,8 +25,6 @@ const routes: Routes = [
   { path: "notifications", canActivate: [AuthGuard], component: NotificationsComponent },
   { path: "calendar", canActivate: [AuthGuard], component: CalendarComponent },
   { path: "settings", canActivate: [AuthGuard], component: SettingsComponent },
-  { path: "login", component: LoginComponent, data: { title: 'Login' } },
-  { path: "register", component: LoginComponent, data: { title: 'Register' } }
 ];
 
 @NgModule({

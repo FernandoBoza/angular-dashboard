@@ -26,6 +26,7 @@ import { TooltipComponent } from './components/shared/tooltip/tooltip.component'
 import { TooltipDirective } from './components/shared/tooltip/tooltip.directive';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     DatePickerComponent,
     DropdownUserComponent,
     TooltipComponent,
-    TooltipDirective
+    TooltipDirective,
+    LandingPageComponent
   ],
   imports: [
     FormsModule,

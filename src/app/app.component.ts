@@ -15,20 +15,12 @@ export class AppComponent {
 
   public expanded: boolean = false;
   public menu = CONSTANTS.menu;
-  public hide: boolean;
 
-  ngOnInit() {
-    if (location.href.includes("login") || location.href.includes("register")) {
-      this.hide = true
-    }
-  }
-
+  ngOnInit() { }
 
   public get isLoggedIn(): boolean {
     return this.user.isLoggedIn;
   }
-
-
 
   public get notif_card(): boolean {
     return this.util.notif_card;
